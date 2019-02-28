@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		251FAED8222783A400B9C063 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251FAED6222783A400B9C063 /* Shader.cpp */; };
+		251FAEDC2227A80E00B9C063 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEDB2227A80E00B9C063 /* shader.vs */; };
+		251FAEDE2227A86B00B9C063 /* shader.fs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEDD2227A86B00B9C063 /* shader.fs */; };
+		251FAEE12227BCBE00B9C063 /* 4.1.texture.vs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEE02227BCBE00B9C063 /* 4.1.texture.vs */; };
+		251FAEE32227BD5C00B9C063 /* 4.1.texture.fs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEE22227BD5C00B9C063 /* 4.1.texture.fs */; };
+		251FAEE52227C28300B9C063 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEE42227C28300B9C063 /* container.jpg */; };
+		251FAEE92227D00E00B9C063 /* awesomeface.png in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEE82227D00E00B9C063 /* awesomeface.png */; };
 		2524F07B2226940C00C8F50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2524F07A2226940C00C8F50D /* Assets.xcassets */; };
 		2524F08C2226940C00C8F50D /* OpenGLTest_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2524F08B2226940C00C8F50D /* OpenGLTest_2Tests.m */; };
 		2524F0972226940C00C8F50D /* OpenGLTest_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2524F0962226940C00C8F50D /* OpenGLTest_2UITests.m */; };
@@ -35,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		251FAED6222783A400B9C063 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		251FAED7222783A400B9C063 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		251FAEDB2227A80E00B9C063 /* shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
+		251FAEDD2227A86B00B9C063 /* shader.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.fs; sourceTree = "<group>"; };
+		251FAEDF2227B94700B9C063 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		251FAEE02227BCBE00B9C063 /* 4.1.texture.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.1.texture.vs; sourceTree = "<group>"; };
+		251FAEE22227BD5C00B9C063 /* 4.1.texture.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.1.texture.fs; sourceTree = "<group>"; };
+		251FAEE42227C28300B9C063 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
+		251FAEE82227D00E00B9C063 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
 		2524F0712226940A00C8F50D /* OpenGLTest_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLTest_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2524F07A2226940C00C8F50D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2524F07F2226940C00C8F50D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +120,9 @@
 		2524F0732226940A00C8F50D /* OpenGLTest_2 */ = {
 			isa = PBXGroup;
 			children = (
+				251FAEE82227D00E00B9C063 /* awesomeface.png */,
+				251FAEE42227C28300B9C063 /* container.jpg */,
+				251FAEDF2227B94700B9C063 /* stb_image.h */,
 				2524F0A42226943200C8F50D /* glad.c */,
 				2524F0A52226943200C8F50D /* libGLEW.2.1.0.dylib */,
 				2524F0A62226943200C8F50D /* libglfw.3.2.dylib */,
@@ -111,6 +130,12 @@
 				2524F07F2226940C00C8F50D /* Info.plist */,
 				2524F0822226940C00C8F50D /* OpenGLTest_2.entitlements */,
 				2524F0AD2226949D00C8F50D /* main.cpp */,
+				251FAED6222783A400B9C063 /* Shader.cpp */,
+				251FAED7222783A400B9C063 /* Shader.hpp */,
+				251FAEE02227BCBE00B9C063 /* 4.1.texture.vs */,
+				251FAEE22227BD5C00B9C063 /* 4.1.texture.fs */,
+				251FAEDB2227A80E00B9C063 /* shader.vs */,
+				251FAEDD2227A86B00B9C063 /* shader.fs */,
 			);
 			path = OpenGLTest_2;
 			sourceTree = "<group>";
@@ -244,7 +269,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251FAEE32227BD5C00B9C063 /* 4.1.texture.fs in Resources */,
+				251FAEE52227C28300B9C063 /* container.jpg in Resources */,
 				2524F07B2226940C00C8F50D /* Assets.xcassets in Resources */,
+				251FAEDE2227A86B00B9C063 /* shader.fs in Resources */,
+				251FAEDC2227A80E00B9C063 /* shader.vs in Resources */,
+				251FAEE12227BCBE00B9C063 /* 4.1.texture.vs in Resources */,
+				251FAEE92227D00E00B9C063 /* awesomeface.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2524F0A72226943200C8F50D /* glad.c in Sources */,
+				251FAED8222783A400B9C063 /* Shader.cpp in Sources */,
 				2524F0AE2226949D00C8F50D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
