@@ -14,6 +14,7 @@
 		251FAEE32227BD5C00B9C063 /* 4.1.texture.fs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEE22227BD5C00B9C063 /* 4.1.texture.fs */; };
 		251FAEE52227C28300B9C063 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEE42227C28300B9C063 /* container.jpg */; };
 		251FAEE92227D00E00B9C063 /* awesomeface.png in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEE82227D00E00B9C063 /* awesomeface.png */; };
+		251FAEED2227D1A900B9C063 /* 4.2.texture.fs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEEC2227D1A900B9C063 /* 4.2.texture.fs */; };
 		2524F07B2226940C00C8F50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2524F07A2226940C00C8F50D /* Assets.xcassets */; };
 		2524F08C2226940C00C8F50D /* OpenGLTest_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2524F08B2226940C00C8F50D /* OpenGLTest_2Tests.m */; };
 		2524F0972226940C00C8F50D /* OpenGLTest_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2524F0962226940C00C8F50D /* OpenGLTest_2UITests.m */; };
@@ -51,6 +52,7 @@
 		251FAEE22227BD5C00B9C063 /* 4.1.texture.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.1.texture.fs; sourceTree = "<group>"; };
 		251FAEE42227C28300B9C063 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		251FAEE82227D00E00B9C063 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
+		251FAEEC2227D1A900B9C063 /* 4.2.texture.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.2.texture.fs; sourceTree = "<group>"; };
 		2524F0712226940A00C8F50D /* OpenGLTest_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLTest_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2524F07A2226940C00C8F50D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2524F07F2226940C00C8F50D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				251FAEE22227BD5C00B9C063 /* 4.1.texture.fs */,
 				251FAEDB2227A80E00B9C063 /* shader.vs */,
 				251FAEDD2227A86B00B9C063 /* shader.fs */,
+				251FAEEC2227D1A900B9C063 /* 4.2.texture.fs */,
 			);
 			path = OpenGLTest_2;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				251FAEE32227BD5C00B9C063 /* 4.1.texture.fs in Resources */,
+				251FAEED2227D1A900B9C063 /* 4.2.texture.fs in Resources */,
 				251FAEE52227C28300B9C063 /* container.jpg in Resources */,
 				2524F07B2226940C00C8F50D /* Assets.xcassets in Resources */,
 				251FAEDE2227A86B00B9C063 /* shader.fs in Resources */,
