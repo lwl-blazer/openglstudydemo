@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25154AEC2228F805000944BC /* 4.5.texture.fs in Resources */ = {isa = PBXBuildFile; fileRef = 25154AEB2228F805000944BC /* 4.5.texture.fs */; };
 		251FAED8222783A400B9C063 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251FAED6222783A400B9C063 /* Shader.cpp */; };
 		251FAEDC2227A80E00B9C063 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEDB2227A80E00B9C063 /* shader.vs */; };
 		251FAEDE2227A86B00B9C063 /* shader.fs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEDD2227A86B00B9C063 /* shader.fs */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25154AEB2228F805000944BC /* 4.5.texture.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.5.texture.fs; sourceTree = "<group>"; };
 		251FAED6222783A400B9C063 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		251FAED7222783A400B9C063 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		251FAEDB2227A80E00B9C063 /* shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				251FAEDB2227A80E00B9C063 /* shader.vs */,
 				251FAEDD2227A86B00B9C063 /* shader.fs */,
 				251FAEEC2227D1A900B9C063 /* 4.2.texture.fs */,
+				25154AEB2228F805000944BC /* 4.5.texture.fs */,
 			);
 			path = OpenGLTest_2;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25154AEC2228F805000944BC /* 4.5.texture.fs in Resources */,
 				251FAEE32227BD5C00B9C063 /* 4.1.texture.fs in Resources */,
 				251FAEED2227D1A900B9C063 /* 4.2.texture.fs in Resources */,
 				251FAEE52227C28300B9C063 /* container.jpg in Resources */,

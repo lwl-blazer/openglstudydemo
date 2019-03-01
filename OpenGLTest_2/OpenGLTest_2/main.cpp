@@ -26,9 +26,12 @@ void renderChangeTriangle(GLFWwindow *window);
 void renderDifferentColorTriangle(GLFWwindow *window);
 void renderRectAndTexture(GLFWwindow *window);
 void renderRectAndTwoTexture(GLFWwindow *window);
+void renderChangeVisibilityTexture(GLFWwindow *window);
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+
+float mixValue = 0.2f;
 
 const char *vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
@@ -62,6 +65,7 @@ const char *fragmentShaderSource2 = "#version 330 core\n"
 "{\n"
 " FragColor = vec4(ourColor, 1.0f);\n"
 "}\n\0";
+
 int main(int argc, char **argv){
     
     glfwInit();
@@ -94,7 +98,8 @@ int main(int argc, char **argv){
     //renderChangeTriangle(window);
     //renderDifferentColorTriangle(window);
     //renderRectAndTexture(window);
-    renderRectAndTwoTexture(window);
+    //renderRectAndTwoTexture(window);
+    renderChangeVisibilityTexture(window);
     
     glfwTerminate();
     return 0;
@@ -311,10 +316,10 @@ void renderRectAndTwoTexture(GLFWwindow *window){
     
     float vertices[] = {
         // positions          // colors           // texture coords
-        0.5f,   0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
-        0.5f,  -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
-        -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
-        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // top left
+        0.5f,   0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.8f, 0.8f, // top right
+        0.5f,  -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.8f, 0.2f, // bottom right
+        -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.2f, 0.8f, // bottom left
+        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.2f, 0.2f  // top left
     };
     unsigned int indices[] = {
         0, 1, 3, // first triangle
@@ -347,6 +352,10 @@ void renderRectAndTwoTexture(GLFWwindow *window){
     glGenTextures(1, &texture1);
     glBindTexture(GL_TEXTURE_2D, texture1);
     
+    /**
+     GL_CLAMP_TO_EDGE 纹理坐标会被约束在0到1之间，超出的部分会重复纹理坐标的边缘，产生一种边缘被拉伸的效果
+     GL_CLAMP_TO_BORDER 超出的坐标为用户指定的边缘颜色
+     */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     
@@ -361,7 +370,6 @@ void renderRectAndTwoTexture(GLFWwindow *window){
         glGenerateMipmap(GL_TEXTURE_2D);
     }
     stbi_image_free(data);
-    
     
     glGenTextures(1, &texture2);
     glBindTexture(GL_TEXTURE_2D, texture2);
@@ -412,6 +420,98 @@ void renderRectAndTwoTexture(GLFWwindow *window){
     glDeleteBuffers(1, &EBO);
 }
 
+void renderChangeVisibilityTexture(GLFWwindow *window){
+    Shader ourShader("4.1.texture.vs", "4.5.texture.fs");
+    float vertices[] = {
+        0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,
+        0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,
+        -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,
+        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f
+    };
+    unsigned int indices[] = {
+        0, 1, 3,
+        1, 2, 3
+    };
+    unsigned int VAO, VBO, EBO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
+    
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER ,VBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void *)0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void *)(3 * GL_FLOAT));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 *sizeof(GL_FLOAT), (void *)(6 * sizeof(GL_FLOAT)));
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glEnableVertexAttribArray(2);
+    
+    unsigned int texture, texture1;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    
+    stbi_set_flip_vertically_on_load(true);
+    int width, height, nrChannel;
+    unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannel, 0);
+    if (data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    stbi_image_free(data);
+    
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    data = stbi_load("awesomeface.png", &width, &height, &nrChannel, 0);
+    if (data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    stbi_image_free(data);
+    
+    ourShader.use(); //给uniform设定位置值时，一定要先use,program
+    ourShader.setInt("texture1", 0);
+    ourShader.setInt("texture2", 1);
+    
+    while (!glfwWindowShouldClose(window)) {
+        processInput(window);
+        
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture1);
+        
+        ourShader.setFloat("mixValue", mixValue);
+        
+        ourShader.use();
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+    
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
+}
+
+
 
 //窗口被调整的时候回调函数
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
@@ -422,5 +522,19 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
 void processInput(GLFWwindow *window){
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {  //是否按下ESC键
         glfwSetWindowShouldClose(window, true); //设置为True 后在GLFW下次循环时候会关闭
+    }
+    
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
+        mixValue += 0.001f;
+        if (mixValue >= 1.0f) {
+            mixValue = 1.0f;
+        }
+    }
+    
+    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
+        mixValue -= 0.001f;
+        if (mixValue <= 0.0f) {
+            mixValue = 0.0f;
+        }
     }
 }
