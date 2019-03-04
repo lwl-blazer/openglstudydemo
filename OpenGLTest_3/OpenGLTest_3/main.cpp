@@ -152,8 +152,11 @@ void renderTexturePlane(GLFWwindow *window){
         glm::mat4 view = glm::mat4(1.0f);
         glm::mat4 projection = glm::mat4(1.0f);
         
+        //围绕x轴旋转   在世界空间里
         model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        //往后移动，以使得物体可见的(当在世界空间里，我们位于原点(0,0,0).想要在场景里里面移动，(将摄像机向后移动，和将整个场景向前移动是一样的))这就是观察矩阵所做的
         view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+        //透视投影
         projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH/(float)SCR_HEIGHT, 0.1f, 100.0f);
         
         unsigned int modelLoc = glGetUniformLocation(ourShader.ID, "model");
