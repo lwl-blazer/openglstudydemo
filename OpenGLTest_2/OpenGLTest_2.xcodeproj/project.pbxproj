@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		250E04A1222CCD8E00A8799F /* 4.6.texture.vs in Resources */ = {isa = PBXBuildFile; fileRef = 250E04A0222CCD8E00A8799F /* 4.6.texture.vs */; };
 		250E04A3222CF80600A8799F /* 4.6.texture.fs in Resources */ = {isa = PBXBuildFile; fileRef = 250E04A2222CF80600A8799F /* 4.6.texture.fs */; };
+		250E04F1222D12A700A8799F /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 250E04F0222D12A700A8799F /* Shader.cpp */; };
 		25154AEC2228F805000944BC /* 4.5.texture.fs in Resources */ = {isa = PBXBuildFile; fileRef = 25154AEB2228F805000944BC /* 4.5.texture.fs */; };
-		251FAED8222783A400B9C063 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251FAED6222783A400B9C063 /* Shader.cpp */; };
 		251FAEDC2227A80E00B9C063 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEDB2227A80E00B9C063 /* shader.vs */; };
 		251FAEDE2227A86B00B9C063 /* shader.fs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEDD2227A86B00B9C063 /* shader.fs */; };
 		251FAEE12227BCBE00B9C063 /* 4.1.texture.vs in Resources */ = {isa = PBXBuildFile; fileRef = 251FAEE02227BCBE00B9C063 /* 4.1.texture.vs */; };
@@ -48,9 +48,9 @@
 /* Begin PBXFileReference section */
 		250E04A0222CCD8E00A8799F /* 4.6.texture.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.6.texture.vs; sourceTree = "<group>"; };
 		250E04A2222CF80600A8799F /* 4.6.texture.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.6.texture.fs; sourceTree = "<group>"; };
+		250E04EF222D12A700A8799F /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		250E04F0222D12A700A8799F /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		25154AEB2228F805000944BC /* 4.5.texture.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.5.texture.fs; sourceTree = "<group>"; };
-		251FAED6222783A400B9C063 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
-		251FAED7222783A400B9C063 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		251FAEDB2227A80E00B9C063 /* shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
 		251FAEDD2227A86B00B9C063 /* shader.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.fs; sourceTree = "<group>"; };
 		251FAEDF2227B94700B9C063 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
@@ -128,6 +128,8 @@
 		2524F0732226940A00C8F50D /* OpenGLTest_2 */ = {
 			isa = PBXGroup;
 			children = (
+				250E04F0222D12A700A8799F /* Shader.cpp */,
+				250E04EF222D12A700A8799F /* Shader.hpp */,
 				251FAEE82227D00E00B9C063 /* awesomeface.png */,
 				251FAEE42227C28300B9C063 /* container.jpg */,
 				251FAEDF2227B94700B9C063 /* stb_image.h */,
@@ -138,8 +140,6 @@
 				2524F07F2226940C00C8F50D /* Info.plist */,
 				2524F0822226940C00C8F50D /* OpenGLTest_2.entitlements */,
 				2524F0AD2226949D00C8F50D /* main.cpp */,
-				251FAED6222783A400B9C063 /* Shader.cpp */,
-				251FAED7222783A400B9C063 /* Shader.hpp */,
 				251FAEE02227BCBE00B9C063 /* 4.1.texture.vs */,
 				251FAEE22227BD5C00B9C063 /* 4.1.texture.fs */,
 				251FAEDB2227A80E00B9C063 /* shader.vs */,
@@ -317,7 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2524F0A72226943200C8F50D /* glad.c in Sources */,
-				251FAED8222783A400B9C063 /* Shader.cpp in Sources */,
+				250E04F1222D12A700A8799F /* Shader.cpp in Sources */,
 				2524F0AE2226949D00C8F50D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
