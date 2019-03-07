@@ -20,6 +20,7 @@
 		250E0542222D14C300A8799F /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 250E0541222D14C300A8799F /* glad.c */; };
 		250E0545222D17B000A8799F /* 6.1.coordinate_systems.vs in Resources */ = {isa = PBXBuildFile; fileRef = 250E0544222D17B000A8799F /* 6.1.coordinate_systems.vs */; };
 		250E0547222D184000A8799F /* 6.1.coordinate_systems.fs in Resources */ = {isa = PBXBuildFile; fileRef = 250E0546222D184000A8799F /* 6.1.coordinate_systems.fs */; };
+		251D916722311013004ED09D /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251D916522311013004ED09D /* Camera.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		250E0543222D15CC00A8799F /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		250E0544222D17B000A8799F /* 6.1.coordinate_systems.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 6.1.coordinate_systems.vs; sourceTree = "<group>"; };
 		250E0546222D184000A8799F /* 6.1.coordinate_systems.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 6.1.coordinate_systems.fs; sourceTree = "<group>"; };
+		251D916522311013004ED09D /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		251D916622311013004ED09D /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				250E053C222D134B00A8799F /* main.cpp */,
 				250E0544222D17B000A8799F /* 6.1.coordinate_systems.vs */,
 				250E0546222D184000A8799F /* 6.1.coordinate_systems.fs */,
+				251D916522311013004ED09D /* Camera.cpp */,
+				251D916622311013004ED09D /* Camera.hpp */,
 			);
 			path = OpenGLTest_3;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251D916722311013004ED09D /* Camera.cpp in Sources */,
 				250E053A222D133F00A8799F /* Shader.cpp in Sources */,
 				250E053D222D134B00A8799F /* main.cpp in Sources */,
 				250E0542222D14C300A8799F /* glad.c in Sources */,
