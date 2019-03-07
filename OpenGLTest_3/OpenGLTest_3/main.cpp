@@ -32,10 +32,22 @@ void renderTexture3D(GLFWwindow *window);
 void renderTextureMore3D(GLFWwindow *window);
 //摄像机旋转
 void renderCameraRotate(GLFWwindow *window);
+//FPS摄像机
+void renderFPSCamera(GLFWwindow *window);
 
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+
+//先定义三个变量
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);  //位置
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);   //方向
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);  //上向量
+
+//平衡移动速度
+float deltatime = 0.0f;  //当前帧与上一帧的时间差
+float lastetime = 0.0f;  //上一帧的时间
+
 
 int main(int argc, char **argv){
     
@@ -542,7 +554,7 @@ void renderCameraRotate(GLFWwindow *window){
     int width, height, nrChannel;
     unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannel, 0);
     if (data) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
     }
     stbi_image_free(data);
@@ -579,6 +591,10 @@ void renderCameraRotate(GLFWwindow *window){
     };
     
     while (!glfwWindowShouldClose(window)) {
+        float currenttime = glfwGetTime();
+        deltatime = currenttime - lastetime;
+        lastetime = currenttime;
+        
         processInput(window);
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
@@ -588,9 +604,29 @@ void renderCameraRotate(GLFWwindow *window){
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture1);
         
+        /*
+        float radius = 10.0f;
+        float camX = sin(glfwGetTime()) * radius;
+        float camZ = cos(glfwGetTime()) * radius;
+        float camY = sin(glfwGetTime()) * radius;
+        */
+        
+        
         ourShader.use();
         glm::mat4 view = glm::mat4(1.0f);
-        view = glm::translate(view, glm::vec3(0.0, 0.0, 3.0f));
+        /** 摄像机 Camera 观察空间 View Space
+           是以摄像机的视角作为场景原点时场景中所有的顶点坐标， 观察矩阵把所有的世界坐标变换为相于摄像机位置与方向的观察坐标。
+         
+         要定义一个摄像机需要:
+         1.世界空间的位置
+         2.观察的方向
+         3.一个指向它右测的向量
+         4.一个指向它上方的向量
+         lookAt所做的就是，它会创建一个看着(Look at)给定目标的观察矩阵
+         参数有摄像机位置 一个目标位置   一个表示世界空间中的上向量的向量
+         */
+       // view = glm::lookAt(glm::vec3(camX, camY, camZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
         ourShader.setMat4("view", view);
         
         glm::mat4 projection = glm::mat4(1.0f);
@@ -607,6 +643,9 @@ void renderCameraRotate(GLFWwindow *window){
             
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
+        
+        glfwSwapBuffers(window);
+        glfwPollEvents();
     }
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
@@ -625,4 +664,36 @@ void processInput(GLFWwindow *window){
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {  //是否按下ESC键
         glfwSetWindowShouldClose(window, true); //设置为True 后在GLFW下次循环时候会关闭
     }
+    
+    float cameraSpeed = 2.5f * deltatime;
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {    //前   位置向量加上方向向量
+        cameraPos += cameraSpeed * cameraFront;
+    }
+    
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {  //后   位置向量减去方向向量
+        cameraPos -= cameraSpeed * cameraFront;
+    }
+    
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) { //左 叉乘
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        //cameraPos += glm::cross(cameraFront, cameraUp) * cameraSpeed;
+    }
+    
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) { //右  叉乘
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) *cameraSpeed;
+        //cameraPos -= glm::cross(cameraFront, cameraUp) * cameraSpeed;
+    }
+    /**
+     如果是左右移动，我们通过叉乘来创建一个右向量，并沿着它相应移动就可以了
+     
+     为什么对右向量进行标准化glm::normalize()
+     如果没有标准化，最后的叉乘结果会根据cameraFront变量返回大小不同的向量， 如果不标准化，我们就得根据摄像机的朝向不同加速或减速移动了，但是如果进行了标准化移动就是匀速的
+     经测试没有很大的区别，不知道是不是跟电脑性能有关
+     
+     * 关于移动速度
+     在实际的情况中，根据处理器能力不同，有些人可能每秒能绘制更多帧，也就是以更高的频率调用processInput()函数，造成有些人移动的快，有些人移动的慢
+     
+     图形程序和游戏通常会跟踪一个时间差(Deltatime)变量 它储存了渲染上一帧所用的时间。我们把所有的速度都去乘以deltatime值，结果就是，如果我们的deltatime很大，就意味着上一帧的渲染花费了更多时间，所以这一帧的速度需要变得更高来平衡渲染所花去的时间
+     */
+    
 }
