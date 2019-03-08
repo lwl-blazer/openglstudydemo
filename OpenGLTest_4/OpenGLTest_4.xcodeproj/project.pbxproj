@@ -18,6 +18,8 @@
 		251D91B322312219004ED09D /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 251D91AB22312219004ED09D /* libGLEW.2.1.0.dylib */; };
 		251D91B422312219004ED09D /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 251D91AC22312219004ED09D /* libglfw.3.2.dylib */; };
 		251D91B622312247004ED09D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251D91B522312247004ED09D /* main.cpp */; };
+		251D91BA22312798004ED09D /* 7.4.camera.vs in Resources */ = {isa = PBXBuildFile; fileRef = 251D91B922312798004ED09D /* 7.4.camera.vs */; };
+		251D91BC223127A2004ED09D /* 7.4.camera.fs in Resources */ = {isa = PBXBuildFile; fileRef = 251D91BB223127A2004ED09D /* 7.4.camera.fs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		251D91AC22312219004ED09D /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libglfw.3.2.dylib; sourceTree = "<group>"; };
 		251D91AD22312219004ED09D /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		251D91B522312247004ED09D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		251D91B922312798004ED09D /* 7.4.camera.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 7.4.camera.vs; sourceTree = "<group>"; };
+		251D91BB223127A2004ED09D /* 7.4.camera.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 7.4.camera.fs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				251D917F223120BE004ED09D /* Info.plist */,
 				251D9182223120BE004ED09D /* OpenGLTest_4.entitlements */,
 				251D91B522312247004ED09D /* main.cpp */,
+				251D91B922312798004ED09D /* 7.4.camera.vs */,
+				251D91BB223127A2004ED09D /* 7.4.camera.fs */,
 			);
 			path = OpenGLTest_4;
 			sourceTree = "<group>";
@@ -250,8 +256,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251D91BA22312798004ED09D /* 7.4.camera.vs in Resources */,
 				251D917B223120BE004ED09D /* Assets.xcassets in Resources */,
 				251D91AF22312219004ED09D /* container.jpg in Resources */,
+				251D91BC223127A2004ED09D /* 7.4.camera.fs in Resources */,
 				251D91B122312219004ED09D /* awesomeface.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
