@@ -26,6 +26,8 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window);
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 void scroll_callback(GLFWwindow *window, double xOffset, double yOffset);
+glm::mat4 calculate_lookAt_matrix(glm::vec3 position, glm::vec3 target, glm::vec3 worldUp);
+
 
 //使用camera class
 void renderUseCameraClass(GLFWwindow *window);
@@ -273,4 +275,37 @@ void mouse_callback(GLFWwindow *window, double xpos, double ypos){
 
 void scroll_callback(GLFWwindow *window, double xOffset, double yOffset){
     camera.ProcessMouseScroll(yOffset);
+}
+
+//自定义一个LookAt函数的算法
+glm::mat4 calculate_lookAt_matrix(glm::vec3 position, glm::vec3 target, glm::vec3 worldUp){
+    
+    //1.摄像机指向哪个方向   用原点 减去 摄像机位置向量的结果  就是摄像机的指向向量
+    glm::vec3 zaxis = glm::normalize(position - target);
+    
+    //2.右向量    上向量 和方向向量 进行叉乘  结果会同时垂直于两个向量
+    glm::vec3 xaxis = glm::normalize(glm::cross(glm::normalize(worldUp), zaxis));
+    
+    //3.上轴(指向摄像机的正y轴向量)   右向量和方向向量进行叉乘
+    glm::vec3 yaxis = glm::cross(zaxis, xaxis);
+    
+    glm::mat4 translation;
+    translation[3][0] = -position.x;
+    translation[3][1] = -position.y;
+    translation[3][2] = -position.z;
+    
+    glm::mat4 rotation;
+    rotation[0][0] = xaxis.x;
+    rotation[1][0] = xaxis.y;
+    rotation[2][0] = xaxis.z;
+    
+    rotation[0][1] = yaxis.x;
+    rotation[1][1] = yaxis.y;
+    rotation[2][1] = yaxis.z;
+    
+    rotation[0][2] = zaxis.x;
+    rotation[1][2] = zaxis.y;
+    rotation[2][2] = zaxis.z;
+    
+    return rotation * translation;
 }
