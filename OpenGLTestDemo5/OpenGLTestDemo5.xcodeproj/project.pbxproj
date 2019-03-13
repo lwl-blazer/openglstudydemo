@@ -23,6 +23,8 @@
 		25155FFA2238A77100FDC855 /* 1.lamp.fs in Resources */ = {isa = PBXBuildFile; fileRef = 25155FF92238A77100FDC855 /* 1.lamp.fs */; };
 		25155FFC2238D2B000FDC855 /* 2.colors.vs in Resources */ = {isa = PBXBuildFile; fileRef = 25155FFB2238D2B000FDC855 /* 2.colors.vs */; };
 		25155FFE2238D2BA00FDC855 /* 2.colors.fs in Resources */ = {isa = PBXBuildFile; fileRef = 25155FFD2238D2BA00FDC855 /* 2.colors.fs */; };
+		251560022238F69B00FDC855 /* 3.colors.vs in Resources */ = {isa = PBXBuildFile; fileRef = 251560012238F69B00FDC855 /* 3.colors.vs */; };
+		251560042238F6A400FDC855 /* 3.colors.fs in Resources */ = {isa = PBXBuildFile; fileRef = 251560032238F6A400FDC855 /* 3.colors.fs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		25155FF92238A77100FDC855 /* 1.lamp.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 1.lamp.fs; sourceTree = "<group>"; };
 		25155FFB2238D2B000FDC855 /* 2.colors.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 2.colors.vs; sourceTree = "<group>"; };
 		25155FFD2238D2BA00FDC855 /* 2.colors.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 2.colors.fs; sourceTree = "<group>"; };
+		251560012238F69B00FDC855 /* 3.colors.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.colors.vs; sourceTree = "<group>"; };
+		251560032238F6A400FDC855 /* 3.colors.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.colors.fs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 				25155FBD22388FD900FDC855 /* Info.plist */,
 				25155FC022388FD900FDC855 /* OpenGLTestDemo5.entitlements */,
 				25155FE22238900100FDC855 /* main.cpp */,
+				251560032238F6A400FDC855 /* 3.colors.fs */,
+				251560012238F69B00FDC855 /* 3.colors.vs */,
 				25155FFB2238D2B000FDC855 /* 2.colors.vs */,
 				25155FFD2238D2BA00FDC855 /* 2.colors.fs */,
 				25155FF32238A5E200FDC855 /* 1.color.vs */,
@@ -267,8 +273,10 @@
 			files = (
 				25155FF82238A69400FDC855 /* 1.lamp.vs in Resources */,
 				25155FFA2238A77100FDC855 /* 1.lamp.fs in Resources */,
+				251560022238F69B00FDC855 /* 3.colors.vs in Resources */,
 				25155FF42238A5E200FDC855 /* 1.color.vs in Resources */,
 				25155FFC2238D2B000FDC855 /* 2.colors.vs in Resources */,
+				251560042238F6A400FDC855 /* 3.colors.fs in Resources */,
 				25155FFE2238D2BA00FDC855 /* 2.colors.fs in Resources */,
 				25155FB922388FD900FDC855 /* Assets.xcassets in Resources */,
 				25155FEE2238924200FDC855 /* container.jpg in Resources */,
