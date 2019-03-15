@@ -24,9 +24,10 @@ void Model::loadModel(string const &path){
         return;
     }
     
-    directory = path.substr(0, path.find_last_of('/'));
+    TextureFromFiledirectory = path.substr(0, path.find_last_of('/'));
     processNode(scene->mRootNode, scene);
 }
+
 
 void Model::processNode(aiNode *node, const aiScene *scene){
     for (unsigned int i = 0; i < node->mNumMeshes; i++) {
