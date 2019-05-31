@@ -18,6 +18,7 @@
 		258CB36022A0F0F700DC8C17 /* AGLKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CB35F22A0F0F700DC8C17 /* AGLKContext.m */; };
 		258CB36322A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CB36222A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.m */; };
 		258CB36522A0FE5400DC8C17 /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 258CB36422A0FE5400DC8C17 /* leaves.gif */; };
+		258CB36822A121A300DC8C17 /* AGLKTextureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CB36722A121A300DC8C17 /* AGLKTextureInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		258CB36122A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
 		258CB36222A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
 		258CB36422A0FE5400DC8C17 /* leaves.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = leaves.gif; sourceTree = "<group>"; };
+		258CB36622A121A300DC8C17 /* AGLKTextureInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKTextureInfo.h; sourceTree = "<group>"; };
+		258CB36722A121A300DC8C17 /* AGLKTextureInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				258CB35F22A0F0F700DC8C17 /* AGLKContext.m */,
 				258CB36122A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.h */,
 				258CB36222A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.m */,
+				258CB36622A121A300DC8C17 /* AGLKTextureInfo.h */,
+				258CB36722A121A300DC8C17 /* AGLKTextureInfo.m */,
 				258CB36422A0FE5400DC8C17 /* leaves.gif */,
 			);
 			path = OpenGLES_2;
@@ -276,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258CB36822A121A300DC8C17 /* AGLKTextureInfo.m in Sources */,
 				258CB36022A0F0F700DC8C17 /* AGLKContext.m in Sources */,
 				258CB33122A0DC6300DC8C17 /* ViewController.m in Sources */,
 				258CB36322A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.m in Sources */,

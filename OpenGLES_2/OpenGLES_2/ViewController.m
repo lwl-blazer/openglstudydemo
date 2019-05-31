@@ -63,10 +63,11 @@ static const SceneVertex vertices[] = {
                                                                options:nil //options参数接受一个存储了用于指定GLKTextureLoader怎么解析加载的图像数据的键值对的NSDictionary.
                                                                  error:NULL];
     //GLKTextureInfo类封装了与刚创建纹理缓存相关的信息，包括它的尺寸以及它是否包含Mip贴图
-    
     /**
      * GLKTextureLoader会自动调用glTexParameteri()方法来为创建的纹理缓存设置OpenGL ES取样和循环模式
      * 具体的信息参考书籍 第3章 55页
+     *
+     * GLKTextureLoader 支持异步纹理加载，MIP贴图生成，以及比简单的2D平面更加吸引人的纹理缓存类型
      *
      * GLKBaseEffect 提供了对于使用纹理做渲染的内建的支持
      */
