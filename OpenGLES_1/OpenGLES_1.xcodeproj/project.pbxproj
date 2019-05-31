@@ -15,6 +15,9 @@
 		251E5272229F6D300066091A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E5271229F6D300066091A /* main.m */; };
 		251E527C229F6D300066091A /* OpenGLES_1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E527B229F6D300066091A /* OpenGLES_1Tests.m */; };
 		251E5287229F6D300066091A /* OpenGLES_1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E5286229F6D300066091A /* OpenGLES_1UITests.m */; };
+		2538A3D522A0CB09006D73F8 /* ViewController_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2538A3D422A0CB09006D73F8 /* ViewController_2.m */; };
+		2538A3D822A0CB2F006D73F8 /* AGLKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2538A3D722A0CB2F006D73F8 /* AGLKView.m */; };
+		258CB31F22A0D38F00DC8C17 /* PersonObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CB31E22A0D38F00DC8C17 /* PersonObj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		251E5282229F6D300066091A /* OpenGLES_1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGLES_1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E5286229F6D300066091A /* OpenGLES_1UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_1UITests.m; sourceTree = "<group>"; };
 		251E5288229F6D300066091A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2538A3D322A0CB09006D73F8 /* ViewController_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_2.h; sourceTree = "<group>"; };
+		2538A3D422A0CB09006D73F8 /* ViewController_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_2.m; sourceTree = "<group>"; };
+		2538A3D622A0CB2F006D73F8 /* AGLKView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKView.h; sourceTree = "<group>"; };
+		2538A3D722A0CB2F006D73F8 /* AGLKView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKView.m; sourceTree = "<group>"; };
+		258CB31D22A0D38F00DC8C17 /* PersonObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonObj.h; sourceTree = "<group>"; };
+		258CB31E22A0D38F00DC8C17 /* PersonObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonObj.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +119,12 @@
 				251E526D229F6D300066091A /* LaunchScreen.storyboard */,
 				251E5270229F6D300066091A /* Info.plist */,
 				251E5271229F6D300066091A /* main.m */,
+				2538A3D322A0CB09006D73F8 /* ViewController_2.h */,
+				2538A3D422A0CB09006D73F8 /* ViewController_2.m */,
+				2538A3D622A0CB2F006D73F8 /* AGLKView.h */,
+				2538A3D722A0CB2F006D73F8 /* AGLKView.m */,
+				258CB31D22A0D38F00DC8C17 /* PersonObj.h */,
+				258CB31E22A0D38F00DC8C17 /* PersonObj.m */,
 			);
 			path = OpenGLES_1;
 			sourceTree = "<group>";
@@ -262,7 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2538A3D822A0CB2F006D73F8 /* AGLKView.m in Sources */,
 				251E5267229F6D2E0066091A /* ViewController.m in Sources */,
+				258CB31F22A0D38F00DC8C17 /* PersonObj.m in Sources */,
+				2538A3D522A0CB09006D73F8 /* ViewController_2.m in Sources */,
 				251E5272229F6D300066091A /* main.m in Sources */,
 				251E5264229F6D2E0066091A /* AppDelegate.m in Sources */,
 			);
