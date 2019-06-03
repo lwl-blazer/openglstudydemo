@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) GLsizeiptr bufferSizeBytes;
 @property(nonatomic, readonly) GLsizeiptr stride;
 
++ (void)drawPreparedArraysWithMode:(GLenum)mode
+                  startVertexIndex:(GLint)first
+                  numberOfVertices:(GLsizei)count;
+
 - (instancetype)initWithAttribStride:(GLsizeiptr)stride
           numberOfVertices:(GLsizei)count
                       data:(const GLvoid *)dataPtr
@@ -30,6 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)drawArrayWithMode:(GLenum)mode
          startVertexIndex:(GLint)first
          numberOfVertices:(GLsizei)count;
+
+- (void)reinitWithAttribStride:(GLsizeiptr)stride
+              numberOfVertices:(GLsizei)count
+                         bytes:(const GLvoid *)dataPtr;
 
 @end
 

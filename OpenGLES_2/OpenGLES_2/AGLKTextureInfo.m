@@ -112,6 +112,7 @@ static NSData *AGLKDataWithResizedCGImageBytes(CGImageRef cgImage,
                                                    kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
     
+    //翻转Y轴  因为Core Graphics是以原点在左上角同时Y轴向下增大的形式来实现iOS中的图片保存的。OpenGL ES的纹理坐标系会设置原点在左下角，同时Y值向上增大   翻转Y轴确保了图像字节拥有适用于纹理缓存的正确的方向
     CGContextTranslateCTM(cgContext, 0, height);
     CGContextScaleCTM(cgContext, 1.0, -1.0);
     

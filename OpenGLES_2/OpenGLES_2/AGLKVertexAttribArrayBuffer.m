@@ -66,6 +66,14 @@
                           (int)self.stride,
                           NULL + offset);
     
+#ifdef DEBUG
+    {
+        GLenum error = glGetError();
+        if (GL_NO_ERROR != error) {
+            NSLog(@"GL Error: 0x%x", error);
+        }
+    }
+#endif
 }
 
 - (void)drawArrayWithMode:(GLenum)mode
@@ -74,6 +82,34 @@
     NSAssert(self.bufferSizeBytes >= ((first + count) * self.stride), @"Attempt to draw more vertex data than available");
     glDrawArrays(mode, first, count);
 }
+
++ (void)drawPreparedArraysWithMode:(GLenum)mode
+                  startVertexIndex:(GLint)first
+                  numberOfVertices:(GLsizei)count{
+    glDrawArrays(mode, first, count);
+}
+
+
+- (void)reinitWithAttribStride:(GLsizeiptr)stride
+              numberOfVertices:(GLsizei)count
+                         bytes:(const GLvoid *)dataPtr{
+    NSParameterAssert(0 < stride);
+    NSParameterAssert(0 < count);
+    NSParameterAssert(NULL != dataPtr);
+    
+    NSAssert(0 != glName, @"Invalid name");
+    
+    self.stride = stride;
+    self.bufferSizeBytes = stride * count;
+    
+    glBindBuffer(GL_ARRAY_BUFFER, glName);
+    
+    glBufferData(GL_ARRAY_BUFFER,
+                 self.bufferSizeBytes,
+                 dataPtr,
+                 GL_DYNAMIC_DRAW);
+}
+
 
 - (void)dealloc{
     if (glName != 0) {
