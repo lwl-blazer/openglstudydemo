@@ -10,6 +10,10 @@
 		255949E122A615FF00A382C7 /* ViewController_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 255949E022A615FF00A382C7 /* ViewController_3.m */; };
 		255949E322A61D4700A382C7 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 255949E222A61D4600A382C7 /* beetle.png */; };
 		255949E622A63C8500A382C7 /* ViewController_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 255949E522A63C8500A382C7 /* ViewController_4.m */; };
+		255949E922A6666C00A382C7 /* ViewController_5.m in Sources */ = {isa = PBXBuildFile; fileRef = 255949E822A6666B00A382C7 /* ViewController_5.m */; };
+		255949EB22A6672E00A382C7 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 255949EA22A6672E00A382C7 /* Shader.fsh */; };
+		255949ED22A6673700A382C7 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 255949EC22A6673700A382C7 /* Shader.vsh */; };
+		255949F022A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 255949EF22A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.m */; };
 		258CB32E22A0DC6300DC8C17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CB32D22A0DC6300DC8C17 /* AppDelegate.m */; };
 		258CB33122A0DC6300DC8C17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CB33022A0DC6300DC8C17 /* ViewController.m */; };
 		258CB33422A0DC6300DC8C17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258CB33222A0DC6300DC8C17 /* Main.storyboard */; };
@@ -49,6 +53,12 @@
 		255949E222A61D4600A382C7 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
 		255949E422A63C8500A382C7 /* ViewController_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_4.h; sourceTree = "<group>"; };
 		255949E522A63C8500A382C7 /* ViewController_4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_4.m; sourceTree = "<group>"; };
+		255949E722A6666B00A382C7 /* ViewController_5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_5.h; sourceTree = "<group>"; };
+		255949E822A6666B00A382C7 /* ViewController_5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_5.m; sourceTree = "<group>"; };
+		255949EA22A6672E00A382C7 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		255949EC22A6673700A382C7 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		255949EE22A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLKEffectPropertyTexture+AGLKAdditions.h"; sourceTree = "<group>"; };
+		255949EF22A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GLKEffectPropertyTexture+AGLKAdditions.m"; sourceTree = "<group>"; };
 		258CB32922A0DC6300DC8C17 /* OpenGLES_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		258CB32C22A0DC6300DC8C17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		258CB32D22A0DC6300DC8C17 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,6 +150,8 @@
 				258CB36222A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.m */,
 				258CB36622A121A300DC8C17 /* AGLKTextureInfo.h */,
 				258CB36722A121A300DC8C17 /* AGLKTextureInfo.m */,
+				255949EE22A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.h */,
+				255949EF22A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.m */,
 				258CB36422A0FE5400DC8C17 /* leaves.gif */,
 				25BFEF7A22A52191001242EC /* grid.png */,
 				255949E222A61D4600A382C7 /* beetle.png */,
@@ -149,6 +161,10 @@
 				255949E022A615FF00A382C7 /* ViewController_3.m */,
 				255949E422A63C8500A382C7 /* ViewController_4.h */,
 				255949E522A63C8500A382C7 /* ViewController_4.m */,
+				255949E722A6666B00A382C7 /* ViewController_5.h */,
+				255949E822A6666B00A382C7 /* ViewController_5.m */,
+				255949EA22A6672E00A382C7 /* Shader.fsh */,
+				255949EC22A6673700A382C7 /* Shader.vsh */,
 			);
 			path = OpenGLES_2;
 			sourceTree = "<group>";
@@ -274,11 +290,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255949ED22A6673700A382C7 /* Shader.vsh in Resources */,
 				255949E322A61D4700A382C7 /* beetle.png in Resources */,
 				258CB33922A0DC6500DC8C17 /* LaunchScreen.storyboard in Resources */,
 				25BFEF7B22A52191001242EC /* grid.png in Resources */,
 				258CB33622A0DC6500DC8C17 /* Assets.xcassets in Resources */,
 				258CB36522A0FE5400DC8C17 /* leaves.gif in Resources */,
+				255949EB22A6672E00A382C7 /* Shader.fsh in Resources */,
 				258CB33422A0DC6300DC8C17 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,8 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255949E922A6666C00A382C7 /* ViewController_5.m in Sources */,
 				258CB36822A121A300DC8C17 /* AGLKTextureInfo.m in Sources */,
 				258CB36022A0F0F700DC8C17 /* AGLKContext.m in Sources */,
+				255949F022A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
 				258CB33122A0DC6300DC8C17 /* ViewController.m in Sources */,
 				255949E622A63C8500A382C7 /* ViewController_4.m in Sources */,
 				258CB36322A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.m in Sources */,

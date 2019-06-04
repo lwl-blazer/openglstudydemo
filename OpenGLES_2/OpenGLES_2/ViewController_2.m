@@ -9,28 +9,7 @@
 #import "ViewController_2.h"
 #import "AGLKVertexAttribArrayBuffer.h"
 #import "AGLKContext.h"
-
-
-@interface GLKEffectPropertyTexture (AGLKAdditions)
-
-- (void)aglkSetParameter:(GLenum)parameterID
-                   value:(GLint)value;
-
-@end
-
-
-@implementation GLKEffectPropertyTexture (AGLKAdditions)
-
-- (void)aglkSetParameter:(GLenum)parameterID
-                   value:(GLint)value{
-    glBindTexture(self.target, self.name);
-    //OpenGL ES该怎样对纹理采样
-    glTexParameteri(self.target,
-                    parameterID,
-                    value);
-}
-
-@end
+#import "GLKEffectPropertyTexture+AGLKAdditions.h"
 
 typedef struct {
     GLKVector3 positionCoords;
