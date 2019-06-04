@@ -24,6 +24,7 @@
 - (void)aglkSetParameter:(GLenum)parameterID
                    value:(GLint)value{
     glBindTexture(self.target, self.name);
+    //OpenGL ES该怎样对纹理采样
     glTexParameteri(self.target,
                     parameterID,
                     value);
@@ -129,8 +130,10 @@ static GLKVector3 movementVectors[3] = {
 }
 
 - (void)updateTextureParameters{
+    //纹理的环绕方式
     [self.baseEffect.texture2d0 aglkSetParameter:GL_TEXTURE_WRAP_S
                                            value:(self.shouldRepeatTexture ? GL_REPEAT : GL_CLAMP_TO_EDGE)];
+    //纹理过滤
     [self.baseEffect.texture2d0 aglkSetParameter:GL_TEXTURE_MAG_FILTER
                                            value:(self.shouldUseLinearFilter ? GL_LINEAR : GL_NEAREST)];
 }
@@ -181,9 +184,6 @@ static GLKVector3 movementVectors[3] = {
                              numberOfVertices:sizeof(vertices)/sizeof(SceneVertex)
                                         bytes:vertices];
 }
-
-
-
 
 - (IBAction)takeShouldUseLinearFilterFrom:(UISwitch *)sender {
     self.shouldUseLinearFilter = [sender isOn];

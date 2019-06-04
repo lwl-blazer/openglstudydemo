@@ -98,18 +98,18 @@ static NSData *AGLKDataWithResizedCGImageBytes(CGImageRef cgImage,
     size_t width = (size_t)AGLKCalcuatePowerOf2ForDimension((int)originalWidth);
     size_t height = (size_t)AGLKCalcuatePowerOf2ForDimension((int)originalHeight);
     
-    NSMutableData *imageData = [NSMutableData dataWithLength:height *width *4];
+    NSMutableData *imageData = [NSMutableData dataWithLength:height *width *4];   //4 bytes 一个RGBA pixel 是4bytes
     NSCAssert(imageData != nil, @"Unable to allocate image storage");
     
-    
+    //CGBitmapContextCreate() Quartz创建一个位图绘制环境，也就是位图上下文。当你向上下文绘制信息时，Quartz把你要绘制的信息作为位图数据绘制到指定的内存块
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef cgContext = CGBitmapContextCreate([imageData mutableBytes],
-                                                   width,
+    CGContextRef cgContext = CGBitmapContextCreate([imageData mutableBytes],  //渲染的绘制内存的地址
+                                                   width,    //像素
                                                    height,
-                                                   8,
-                                                   4 * width,
-                                                   colorSpace,
-                                                   kCGImageAlphaPremultipliedLast);
+                                                   8,    //内存中像素的每个组件的位数 例如对于32位像素格式和RGB颜色空间  应该设置8
+                                                   4 * width,   //bitmap的每一行在内存所占的比特数
+                                                   colorSpace,  //颜色空间
+                                                   kCGImageAlphaPremultipliedLast);  //指定bitmap是否包含alpha通道，像素中alpha通道相对的位置，像素组件是整形还是浮点型等信息字符串
     CGColorSpaceRelease(colorSpace);
     
     //翻转Y轴  因为Core Graphics是以原点在左上角同时Y轴向下增大的形式来实现iOS中的图片保存的。OpenGL ES的纹理坐标系会设置原点在左下角，同时Y值向上增大   翻转Y轴确保了图像字节拥有适用于纹理缓存的正确的方向

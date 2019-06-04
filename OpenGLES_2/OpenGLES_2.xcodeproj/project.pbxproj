@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		255949E122A615FF00A382C7 /* ViewController_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 255949E022A615FF00A382C7 /* ViewController_3.m */; };
+		255949E322A61D4700A382C7 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 255949E222A61D4600A382C7 /* beetle.png */; };
+		255949E622A63C8500A382C7 /* ViewController_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 255949E522A63C8500A382C7 /* ViewController_4.m */; };
 		258CB32E22A0DC6300DC8C17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CB32D22A0DC6300DC8C17 /* AppDelegate.m */; };
 		258CB33122A0DC6300DC8C17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 258CB33022A0DC6300DC8C17 /* ViewController.m */; };
 		258CB33422A0DC6300DC8C17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258CB33222A0DC6300DC8C17 /* Main.storyboard */; };
@@ -41,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		255949DF22A615FF00A382C7 /* ViewController_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_3.h; sourceTree = "<group>"; };
+		255949E022A615FF00A382C7 /* ViewController_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_3.m; sourceTree = "<group>"; };
+		255949E222A61D4600A382C7 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
+		255949E422A63C8500A382C7 /* ViewController_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_4.h; sourceTree = "<group>"; };
+		255949E522A63C8500A382C7 /* ViewController_4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_4.m; sourceTree = "<group>"; };
 		258CB32922A0DC6300DC8C17 /* OpenGLES_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		258CB32C22A0DC6300DC8C17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		258CB32D22A0DC6300DC8C17 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,8 +142,13 @@
 				258CB36722A121A300DC8C17 /* AGLKTextureInfo.m */,
 				258CB36422A0FE5400DC8C17 /* leaves.gif */,
 				25BFEF7A22A52191001242EC /* grid.png */,
+				255949E222A61D4600A382C7 /* beetle.png */,
 				25BFEF7722A4C2FE001242EC /* ViewController_2.h */,
 				25BFEF7822A4C2FE001242EC /* ViewController_2.m */,
+				255949DF22A615FF00A382C7 /* ViewController_3.h */,
+				255949E022A615FF00A382C7 /* ViewController_3.m */,
+				255949E422A63C8500A382C7 /* ViewController_4.h */,
+				255949E522A63C8500A382C7 /* ViewController_4.m */,
 			);
 			path = OpenGLES_2;
 			sourceTree = "<group>";
@@ -261,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255949E322A61D4700A382C7 /* beetle.png in Resources */,
 				258CB33922A0DC6500DC8C17 /* LaunchScreen.storyboard in Resources */,
 				25BFEF7B22A52191001242EC /* grid.png in Resources */,
 				258CB33622A0DC6500DC8C17 /* Assets.xcassets in Resources */,
@@ -293,9 +307,11 @@
 				258CB36822A121A300DC8C17 /* AGLKTextureInfo.m in Sources */,
 				258CB36022A0F0F700DC8C17 /* AGLKContext.m in Sources */,
 				258CB33122A0DC6300DC8C17 /* ViewController.m in Sources */,
+				255949E622A63C8500A382C7 /* ViewController_4.m in Sources */,
 				258CB36322A0F36300DC8C17 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				258CB33C22A0DC6500DC8C17 /* main.m in Sources */,
 				258CB32E22A0DC6300DC8C17 /* AppDelegate.m in Sources */,
+				255949E122A615FF00A382C7 /* ViewController_3.m in Sources */,
 				25BFEF7922A4C2FE001242EC /* ViewController_2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
