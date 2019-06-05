@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2547A86C22A7AF29007AFCD4 /* AGLKShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2547A86B22A7AF29007AFCD4 /* AGLKShader.m */; };
 		255949E122A615FF00A382C7 /* ViewController_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 255949E022A615FF00A382C7 /* ViewController_3.m */; };
 		255949E322A61D4700A382C7 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 255949E222A61D4600A382C7 /* beetle.png */; };
 		255949E622A63C8500A382C7 /* ViewController_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 255949E522A63C8500A382C7 /* ViewController_4.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2547A86A22A7AF29007AFCD4 /* AGLKShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKShader.h; sourceTree = "<group>"; };
+		2547A86B22A7AF29007AFCD4 /* AGLKShader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKShader.m; sourceTree = "<group>"; };
 		255949DF22A615FF00A382C7 /* ViewController_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_3.h; sourceTree = "<group>"; };
 		255949E022A615FF00A382C7 /* ViewController_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_3.m; sourceTree = "<group>"; };
 		255949E222A61D4600A382C7 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				258CB36722A121A300DC8C17 /* AGLKTextureInfo.m */,
 				255949EE22A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.h */,
 				255949EF22A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.m */,
+				2547A86A22A7AF29007AFCD4 /* AGLKShader.h */,
+				2547A86B22A7AF29007AFCD4 /* AGLKShader.m */,
 				258CB36422A0FE5400DC8C17 /* leaves.gif */,
 				25BFEF7A22A52191001242EC /* grid.png */,
 				255949E222A61D4600A382C7 /* beetle.png */,
@@ -323,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				255949E922A6666C00A382C7 /* ViewController_5.m in Sources */,
+				2547A86C22A7AF29007AFCD4 /* AGLKShader.m in Sources */,
 				258CB36822A121A300DC8C17 /* AGLKTextureInfo.m in Sources */,
 				258CB36022A0F0F700DC8C17 /* AGLKContext.m in Sources */,
 				255949F022A66AA500A382C7 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
