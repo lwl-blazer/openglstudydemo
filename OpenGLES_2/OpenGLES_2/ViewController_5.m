@@ -184,7 +184,7 @@ static const SceneVertex vertices[] =
     baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, rotation, 0.0f, 1.0f, 0.0f);
     GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -1.5f);
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, rotation, 1.0f, 1.0f, 1.0f);
-    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
+    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);   //两个矩阵相乘
     
     self.baseEffect.transform.modelviewMatrix = modelViewMatrix;
     
@@ -193,9 +193,11 @@ static const SceneVertex vertices[] =
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, rotation, 1.0f, 1.0f, 1.0f);
     modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
     
+    //GLKMatrix4InvertAndTranspose 反转和转置矩阵
     normalMatrix = GLKMatrix4GetMatrix3(GLKMatrix4InvertAndTranspose(modelViewMatrix, NULL));
     modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
     
+    //当前viewcontroller 最后调用GLKViewControllerDelegate的方法的时间
     rotation += self.timeSinceLastUpdate * 0.5f;
     
     /**
