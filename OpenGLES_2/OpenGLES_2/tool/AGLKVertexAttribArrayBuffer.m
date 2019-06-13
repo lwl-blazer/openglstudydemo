@@ -44,6 +44,29 @@
     return self;
 }
 
+- (instancetype)initWithAttribStride:(GLsizeiptr)stride
+                    numberOfVertices:(GLsizei)count
+                               bytes:(const GLvoid *)dataPtr
+                               usage:(GLenum)usage{
+    NSParameterAssert(0 < stride);
+    NSAssert((0 < count && NULL != dataPtr) || (0 == count && NULL == dataPtr), @"data must not be null or count > 0");  //条件成立继续 否则闪退
+    self = [super init];
+    if (self) {
+        self.stride = stride;
+        self.bufferSizeBytes = stride * count;
+        
+        glGenBuffers(1, &glName);
+        glBindBuffer(GL_ARRAY_BUFFER, glName);
+        glBufferData(GL_ARRAY_BUFFER,
+                     self.bufferSizeBytes,
+                     dataPtr,
+                     usage);
+        
+        NSAssert(0 != glName, @"Failed to generate name");
+    }
+    return self;
+}
+
 - (void)prepareToDrawWithAttrib:(GLuint)index
             numberOfCoordinates:(GLint)count
                    attribOffset:(GLsizeiptr)offset

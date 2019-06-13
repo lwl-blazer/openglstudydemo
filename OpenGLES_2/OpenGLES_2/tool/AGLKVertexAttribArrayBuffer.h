@@ -26,6 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
                       data:(const GLvoid *)dataPtr
                      usage:(GLenum)usage;
 
+- (instancetype)initWithAttribStride:(GLsizeiptr)stride
+                    numberOfVertices:(GLsizei)count
+                               bytes:(const GLvoid *)dataPtr
+                               usage:(GLenum)usage;
+
 - (void)prepareToDrawWithAttrib:(GLuint)index
             numberOfCoordinates:(GLint)count
                    attribOffset:(GLsizeiptr)offset
