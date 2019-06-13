@@ -23,21 +23,13 @@ typedef struct {
 } SceneTriangle;
 
 static const SceneVertex vertexA = {{-0.5, 0.5, -0.5}, {0.0, 0.0, 1.0}};
-
 static const SceneVertex vertexB = {{-0.5, 0.0, -0.5}, {0.0, 0.0, 1.0}};
-
 static const SceneVertex vertexC = {{-0.5, -0.5, -0.5}, {0.0, 0.0, 1.0}};
-
 static const SceneVertex vertexD = {{0.0, 0.5, -0.5}, {0.0, 0.0, 1.0}};
-
 static const SceneVertex vertexE = {{0.0, 0.0, -0.5}, {0.0, 0.0, 1.0}};
-
 static const SceneVertex vertexF = {{0.0, -0.5, -0.5}, {0.0, 0.0, 1.0}};
-
 static const SceneVertex vertexG = {{0.5, 0.5, -0.5}, {0.0, 0.0, 1.0}};
-
 static const SceneVertex vertexH = {{0.5, 0.0, -0.5}, {0.0, 0.0, 1.0}};
-
 static const SceneVertex vertexI = {{0.5, -0.5, -0.5}, {0.0, 0.0, 1.0}};
 
 static SceneTriangle SceneTriangleMake(const SceneVertex vertexA,
@@ -467,6 +459,8 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
  * 3.镜面反射光  --- 从几何图形对象反射出来的光线 。 镜面物体会反射大量的光线，但是钝面的物体不会。 因此镜面反射光的感知亮度是由照射到每个三角形上的光线的量和三角形的反光度决定的
  
  * 所以一个渲染的三角形中的每个光线组成部分的效果取决于三个相互关联的因素：光线的设置、三角形相对于光线的方向，以及三角形的材质属性
+ *
+ * OpenGL ES 1.x灯光模拟是GLKit通过计算光线方向矢量和每个顶点的顶点法向量之间的标量积来测定的。标量积决定了有多少光线会照向顶点。之后，计算出来的光线效果被插补在顶点之间使用光线看起来平滑
  */
 
 

@@ -20,6 +20,9 @@
 		252A6C9922B0990A0021B7ED /* AGLKShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 252A6C8F22B0990A0021B7ED /* AGLKShader.m */; };
 		252A6C9A22B0990A0021B7ED /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 252A6C9022B0990A0021B7ED /* AGLKVertexAttribArrayBuffer.m */; };
 		252A6C9B22B0990A0021B7ED /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 252A6C9522B0990A0021B7ED /* GLKEffectPropertyTexture+AGLKAdditions.m */; };
+		2543F58A22B2456B00502037 /* ViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2543F58922B2456B00502037 /* ViewController_1.m */; };
+		2543F58D22B252DE00502037 /* LightingDetail256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 2543F58B22B252DD00502037 /* LightingDetail256x256.png */; };
+		2543F58E22B252DE00502037 /* Lighting256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 2543F58C22B252DE00502037 /* Lighting256x256.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,10 @@
 		252A6C9422B0990A0021B7ED /* AGLKContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKContext.h; sourceTree = "<group>"; };
 		252A6C9522B0990A0021B7ED /* GLKEffectPropertyTexture+AGLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GLKEffectPropertyTexture+AGLKAdditions.m"; sourceTree = "<group>"; };
 		252A6C9622B0990A0021B7ED /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
+		2543F58822B2456B00502037 /* ViewController_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_1.h; sourceTree = "<group>"; };
+		2543F58922B2456B00502037 /* ViewController_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_1.m; sourceTree = "<group>"; };
+		2543F58B22B252DD00502037 /* LightingDetail256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightingDetail256x256.png; sourceTree = "<group>"; };
+		2543F58C22B252DE00502037 /* Lighting256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lighting256x256.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +128,15 @@
 				252A6C5B22B095D20021B7ED /* AppDelegate.m */,
 				252A6C5D22B095D20021B7ED /* ViewController.h */,
 				252A6C5E22B095D20021B7ED /* ViewController.m */,
+				2543F58822B2456B00502037 /* ViewController_1.h */,
+				2543F58922B2456B00502037 /* ViewController_1.m */,
 				252A6C6022B095D20021B7ED /* Main.storyboard */,
 				252A6C6322B095D30021B7ED /* Assets.xcassets */,
 				252A6C6522B095D30021B7ED /* LaunchScreen.storyboard */,
 				252A6C6822B095D30021B7ED /* Info.plist */,
 				252A6C6922B095D30021B7ED /* main.m */,
+				2543F58C22B252DE00502037 /* Lighting256x256.png */,
+				2543F58B22B252DD00502037 /* LightingDetail256x256.png */,
 			);
 			path = OpenGLES_4;
 			sourceTree = "<group>";
@@ -272,6 +283,8 @@
 				252A6C6722B095D30021B7ED /* LaunchScreen.storyboard in Resources */,
 				252A6C6422B095D30021B7ED /* Assets.xcassets in Resources */,
 				252A6C6222B095D20021B7ED /* Main.storyboard in Resources */,
+				2543F58E22B252DE00502037 /* Lighting256x256.png in Resources */,
+				2543F58D22B252DE00502037 /* LightingDetail256x256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +315,7 @@
 				252A6C5F22B095D20021B7ED /* ViewController.m in Sources */,
 				252A6C6A22B095D30021B7ED /* main.m in Sources */,
 				252A6C9B22B0990A0021B7ED /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
+				2543F58A22B2456B00502037 /* ViewController_1.m in Sources */,
 				252A6C5C22B095D20021B7ED /* AppDelegate.m in Sources */,
 				252A6C9A22B0990A0021B7ED /* AGLKVertexAttribArrayBuffer.m in Sources */,
 			);
