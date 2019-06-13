@@ -108,7 +108,7 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
                                                     1.0f,
                                                     1.0f); //constantColor属性仅适用于渲染单调不发光的物体
     
-    //模型视图矩阵 ---- 侧俯视角来渲染三角形  整个场景被旋转并定位以更容易地看到三角锥的高度变化
+    //模型视图矩阵 ---- 侧俯视角来渲染三角形  整个场景被旋转并定位以更容易地看到三角锥的高度变化 围绕着x和z轴做了变换
     {
         GLKMatrix4 modelViewMatrix = GLKMatrix4MakeRotation(GLKMathDegreesToRadians(-60.0),    //尝试改变这个值的效果  以0度为分界线
                                                             1.0f,
@@ -179,7 +179,7 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
      * 当顶点E上下移动的时，三角形2到5会改变
      */
     SceneVertex newVertexE = vertexE;
-    newVertexE.position.z = centerVertexHeight;
+    newVertexE.position.z = self.centerVertexHeight;
     
     triangles[2] = SceneTriangleMake(vertexD, vertexB, newVertexE);
     triangles[3] = SceneTriangleMake(newVertexE, vertexB, vertexF);
@@ -190,6 +190,7 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
     [self updateNormals];
 }
 
+
 - (void)setShouldUseFaceNormals:(BOOL)shouldUseFaceNormals{
     if (shouldUseFaceNormals != self.shouldUseFaceNormals) {
         _shouldUseFaceNormals = shouldUseFaceNormals;
@@ -197,11 +198,13 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
     }
 }
 
-//重新计算受影响后的法向量
+//重新计算受影响后的法向量 ---- 此案例中的关键部分
 - (void)updateNormals{
     if (self.shouldUseFaceNormals) {
+        //使用平均法线(面法线)
         SceneTrianglesUpdateFaceNormals(triangles);
     } else {
+        //使用顶点法线
         SceneTrianglesUpdateVertexNormals(triangles);
     }
     
@@ -210,10 +213,11 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
                                         bytes:triangles];
 }
 
-//绘制线条
+//绘制法线(线条)
 - (void)drawNormals{
     GLKVector3 normalLineVertices[50];
     
+    //更新48个法向量顶点和两个灯光方向顶点
     SceneTrianglesNormalLinesUpdate(triangles,
                                     GLKVector3MakeWithArray(self.baseEffect.light0.position.v),
                                     normalLineVertices);
@@ -222,26 +226,30 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
     [self.extraBuffer reinitWithAttribStride:sizeof(GLKVector3)
                             numberOfVertices:sizeof(normalLineVertices)
                                        bytes:normalLineVertices];
-    
+
     [self.extraBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
                           numberOfCoordinates:3
                                  attribOffset:0
                                  shouldEnable:YES];
     
-    
-    
+    //法线
     [self.extraEffect prepareToDraw];
     [self.extraBuffer drawArrayWithMode:GL_LINES
                        startVertexIndex:0
                        numberOfVertices:48];
     
-    self.extraEffect.constantColor = GLKVector4Make(1.0, 1.0, 1.0, 1.0);
-    
+    //灯光的位置
+    self.extraEffect.constantColor = GLKVector4Make(1.0, 1.0, 0.0, 1.0);
     [self.extraEffect prepareToDraw];
-    
     [self.extraBuffer drawArrayWithMode:GL_LINES
                        startVertexIndex:48
                        numberOfVertices:2];
+    
+    /**
+     * 摘自网络
+     * 小思考:我们仅仅使用了顶点的法向量模拟灯光效果，那么相应的是不是可以给每个片元都缓存法向量呢，这样更加真实
+     * 答:是可以的，这里的偏远计算，在每个RGB纹素编码的过程中加入x,y,z的法向量分量，这样的纹理叫法线贴图(或者叫凹凸贴图，DOT3灯光)
+     */
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
@@ -270,7 +278,7 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
 
 
 #pragma mark - Triangle manipulation
-
+//生成三角形
 static SceneTriangle SceneTriangleMake(const SceneVertex vertexA,
                                       const SceneVertex vertexB,
                                       const SceneVertex vertexC){
@@ -281,6 +289,7 @@ static SceneTriangle SceneTriangleMake(const SceneVertex vertexA,
     return result;
 }
 
+//triangle 法向量
 static GLKVector3 SceneTriangleFaceNormal(SceneTriangle
                                           someTriangles){
     
@@ -294,6 +303,7 @@ static GLKVector3 SceneTriangleFaceNormal(SceneTriangle
     return SceneVector3UnitNormal(vectorA, vectorB);
 }
 
+//显示光照--添加法向量
 static void SceneTrianglesUpdateFaceNormals(SceneTriangle someTriangles[8]){
     for (int i = 0; i < 8; i ++) {
         GLKVector3 faceNormal = SceneTriangleFaceNormal(someTriangles[i]);
@@ -303,6 +313,7 @@ static void SceneTrianglesUpdateFaceNormals(SceneTriangle someTriangles[8]){
     }
 }
 
+//使用顶点所包含的所有三角形的平均法向量
 static void SceneTrianglesUpdateVertexNormals(SceneTriangle someTriangles[8]){
     SceneVertex newVertexA = vertexA;
     SceneVertex newVertexB = vertexB;
@@ -319,12 +330,14 @@ static void SceneTrianglesUpdateVertexNormals(SceneTriangle someTriangles[8]){
         faceNormals[i] = SceneTriangleFaceNormal(someTriangles[i]);
     }
     
+    //每个顶点的平均法向量
     newVertexA.normal = faceNormals[0];
     newVertexB.normal = GLKVector3MultiplyScalar(GLKVector3Add(GLKVector3Add(GLKVector3Add(faceNormals[0],
                                                                                      faceNormals[1]),
                                                                        faceNormals[2]),
                                                          faceNormals[3]),
                                            0.25f);
+    
     newVertexC.normal = faceNormals[1];
     newVertexD.normal = GLKVector3MultiplyScalar(GLKVector3Add(GLKVector3Add(GLKVector3Add(faceNormals[0],
                                                                                            faceNormals[2]),
@@ -354,6 +367,7 @@ static void SceneTrianglesUpdateVertexNormals(SceneTriangle someTriangles[8]){
     
     newVertexI.normal = faceNormals[7];
     
+    //更新triangles
     someTriangles[0] = SceneTriangleMake(newVertexA,
                                          newVertexB,
                                          newVertexD);
@@ -380,13 +394,15 @@ static void SceneTrianglesUpdateVertexNormals(SceneTriangle someTriangles[8]){
                                          newVertexI);
 }
 
+//更新三角形法线 还有灯光方向线
 static void SceneTrianglesNormalLinesUpdate(
                                             const SceneTriangle someTriangles[8],
                                             GLKVector3 lightPosition,
-                                            GLKVector3 someNormalLineVertices[50]){
+                                            GLKVector3 someNormalLineVertices[50]){ //为什么这里是50  8个三角形 每个三角形3个顶点  总共24个顶点  每条法线需要绘制起始和终止两个顶点，也就是48个数据源顶点，额外2个顶点用于绘制灯光方向
     int trianglesIndex;
     int lineVetexIndex = 0;
     
+    //每条法向量的顶点确定，用于绘制法线
     for (trianglesIndex = 0; trianglesIndex < 8; trianglesIndex++) {
         someNormalLineVertices[lineVetexIndex++] = someTriangles[trianglesIndex].vertices[0].position;
         
@@ -451,6 +467,15 @@ static GLKVector3 SceneVector3UnitNormal(const GLKVector3 vectorA,
  * 3.镜面反射光  --- 从几何图形对象反射出来的光线 。 镜面物体会反射大量的光线，但是钝面的物体不会。 因此镜面反射光的感知亮度是由照射到每个三角形上的光线的量和三角形的反光度决定的
  
  * 所以一个渲染的三角形中的每个光线组成部分的效果取决于三个相互关联的因素：光线的设置、三角形相对于光线的方向，以及三角形的材质属性
+ */
+
+
+/** 面法线和顶点法线
+ * 在3D世界中每一个顶点都有颜色，除了使用光源和物体的材质信息之外，还需要知道每个顶点的法向量，根据光照入射方向和法向量的夹角，计算顶点的最终颜色。
+ *
+ * 顶点法线: 每一个顶点都有法向量，就能知道光线到达物体表面的入射角
+ * 面法线: 垂直一个平面的直线叫面法线
+ *
  */
 
 @end
