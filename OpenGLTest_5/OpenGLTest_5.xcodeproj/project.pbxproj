@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254A868B22B9E7A50049EDB6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254A868A22B9E7A50049EDB6 /* main.cpp */; };
+		254A868D22BA05900049EDB6 /* 3.1.materials.vs in Resources */ = {isa = PBXBuildFile; fileRef = 254A868C22BA05900049EDB6 /* 3.1.materials.vs */; };
+		254A868F22BA064E0049EDB6 /* 3.1.materials.fs in Resources */ = {isa = PBXBuildFile; fileRef = 254A868E22BA064E0049EDB6 /* 3.1.materials.fs */; };
 		25E2F2B522B332C3001D97BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E2F2B422B332C3001D97BF /* Assets.xcassets */; };
 		25E2F2C622B332C3001D97BF /* OpenGLTest_5Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E2F2C522B332C3001D97BF /* OpenGLTest_5Tests.m */; };
 		25E2F2D122B332C3001D97BF /* OpenGLTest_5UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E2F2D022B332C3001D97BF /* OpenGLTest_5UITests.m */; };
-		25E2F2DF22B332E0001D97BF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25E2F2DE22B332E0001D97BF /* main.cpp */; };
 		25E2F2E322B3332B001D97BF /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E2F2E122B3332B001D97BF /* libGLEW.2.1.0.dylib */; };
 		25E2F2E422B3332B001D97BF /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E2F2E222B3332B001D97BF /* libglfw.3.2.dylib */; };
 		25E2F2E922B333AC001D97BF /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 25E2F2E622B333AC001D97BF /* glad.c */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		254A868A22B9E7A50049EDB6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		254A868C22BA05900049EDB6 /* 3.1.materials.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.1.materials.vs; sourceTree = "<group>"; };
+		254A868E22BA064E0049EDB6 /* 3.1.materials.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.1.materials.fs; sourceTree = "<group>"; };
 		25E2F2AB22B332C1001D97BF /* OpenGLTest_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLTest_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E2F2B422B332C3001D97BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25E2F2B922B332C3001D97BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +55,7 @@
 		25E2F2CC22B332C3001D97BF /* OpenGLTest_5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGLTest_5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E2F2D022B332C3001D97BF /* OpenGLTest_5UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLTest_5UITests.m; sourceTree = "<group>"; };
 		25E2F2D222B332C3001D97BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25E2F2DE22B332E0001D97BF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		25E2F2DE22B332E0001D97BF /* main_baseLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main_baseLight.cpp; sourceTree = "<group>"; };
 		25E2F2E122B3332B001D97BF /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = OpenGLTest_5/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		25E2F2E222B3332B001D97BF /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = OpenGLTest_5/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		25E2F2E522B333AC001D97BF /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
@@ -125,11 +130,14 @@
 				25E2F2B422B332C3001D97BF /* Assets.xcassets */,
 				25E2F2B922B332C3001D97BF /* Info.plist */,
 				25E2F2BC22B332C3001D97BF /* OpenGLTest_5.entitlements */,
-				25E2F2DE22B332E0001D97BF /* main.cpp */,
+				254A868A22B9E7A50049EDB6 /* main.cpp */,
+				25E2F2DE22B332E0001D97BF /* main_baseLight.cpp */,
 				25E2F2EB22B33910001D97BF /* 1.colors.vs */,
 				25E2F2ED22B33AEB001D97BF /* 1.colors.fs */,
 				25E2F2EF22B33B4A001D97BF /* 1.lamp.vs */,
 				25E2F2F122B33C0E001D97BF /* 1.lamp.fs */,
+				254A868C22BA05900049EDB6 /* 3.1.materials.vs */,
+				254A868E22BA064E0049EDB6 /* 3.1.materials.fs */,
 			);
 			path = OpenGLTest_5;
 			sourceTree = "<group>";
@@ -265,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				25E2F2EC22B33910001D97BF /* 1.colors.vs in Resources */,
+				254A868D22BA05900049EDB6 /* 3.1.materials.vs in Resources */,
+				254A868F22BA064E0049EDB6 /* 3.1.materials.fs in Resources */,
 				25E2F2F022B33B4A001D97BF /* 1.lamp.vs in Resources */,
 				25E2F2EE22B33AEB001D97BF /* 1.colors.fs in Resources */,
 				25E2F2B522B332C3001D97BF /* Assets.xcassets in Resources */,
@@ -294,8 +304,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				25E2F2F522B33DD7001D97BF /* Camera.cpp in Sources */,
-				25E2F2DF22B332E0001D97BF /* main.cpp in Sources */,
 				25E2F2EA22B333AC001D97BF /* Shader.cpp in Sources */,
+				254A868B22B9E7A50049EDB6 /* main.cpp in Sources */,
 				25E2F2E922B333AC001D97BF /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
