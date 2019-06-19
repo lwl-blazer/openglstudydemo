@@ -148,6 +148,9 @@ int main(int argc, char **argv) {
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
+        lightPos.x = 1.0f + sin(currentFrame) * 2.0f;
+        lightPos.y = sin(currentFrame / 2.0f) * 1.0f;
+        
         
         processInput(window);
     
@@ -158,6 +161,7 @@ int main(int argc, char **argv) {
         lightingShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
         lightingShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
         lightingShader.setVec3("lightPos", lightPos);
+        lightingShader.setVec3("viewPos", camera.Position);
         
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom),
                                                 (float)SCR_WIDTH/(float)SCR_HEIGHT,
