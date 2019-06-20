@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		252B93A022BB1D1200B43DE5 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B939F22BB1D1200B43DE5 /* ViewController2.m */; };
+		252B93A422BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */; };
 		254A869E22BA13BE0049EDB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A869D22BA13BE0049EDB6 /* AppDelegate.m */; };
 		254A86A122BA13BE0049EDB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A86A022BA13BE0049EDB6 /* ViewController.m */; };
 		254A86A422BA13BE0049EDB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A86A222BA13BE0049EDB6 /* Main.storyboard */; };
@@ -48,6 +49,8 @@
 		252B939E22BB1D1200B43DE5 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		252B939F22BB1D1200B43DE5 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lowPolyAxesAndModels2.h; sourceTree = "<group>"; };
+		252B93A222BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKTextureRotationBaseEffect.h; sourceTree = "<group>"; };
+		252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureRotationBaseEffect.m; sourceTree = "<group>"; };
 		254A869922BA13BE0049EDB6 /* OpenGLES_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		254A869C22BA13BE0049EDB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		254A869D22BA13BE0049EDB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				254A86E522BA221B0049EDB6 /* AGLKView.m */,
 				254A86EA22BA306D0049EDB6 /* AGLKViewController.h */,
 				254A86EB22BA306D0049EDB6 /* AGLKViewController.m */,
+				252B93A222BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.h */,
+				252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */,
 			);
 			name = tool;
 			path = ../../OpenGLES_2/OpenGLES_2/tool;
@@ -336,6 +341,7 @@
 				254A86DD22BA14840049EDB6 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
 				254A869E22BA13BE0049EDB6 /* AppDelegate.m in Sources */,
 				254A86DC22BA14840049EDB6 /* AGLKVertexAttribArrayBuffer.m in Sources */,
+				252B93A422BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
