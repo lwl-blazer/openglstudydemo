@@ -70,6 +70,7 @@
             context = acontext;
             [EAGLContext setCurrentContext:acontext];
             
+            //创建一个帧缓存
             glGenFramebuffers(1, &defaultFrameBuffer);
             glBindFramebuffer(GL_FRAMEBUFFER, defaultFrameBuffer);
             
@@ -95,7 +96,7 @@
     [EAGLContext setCurrentContext:self.context];
     glViewport(0, 0, (GLsizei)self.drawableWidth, (GLsizei)self.drawableHeight);
     [self drawRect:[self bounds]];
-    [self.context presentRenderbuffer:GL_RENDERBUFFER];
+    [self.context presentRenderbuffer:GL_RENDERBUFFER];   //展示、渲染的意思
 }
 
 
@@ -112,7 +113,7 @@
     [self.context renderbufferStorage:GL_RENDERBUFFER
                          fromDrawable:eaglLayer];
     
-    if (depthRenderBuffer != 0) {
+    if (depthRenderBuffer != 0) {//如果深度缓存存在把它删除
         glDeleteRenderbuffers(1,
                               &depthRenderBuffer);
         depthRenderBuffer = 0;
@@ -123,14 +124,17 @@
     
     if (self.drawableDepthFormat != AGLKViewDrawableDepthFormat16 && currentDrawableWidth > 0 && currentDrawableHeight > 0) {
         
-        //创建一个渲染缓冲对象
+        //step 1 创建一个深度渲染缓冲对象
         glGenRenderbuffers(1, &depthRenderBuffer);
+        //step 2 绑定--告诉OpenGL ES在接下来的操作中使用哪一个缓存
         glBindRenderbuffer(GL_RENDERBUFFER,
                            depthRenderBuffer);
+        //step 3 配置存储--指定深度缓存的大小
         glRenderbufferStorage(GL_RENDERBUFFER,
                               GL_DEPTH_COMPONENT16,
                               currentDrawableWidth,
                               currentDrawableHeight);    //我们将它创建为一个深度和模板附件渲染缓冲对象 GL_DEPTH_COMPONENT16    内部格式设置为GL_DEPTH_COMPONENT16    GL_DEPTH24_STENCIL8 深度和模板附件格式
+        //step 4 附加深度缓存到一个帧缓存
         glFramebufferRenderbuffer(GL_FRAMEBUFFER,
                                   GL_DEPTH_ATTACHMENT,
                                   GL_RENDERBUFFER,

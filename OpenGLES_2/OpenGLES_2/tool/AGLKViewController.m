@@ -56,7 +56,7 @@ static const NSInteger kAGLKDefaultFramesPerSecond = 30;
     AGLKView *view = (AGLKView *)self.view;
     NSAssert([view isKindOfClass:[AGLKView class]], @"View controller's view is not a AGLKView");
     
-    view.opaque = YES;
+    view.opaque = YES;   //提供渲染质量，但会消耗内存
     view.delegate = self;
 }
 

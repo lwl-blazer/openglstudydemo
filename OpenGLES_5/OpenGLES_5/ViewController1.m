@@ -11,7 +11,7 @@
 #import "AGLKVertexAttribArrayBuffer.h"
 #import "AGLKContext.h"
 #import "AGLKView.h"
-#import "sphere.h"
+//#import "sphere.h"
 
 @interface ViewController1 ()
 
@@ -62,7 +62,7 @@
                                                                0.0f,
                                                                1.0f);
     
-    self.vertexPositionBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:3 * sizeof(GLfloat)
+    /*self.vertexPositionBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:3 * sizeof(GLfloat)
                                                                          numberOfVertices:sizeof(sphereVerts)/(3 * sizeof(GLfloat))
                                                                                      data:sphereVerts
                                                                                     usage:GL_STATIC_DRAW];
@@ -76,12 +76,14 @@
                                                                              numberOfVertices:sizeof(sphereTexCoords) / (2 * sizeof(GLfloat))
                                                                                          data:sphereTexCoords
                                                                                         usage:GL_STATIC_DRAW];
-    
+    */
     [((AGLKContext *)view.context) enable:GL_DEPTH_TEST];
 }
 
 - (void)glkView:(AGLKView *)view drawInRect:(CGRect)rect{
     [self.baseEffect prepareToDraw];
+    
+    [((AGLKContext *)view.context) clear:GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT];
     
     [self.vertexPositionBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
                                    numberOfCoordinates:3
@@ -103,9 +105,9 @@
                                                                     aspectRatio,
                                                                     1.0);
     
-    [AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
+    /*[AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
                                            startVertexIndex:0
-                                           numberOfVertices:sphereNumVerts];
+                                           numberOfVertices:sphereNumVerts];*/
 }
 
 - (void)dealloc{

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		252B93A022BB1D1200B43DE5 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B939F22BB1D1200B43DE5 /* ViewController2.m */; };
 		254A869E22BA13BE0049EDB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A869D22BA13BE0049EDB6 /* AppDelegate.m */; };
 		254A86A122BA13BE0049EDB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A86A022BA13BE0049EDB6 /* ViewController.m */; };
 		254A86A422BA13BE0049EDB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A86A222BA13BE0049EDB6 /* Main.storyboard */; };
@@ -44,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		252B939E22BB1D1200B43DE5 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		252B939F22BB1D1200B43DE5 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lowPolyAxesAndModels2.h; sourceTree = "<group>"; };
 		254A869922BA13BE0049EDB6 /* OpenGLES_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		254A869C22BA13BE0049EDB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		254A869D22BA13BE0049EDB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -135,8 +139,11 @@
 				254A86A022BA13BE0049EDB6 /* ViewController.m */,
 				254A86E722BA256C0049EDB6 /* ViewController1.h */,
 				254A86E822BA256C0049EDB6 /* ViewController1.m */,
+				252B939E22BB1D1200B43DE5 /* ViewController2.h */,
+				252B939F22BB1D1200B43DE5 /* ViewController2.m */,
 				254A86DE22BA16FE0049EDB6 /* Earth512x256.jpg */,
 				254A86E022BA187A0049EDB6 /* sphere.h */,
+				252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */,
 				254A86A222BA13BE0049EDB6 /* Main.storyboard */,
 				254A86A522BA13C00049EDB6 /* Assets.xcassets */,
 				254A86A722BA13C00049EDB6 /* LaunchScreen.storyboard */,
@@ -322,6 +329,7 @@
 				254A86DA22BA14840049EDB6 /* AGLKContext.m in Sources */,
 				254A86DB22BA14840049EDB6 /* AGLKShader.m in Sources */,
 				254A86D922BA14840049EDB6 /* AGLKTextureInfo.m in Sources */,
+				252B93A022BB1D1200B43DE5 /* ViewController2.m in Sources */,
 				254A86A122BA13BE0049EDB6 /* ViewController.m in Sources */,
 				254A86AC22BA13C00049EDB6 /* main.m in Sources */,
 				254A86E622BA221B0049EDB6 /* AGLKView.m in Sources */,
