@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		252B93A022BB1D1200B43DE5 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B939F22BB1D1200B43DE5 /* ViewController2.m */; };
 		252B93A422BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */; };
+		252B93A622BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 252B93A522BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh */; };
+		252B93A822BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 252B93A722BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh */; };
+		252B93AB22BB8CF500B43DE5 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B93AA22BB8CF500B43DE5 /* ViewController3.m */; };
 		254A869E22BA13BE0049EDB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A869D22BA13BE0049EDB6 /* AppDelegate.m */; };
 		254A86A122BA13BE0049EDB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A86A022BA13BE0049EDB6 /* ViewController.m */; };
 		254A86A422BA13BE0049EDB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A86A222BA13BE0049EDB6 /* Main.storyboard */; };
@@ -51,6 +54,10 @@
 		252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lowPolyAxesAndModels2.h; sourceTree = "<group>"; };
 		252B93A222BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKTextureRotationBaseEffect.h; sourceTree = "<group>"; };
 		252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureRotationBaseEffect.m; sourceTree = "<group>"; };
+		252B93A522BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AGLKTextureMatrix2PointLightShader.vsh; sourceTree = "<group>"; };
+		252B93A722BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AGLKTextureMatrix2PointLightShader.fsh; sourceTree = "<group>"; };
+		252B93A922BB8CF500B43DE5 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		252B93AA22BB8CF500B43DE5 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		254A869922BA13BE0049EDB6 /* OpenGLES_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		254A869C22BA13BE0049EDB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		254A869D22BA13BE0049EDB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +151,8 @@
 				254A86E822BA256C0049EDB6 /* ViewController1.m */,
 				252B939E22BB1D1200B43DE5 /* ViewController2.h */,
 				252B939F22BB1D1200B43DE5 /* ViewController2.m */,
+				252B93A922BB8CF500B43DE5 /* ViewController3.h */,
+				252B93AA22BB8CF500B43DE5 /* ViewController3.m */,
 				254A86DE22BA16FE0049EDB6 /* Earth512x256.jpg */,
 				254A86E022BA187A0049EDB6 /* sphere.h */,
 				252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */,
@@ -152,6 +161,8 @@
 				254A86A722BA13C00049EDB6 /* LaunchScreen.storyboard */,
 				254A86AA22BA13C00049EDB6 /* Info.plist */,
 				254A86AB22BA13C00049EDB6 /* main.m */,
+				252B93A522BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh */,
+				252B93A722BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh */,
 			);
 			path = OpenGLES_5;
 			sourceTree = "<group>";
@@ -302,9 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				254A86DF22BA16FE0049EDB6 /* Earth512x256.jpg in Resources */,
+				252B93A622BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh in Resources */,
 				254A86A922BA13C00049EDB6 /* LaunchScreen.storyboard in Resources */,
 				254A86A622BA13C00049EDB6 /* Assets.xcassets in Resources */,
 				254A86A422BA13BE0049EDB6 /* Main.storyboard in Resources */,
+				252B93A822BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +348,7 @@
 				254A86DB22BA14840049EDB6 /* AGLKShader.m in Sources */,
 				254A86D922BA14840049EDB6 /* AGLKTextureInfo.m in Sources */,
 				252B93A022BB1D1200B43DE5 /* ViewController2.m in Sources */,
+				252B93AB22BB8CF500B43DE5 /* ViewController3.m in Sources */,
 				254A86A122BA13BE0049EDB6 /* ViewController.m in Sources */,
 				254A86AC22BA13C00049EDB6 /* main.m in Sources */,
 				254A86E622BA221B0049EDB6 /* AGLKView.m in Sources */,
