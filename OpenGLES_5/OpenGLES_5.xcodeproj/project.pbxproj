@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2524431522BCD23400F86947 /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2524431322BCD23300F86947 /* leaves.gif */; };
+		2524431622BCD23400F86947 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2524431422BCD23400F86947 /* beetle.png */; };
 		252B93A022BB1D1200B43DE5 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B939F22BB1D1200B43DE5 /* ViewController2.m */; };
 		252B93A422BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */; };
 		252B93A622BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 252B93A522BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2524431322BCD23300F86947 /* leaves.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = leaves.gif; path = ../../OpenGLES_2/OpenGLES_2/leaves.gif; sourceTree = "<group>"; };
+		2524431422BCD23400F86947 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beetle.png; path = ../../OpenGLES_2/OpenGLES_2/beetle.png; sourceTree = "<group>"; };
 		252B939E22BB1D1200B43DE5 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		252B939F22BB1D1200B43DE5 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lowPolyAxesAndModels2.h; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				252B939F22BB1D1200B43DE5 /* ViewController2.m */,
 				252B93A922BB8CF500B43DE5 /* ViewController3.h */,
 				252B93AA22BB8CF500B43DE5 /* ViewController3.m */,
+				2524431422BCD23400F86947 /* beetle.png */,
+				2524431322BCD23300F86947 /* leaves.gif */,
 				254A86DE22BA16FE0049EDB6 /* Earth512x256.jpg */,
 				254A86E022BA187A0049EDB6 /* sphere.h */,
 				252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */,
@@ -315,8 +321,10 @@
 				254A86DF22BA16FE0049EDB6 /* Earth512x256.jpg in Resources */,
 				252B93A622BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh in Resources */,
 				254A86A922BA13C00049EDB6 /* LaunchScreen.storyboard in Resources */,
+				2524431522BCD23400F86947 /* leaves.gif in Resources */,
 				254A86A622BA13C00049EDB6 /* Assets.xcassets in Resources */,
 				254A86A422BA13BE0049EDB6 /* Main.storyboard in Resources */,
+				2524431622BCD23400F86947 /* beetle.png in Resources */,
 				252B93A822BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

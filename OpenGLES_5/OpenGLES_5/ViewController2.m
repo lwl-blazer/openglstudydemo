@@ -179,12 +179,6 @@ static GLKMatrix4 SceneMatrixForTransform(SceneTransformationSelector type,
     [AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
                                            startVertexIndex:0
                                            numberOfVertices:lowPolyAxesAndModels2NumVerts];
-    
-    /**
-     * 复制矩阵  ---- GLKit提供了一个方便的数据类型GLKMatrixStack   维护一个堆栈数据结构保存矩阵的函数集合。堆栈是一个后进先出的数据结果，它可以方便地存储某个程序可能需要恢复的矩阵。GLKMatrixStack会实现一个4 * 4矩阵的堆栈
-     
-     * GLKMatrixStackPush() 会复制最顶点的矩阵到堆栈的顶点。
-     */
 }
 
 - (void)dealloc{

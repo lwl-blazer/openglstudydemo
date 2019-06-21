@@ -1,8 +1,8 @@
 
 attribute vec3 a_position;
 attribute vec3 a_normal;
-attribute vec3 a_texCoord0;
-attribute vec3 a_texCoord1;
+attribute vec2 a_texCoord0;
+attribute vec2 a_texCoord1;
 
 #define MAX_TEXTURES 2
 #define MAX_TEX_COORDS 2
@@ -43,8 +43,7 @@ varying lowp vec3 v_vertexToLight1;
 varying lowp vec4 v_diffuseColor1;
 varying lowp vec4 v_diffuseColor2;
 
-void main()
-{
+void main() {
     //Texture
     v_texCoord[0] = a_texCoord0;
     v_texCoord[1] = a_texCoord1;

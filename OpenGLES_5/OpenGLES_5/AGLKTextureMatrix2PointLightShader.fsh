@@ -14,6 +14,7 @@ uniform lowp float u_tex1Enable;
 
 uniform lowp vec4 u_globalAmbient;
 
+//Light0
 uniform highp vec3 u_light0EyePos;
 uniform lowp vec3 u_light0NormalEyeDirection;
 uniform lowp vec4 u_light0Diffuse;
@@ -21,6 +22,7 @@ uniform lowp vec4 u_light0Ambient;
 uniform highp float u_light0Cutoff;
 uniform highp float u_light0Exponent;
 
+//Light1
 uniform highp vec3 u_light1EyePos;
 uniform lowp vec3 u_light1NormalEyeDirection;
 uniform lowp vec4 u_light1Diffuse;
@@ -30,6 +32,8 @@ uniform highp float u_light1Exponent;
 
 uniform highp vec3 u_light2EyePos;
 uniform lowp vec4 u_light2Diffuse;
+
+
 
 
 varying highp vec2 v_texCoord[MAX_TEX_COORDS];
@@ -42,7 +46,7 @@ varying lowp vec4 v_diffuseColor1;
 
 varying lowp vec4 v_diffuseColor2;
 
-void main
+void main()
 {
     //Texture0 contribution to color
     lowp vec2 texCoords = v_texCoord[0];
@@ -50,7 +54,7 @@ void main
     texCoordsVec4 = u_tex0Matrix * texCoordsVec4;
     texCoords = texCoordsVec4.st;
     
-    lowp vec4 texColor0 = texture2D(u_unit2D[1], texCoords);
+    lowp vec4 texColor0 = texture2D(u_unit2D[0], texCoords);
     texColor0 = u_tex0Enable * texColor0;
     
     
@@ -66,7 +70,7 @@ void main
     
     //Combined texture contribution to color
     lowp vec4 combinedTexColor;
-    combinedTexColor.rgb = (texColor0.rgb * (1 - texColor1.a)) + (texColor1.rgb * texColor1.a);
+    combinedTexColor.rgb = (texColor0.rgb * (1.0 - texColor1.a)) + (texColor1.rgb * texColor1.a);
     combinedTexColor.rgb += (1.0 - max(u_tex0Enable, u_tex1Enable)) * vec3(1, 1, 1);
     combinedTexColor.a = max(texColor1.a, texColor0.a);
     
@@ -104,6 +108,6 @@ void main
     diffuseColor += v_diffuseColor2;
     
     //Mix light and texture
-    gl_FragColor.rgb = (diffuseColor.rgb + u_globalAmbient.rgb);
+    gl_FragColor.rgb = (diffuseColor.rgb + u_globalAmbient.rgb) * combinedTexColor.rgb;
     gl_FragColor.a = combinedTexColor.a;
 }
