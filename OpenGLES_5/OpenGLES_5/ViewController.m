@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "AGLKVertexAttribArrayBuffer.h"
 #import "AGLKContext.h"
-#include "sphere.h"
+//#import "sphere.h"
 
 @interface ViewController ()
 
@@ -61,7 +61,7 @@
                                                               0.0f,
                                                               1.0f);
     
-    self.vertexPositionBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:3 * sizeof(GLfloat)
+    /*self.vertexPositionBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:3 * sizeof(GLfloat)
                                                                          numberOfVertices:sizeof(sphereVerts)/(3 * sizeof(GLfloat))
                                                                                      data:sphereVerts
                                                                                     usage:GL_STATIC_DRAW];
@@ -74,7 +74,7 @@
     self.vertexTextureCoordBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:2 * sizeof(GLfloat)
                                                                              numberOfVertices:sizeof(sphereTexCoords) / (2 * sizeof(GLfloat))
                                                                                          data:sphereTexCoords
-                                                                                        usage:GL_STATIC_DRAW];
+                                                                                        usage:GL_STATIC_DRAW];*/
     
     [((AGLKContext *)view.context) enable:GL_DEPTH_TEST];
 }
@@ -105,9 +105,9 @@
     //GLKMatrix4MakeScale() 创建一个基础的变换矩阵  指定一个值1.0意味着没有变化
     self.baseEffect.transform.projectionMatrix = GLKMatrix4MakeScale(1.0f, aspectRatio, 1.0f);
     
-    [AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
+   /* [AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
                                            startVertexIndex:0
-                                           numberOfVertices:sphereNumVerts];
+                                           numberOfVertices:sphereNumVerts];*/
 }
 
 - (void)dealloc{

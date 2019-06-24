@@ -44,10 +44,11 @@ varying lowp vec4 v_diffuseColor1;
 
 varying lowp vec4 v_diffuseColor2;
 
+//多重纹理处理
 void main()
 {
     //Texture0 contribution to color
-    lowp vec2 texCoords = v_texCoord[0];
+    lowp vec2 texCoords = v_texCoord[0];    //纹理坐标
     lowp vec4 texCoordsVec4 = vec4(texCoords.s, texCoords.t, 0, 1.0);
     texCoordsVec4 = u_tex0Matrix * texCoordsVec4;
     texCoords = texCoordsVec4.st;
@@ -105,6 +106,7 @@ void main()
     diffuseColor += v_diffuseColor2;
     
     //Mix light and texture
-    gl_FragColor.rgb = (diffuseColor.rgb + u_globalAmbient.rgb) * combinedTexColor.rgb;
+   gl_FragColor.rgb = (diffuseColor.rgb + u_globalAmbient.rgb) * combinedTexColor.rgb;
+   // gl_FragColor.rgb = u_globalAmbient.rgb * combinedTexColor.rgb;
     gl_FragColor.a = combinedTexColor.a;
 }

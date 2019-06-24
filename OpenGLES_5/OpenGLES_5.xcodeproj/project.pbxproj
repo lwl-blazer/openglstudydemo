@@ -31,6 +31,8 @@
 		254A86E622BA221B0049EDB6 /* AGLKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A86E522BA221B0049EDB6 /* AGLKView.m */; };
 		254A86E922BA256C0049EDB6 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A86E822BA256C0049EDB6 /* ViewController1.m */; };
 		254A86EC22BA306D0049EDB6 /* AGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A86EB22BA306D0049EDB6 /* AGLKViewController.m */; };
+		256626B222C0B2520040BC73 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 256626B122C0B2520040BC73 /* ViewController4.m */; };
+		256626B522C0C3DC0040BC73 /* Moon256x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 256626B422C0C3DC0040BC73 /* Moon256x128.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,9 @@
 		254A86E822BA256C0049EDB6 /* ViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
 		254A86EA22BA306D0049EDB6 /* AGLKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKViewController.h; sourceTree = "<group>"; };
 		254A86EB22BA306D0049EDB6 /* AGLKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKViewController.m; sourceTree = "<group>"; };
+		256626B022C0B2520040BC73 /* ViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		256626B122C0B2520040BC73 /* ViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
+		256626B422C0C3DC0040BC73 /* Moon256x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Moon256x128.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +162,12 @@
 				252B939F22BB1D1200B43DE5 /* ViewController2.m */,
 				252B93A922BB8CF500B43DE5 /* ViewController3.h */,
 				252B93AA22BB8CF500B43DE5 /* ViewController3.m */,
+				256626B022C0B2520040BC73 /* ViewController4.h */,
+				256626B122C0B2520040BC73 /* ViewController4.m */,
 				2524431422BCD23400F86947 /* beetle.png */,
 				2524431322BCD23300F86947 /* leaves.gif */,
 				254A86DE22BA16FE0049EDB6 /* Earth512x256.jpg */,
+				256626B422C0C3DC0040BC73 /* Moon256x128.png */,
 				254A86E022BA187A0049EDB6 /* sphere.h */,
 				252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */,
 				254A86A222BA13BE0049EDB6 /* Main.storyboard */,
@@ -325,6 +333,7 @@
 				254A86A622BA13C00049EDB6 /* Assets.xcassets in Resources */,
 				254A86A422BA13BE0049EDB6 /* Main.storyboard in Resources */,
 				2524431622BCD23400F86947 /* beetle.png in Resources */,
+				256626B522C0C3DC0040BC73 /* Moon256x128.png in Resources */,
 				252B93A822BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +370,7 @@
 				254A86AC22BA13C00049EDB6 /* main.m in Sources */,
 				254A86E622BA221B0049EDB6 /* AGLKView.m in Sources */,
 				254A86DD22BA14840049EDB6 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
+				256626B222C0B2520040BC73 /* ViewController4.m in Sources */,
 				254A869E22BA13BE0049EDB6 /* AppDelegate.m in Sources */,
 				254A86DC22BA14840049EDB6 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				252B93A422BB654F00B43DE5 /* AGLKTextureTransformBaseEffect.m in Sources */,

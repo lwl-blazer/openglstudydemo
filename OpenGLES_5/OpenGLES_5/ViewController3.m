@@ -94,8 +94,9 @@ static const SceneVertex vertices[] = {
     [self.baseEffect.texture2d1 aglkSetParameter:GL_TEXTURE_WRAP_T
                                            value:GL_REPEAT];
     
-    GLKMatrixStackLoadMatrix4(self.textureMatrixStack,
-                              self.baseEffect.textureMatrix2d1);
+    /*GLKMatrixStackLoadMatrix4(self.textureMatrixStack,
+                              self.baseEffect.textureMatrix2d1);*/
+    GLKMatrixStackLoadMatrix4(self.textureMatrixStack, self.baseEffect.textureMatrix2d0);
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
@@ -145,7 +146,8 @@ static const SceneVertex vertices[] = {
     GLKMatrixStackTranslate(self.textureMatrixStack,
                             -0.5, -0.5, 0.0);
     
-    self.baseEffect.textureMatrix2d1 = GLKMatrixStackGetMatrix4(self.textureMatrixStack);
+    //self.baseEffect.textureMatrix2d1 = GLKMatrixStackGetMatrix4(self.textureMatrixStack);
+    self.baseEffect.textureMatrix2d0 = GLKMatrixStackGetMatrix4(self.textureMatrixStack);
     
     [self.baseEffect prepareToDrawMultitextures];
     
@@ -154,7 +156,8 @@ static const SceneVertex vertices[] = {
                         numberOfVertices:sizeof(vertices)/sizeof(SceneVertex)];
     
     GLKMatrixStackPop(self.textureMatrixStack);
-    self.baseEffect.textureMatrix2d1 = GLKMatrixStackGetMatrix4(self.textureMatrixStack);
+    //self.baseEffect.textureMatrix2d1 = GLKMatrixStackGetMatrix4(self.textureMatrixStack);
+    self.baseEffect.textureMatrix2d0 = GLKMatrixStackGetMatrix4(self.textureMatrixStack);
 }
 
 - (void)dealloc{
