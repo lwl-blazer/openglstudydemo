@@ -15,15 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) GLuint program;
 
 - (instancetype)initWithShader:(NSString *)shaderName;
-
 - (void)bindAttribute:(GLuint)location name:(NSString *)name;
 - (int)getUniform:(NSString *)uniformName;
+- (void)linkProgram;
+- (void)detachShader;
+- (void)useProgram;
 
 - (void)setMat4:(NSString *)name value:(float *)value;
 - (void)setMat3:(NSString *)name value:(float *)value;
 - (void)setInt:(NSString *)name value:(GLint)value;
 
-- (void)useProgram;
+
 
 @end
 

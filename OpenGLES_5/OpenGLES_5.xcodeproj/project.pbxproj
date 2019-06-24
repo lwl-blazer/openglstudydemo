@@ -10,7 +10,7 @@
 		2524431522BCD23400F86947 /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2524431322BCD23300F86947 /* leaves.gif */; };
 		2524431622BCD23400F86947 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2524431422BCD23400F86947 /* beetle.png */; };
 		252B93A022BB1D1200B43DE5 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B939F22BB1D1200B43DE5 /* ViewController2.m */; };
-		252B93A422BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */; };
+		252B93A422BB654F00B43DE5 /* AGLKTextureTransformBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B93A322BB654F00B43DE5 /* AGLKTextureTransformBaseEffect.m */; };
 		252B93A622BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 252B93A522BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh */; };
 		252B93A822BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 252B93A722BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh */; };
 		252B93AB22BB8CF500B43DE5 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B93AA22BB8CF500B43DE5 /* ViewController3.m */; };
@@ -56,8 +56,8 @@
 		252B939E22BB1D1200B43DE5 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		252B939F22BB1D1200B43DE5 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		252B93A122BB30ED00B43DE5 /* lowPolyAxesAndModels2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lowPolyAxesAndModels2.h; sourceTree = "<group>"; };
-		252B93A222BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKTextureRotationBaseEffect.h; sourceTree = "<group>"; };
-		252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureRotationBaseEffect.m; sourceTree = "<group>"; };
+		252B93A222BB654F00B43DE5 /* AGLKTextureTransformBaseEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKTextureTransformBaseEffect.h; sourceTree = "<group>"; };
+		252B93A322BB654F00B43DE5 /* AGLKTextureTransformBaseEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureTransformBaseEffect.m; sourceTree = "<group>"; };
 		252B93A522BB7D9300B43DE5 /* AGLKTextureMatrix2PointLightShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AGLKTextureMatrix2PointLightShader.vsh; sourceTree = "<group>"; };
 		252B93A722BB7D9C00B43DE5 /* AGLKTextureMatrix2PointLightShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AGLKTextureMatrix2PointLightShader.fsh; sourceTree = "<group>"; };
 		252B93A922BB8CF500B43DE5 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
@@ -208,8 +208,8 @@
 				254A86E522BA221B0049EDB6 /* AGLKView.m */,
 				254A86EA22BA306D0049EDB6 /* AGLKViewController.h */,
 				254A86EB22BA306D0049EDB6 /* AGLKViewController.m */,
-				252B93A222BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.h */,
-				252B93A322BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m */,
+				252B93A222BB654F00B43DE5 /* AGLKTextureTransformBaseEffect.h */,
+				252B93A322BB654F00B43DE5 /* AGLKTextureTransformBaseEffect.m */,
 			);
 			name = tool;
 			path = ../../OpenGLES_2/OpenGLES_2/tool;
@@ -363,7 +363,7 @@
 				254A86DD22BA14840049EDB6 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
 				254A869E22BA13BE0049EDB6 /* AppDelegate.m in Sources */,
 				254A86DC22BA14840049EDB6 /* AGLKVertexAttribArrayBuffer.m in Sources */,
-				252B93A422BB654F00B43DE5 /* AGLKTextureRotationBaseEffect.m in Sources */,
+				252B93A422BB654F00B43DE5 /* AGLKTextureTransformBaseEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

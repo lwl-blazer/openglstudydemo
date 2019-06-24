@@ -7,27 +7,27 @@
 //
 
 #import "ViewController3.h"
-#import "AGLKTextureRotationBaseEffect.h"
+#import "AGLKTextureTransformBaseEffect.h"
 #import "AGLKVertexAttribArrayBuffer.h"
 #import "AGLKContext.h"
 
 typedef struct {
-    GLKVector3 positionCoords;
-    GLKVector3 textureCoords;
-} SceneVertex;
+    GLKVector3  positionCoords;
+    GLKVector2  textureCoords;
+}SceneVertex;
 
-static const SceneVertex vertics[] = {
-    {{-1.0f, -0.67f, 0.0f}, {0.0f, 0.0f}},  //first trian
+static const SceneVertex vertices[] = {
+    {{-1.0f, -0.67f, 0.0f}, {0.0f, 0.0f}},  // first triangle
     {{ 1.0f, -0.67f, 0.0f}, {1.0f, 0.0f}},
     {{-1.0f,  0.67f, 0.0f}, {0.0f, 1.0f}},
-    {{ 1.0f, -0.67f, 0.0f}, {1.0f, 0.0f}}, //second triangle
+    {{ 1.0f, -0.67f, 0.0f}, {1.0f, 0.0f}},  // second triangle
     {{-1.0f,  0.67f, 0.0f}, {0.0f, 1.0f}},
     {{ 1.0f,  0.67f, 0.0f}, {1.0f, 1.0f}},
 };
 
 @interface ViewController3 ()
 
-@property(nonatomic, strong) AGLKTextureRotationBaseEffect *baseEffect;
+@property(nonatomic, strong) AGLKTextureTransformBaseEffect *baseEffect;
 @property(nonatomic, strong) AGLKVertexAttribArrayBuffer *vertexBuffer;
 
 @property(nonatomic, assign) float textureScaleFactor;
@@ -40,6 +40,7 @@ static const SceneVertex vertics[] = {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.textureMatrixStack = GLKMatrixStackCreate(kCFAllocatorDefault);
     self.textureScaleFactor = 1.0f;
     
@@ -49,7 +50,7 @@ static const SceneVertex vertics[] = {
     
     [AGLKContext setCurrentContext:view.context];
     
-    self.baseEffect = [[AGLKTextureRotationBaseEffect alloc] init];
+    self.baseEffect = [[AGLKTextureTransformBaseEffect alloc] init];
     self.baseEffect.useConstantColor = GL_TRUE;
     self.baseEffect.constantColor = GLKVector4Make(1.0f,
                                                    1.0f,
@@ -62,12 +63,11 @@ static const SceneVertex vertics[] = {
                                                               1.0f);
     
     self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
-                                                                 numberOfVertices:sizeof(vertics)/sizeof(SceneVertex)
-                                                                             data:vertics
+                                                                 numberOfVertices:sizeof(vertices)/sizeof(SceneVertex)
+                                                                             data:vertices
                                                                             usage:GL_STATIC_DRAW];
     
     CGImageRef imageRef0 = [[UIImage imageNamed:@"leaves.gif"] CGImage];
-    
     GLKTextureInfo *textureInfo0 = [GLKTextureLoader textureWithCGImage:imageRef0
                                                                 options:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],
                                                                          GLKTextureLoaderOriginBottomLeft, nil]
@@ -77,15 +77,17 @@ static const SceneVertex vertics[] = {
     self.baseEffect.texture2d0.target = textureInfo0.target;
     self.baseEffect.texture2d0.enabled = GL_TRUE;
     
-    CGImageRef imageRef1 = [[UIImage imageNamed:@"bettle.png"] CGImage];
+    CGImageRef imageRef1 = [[UIImage imageNamed:@"beetle.png"] CGImage];
     GLKTextureInfo *textureInfo1 = [GLKTextureLoader textureWithCGImage:imageRef1
                                                                 options:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],
                                                                          GLKTextureLoaderOriginBottomLeft, nil]
                                                                   error:NULL];
+    
     self.baseEffect.texture2d1.name = textureInfo1.name;
     self.baseEffect.texture2d1.target = textureInfo1.target;
     self.baseEffect.texture2d1.enabled = GL_TRUE;
     self.baseEffect.texture2d1.envMode = GLKTextureEnvModeDecal;
+    
     
     [self.baseEffect.texture2d1 aglkSetParameter:GL_TEXTURE_WRAP_S
                                            value:GL_REPEAT];
@@ -94,11 +96,9 @@ static const SceneVertex vertics[] = {
     
     GLKMatrixStackLoadMatrix4(self.textureMatrixStack,
                               self.baseEffect.textureMatrix2d1);
-
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
-    
     [((AGLKContext *)view.context) clear:GL_COLOR_BUFFER_BIT];
     
     [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
@@ -115,7 +115,7 @@ static const SceneVertex vertics[] = {
                            numberOfCoordinates:2
                                   attribOffset:offsetof(SceneVertex, textureCoords)
                                   shouldEnable:YES];
-
+    
     /**
      * 复制矩阵  ---- GLKit提供了一个方便的数据类型GLKMatrixStack   维护一个堆栈数据结构保存矩阵的函数集合。堆栈是一个后进先出的数据结果，它可以方便地存储某个程序可能需要恢复的矩阵。GLKMatrixStack会实现一个4 * 4矩阵的堆栈
      
@@ -151,7 +151,7 @@ static const SceneVertex vertics[] = {
     
     [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
                         startVertexIndex:0
-                        numberOfVertices:sizeof(vertics)/sizeof(SceneVertex)];
+                        numberOfVertices:sizeof(vertices)/sizeof(SceneVertex)];
     
     GLKMatrixStackPop(self.textureMatrixStack);
     self.baseEffect.textureMatrix2d1 = GLKMatrixStackGetMatrix4(self.textureMatrixStack);
@@ -170,11 +170,11 @@ static const SceneVertex vertics[] = {
 
 
 - (IBAction)takeTextureAngleFrom:(UISlider *)sender {
-    self.textureScaleFactor = sender.value;
+    self.textureAngle = sender.value;
 }
 
 - (IBAction)takeTextureScaleFactorFrom:(UISlider *)sender {
-    self.textureAngle = sender.value;
+    self.textureScaleFactor = sender.value;
 }
 
 

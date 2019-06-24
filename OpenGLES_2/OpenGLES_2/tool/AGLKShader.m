@@ -8,13 +8,22 @@
 
 #import "AGLKShader.h"
 
+@interface AGLKShader (){
+    GLuint vertShader;
+    GLuint fragShader;
+}
+
+
+
+@end
+
 @implementation AGLKShader
 
 - (instancetype)initWithShader:(NSString *)shaderName
 {
     self = [super init];
     if (self) {
-        GLuint vertShader, fragShader;
+        
         NSString *vertShaderPathname, *fragShaderPathname;
         
         self.program = glCreateProgram();
@@ -31,38 +40,50 @@
         
         glAttachShader(self.program, vertShader);
         glAttachShader(self.program, fragShader);
-        
-        if (![self linkProgram:self.program]) {
-            NSLog(@"faile to link program");
-            
-            if (vertShader) {
-                glDeleteShader(vertShader);
-                vertShader = 0;
-            }
-            
-            if (fragShader) {
-                glDeleteShader(fragShader);
-                fragShader = 0;
-            }
-            
-            if (self.program) {
-                glDeleteProgram(self.program);
-                self.program = 0;
-            }
-        }
-        
-        if (vertShader) {
-            glDetachShader(self.program, vertShader);
-            glDeleteShader(vertShader);
-        }
-        
-        if (fragShader) {
-            glDetachShader(self.program, fragShader);
-            glDeleteShader(fragShader);
-        }
+
     }
     return self;
 }
+
+- (void)linkProgram{
+    GLint status;
+    glLinkProgram(self.program);
+    
+#ifdef DEBUG
+    
+    GLint logLength;
+    glGetProgramiv(self.program, GL_INFO_LOG_LENGTH, &logLength);
+    if (logLength > 0) {
+        GLchar *log = (GLchar *)malloc(logLength);
+        glGetProgramInfoLog(self.program, logLength, &logLength, log);
+        NSLog(@"program link log:\n%s", log);
+        free(log);
+    }
+#endif
+    
+    glGetProgramiv(self.program, GL_LINK_STATUS, &status);
+    if (status == 0) {
+        [self detachShader];
+        if (self.program) {
+            glDeleteProgram(self.program);
+            self.program = 0;
+        }
+    }
+}
+
+
+- (void)detachShader{
+    if (vertShader) {
+        glDetachShader(self.program, vertShader);
+        glDeleteShader(vertShader);
+    }
+    
+    if (fragShader) {
+        glDetachShader(self.program, fragShader);
+        glDeleteShader(fragShader);
+    }
+}
+
 
 - (BOOL)compileShader:(GLuint *)shader type:(GLenum)type file:(NSString *)file{
     GLint status;

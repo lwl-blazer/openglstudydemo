@@ -6,7 +6,7 @@
 //  Copyright © 2019 luowailin. All rights reserved.
 //
 
-#import "AGLKTextureRotationBaseEffect.h"
+#import "AGLKTextureTransformBaseEffect.h"
 #import "AGLKShader.h"
 
 enum{
@@ -35,7 +35,7 @@ enum{
 };
 
 
-@interface AGLKTextureRotationBaseEffect ()
+@interface AGLKTextureTransformBaseEffect ()
 {
     GLuint _program;
     GLint _uniforms[AGLKNumUniforms];
@@ -53,7 +53,7 @@ enum{
 
 @end
 
-@implementation AGLKTextureRotationBaseEffect
+@implementation AGLKTextureTransformBaseEffect
 
 - (instancetype)init
 {
@@ -111,7 +111,7 @@ enum{
                            0,
                            self.transform.normalMatrix.m);
         
-        glUniformMatrix3fv(_uniforms[AGLKTex0Matrix],
+        glUniformMatrix4fv(_uniforms[AGLKTex0Matrix],
                            1,
                            0,
                            self.textureMatrix2d0.m);
@@ -227,7 +227,7 @@ enum{
         
         glActiveTexture(GL_TEXTURE1);
         if (self.texture2d1.name != 0 && self.texture2d1.enabled) {
-            glBindTexture(GL_TEXTURE_2D, self.texture2d0.name);
+            glBindTexture(GL_TEXTURE_2D, self.texture2d1.name);
         } else {
             glBindTexture(GL_TEXTURE_2D, 0);
         }
@@ -320,16 +320,16 @@ enum{
 
 /*
 - (BOOL)loadShaders{
-    
     self.shader = [[AGLKShader alloc] initWithShader:@"AGLKTextureMatrix2PointLightShader"];
     _program = self.shader.program;
-    
     
     [self.shader bindAttribute:GLKVertexAttribPosition name:@"a_position"];
     [self.shader bindAttribute:GLKVertexAttribNormal name:@"a_normal"];
     [self.shader bindAttribute:GLKVertexAttribTexCoord0 name:@"a_texCoord0"];
     [self.shader bindAttribute:GLKVertexAttribTexCoord1 name:@"a_texCoord1"];
  
+    [self.shader linkProgram];
+    
     _uniforms[AGLKModelviewMatrix] = [self.shader getUniform:@"u_modelviewMatrix"];
     _uniforms[AGLKMVPMatrix] = [self.shader getUniform:@"u_mvpMatrix"];
     _uniforms[AGLKNormalMatrix] = [self.shader getUniform:@"u_normalMatrix"];
@@ -344,7 +344,7 @@ enum{
     
     _uniforms[AGLKLight0Pos] = [self.shader getUniform:@"u_light0EyePos"];
     _uniforms[AGLKLight0Direction] = [self.shader getUniform:@"u_light0NormalEyeDirection"];
-    _uniforms[AGLKLight0Diffuse] = [self.shader getUniform:@"u_light0Cutoff"];
+    _uniforms[AGLKLight0Diffuse] = [self.shader getUniform:@"u_light0Diffuse"];
     _uniforms[AGLKLight0Cutoff] = [self.shader getUniform:@"u_light0Cutoff"];
     _uniforms[AGLKLight0Exponent] = [self.shader getUniform:@"u_light0Exponent"];
     
@@ -357,9 +357,12 @@ enum{
     _uniforms[AGLKLight2Pos] = [self.shader getUniform:@"u_light2EyePos"];
     _uniforms[AGLKLight2Diffuse] = [self.shader getUniform:@"u_light2Diffuse"];
 
+    [self.shader detachShader];
+    
     return YES;
 }
 */
+
 
 - (BOOL)loadShaders
 {
@@ -596,7 +599,9 @@ enum{
 - (void)aglkSetParameter:(GLenum)parameterID value:(GLint)value{
     glBindTexture(self.target,
                   self.name);
-    glTexParameteri(self.target, parameterID, value);
+    glTexParameteri(self.target,
+                    parameterID,
+                    value);
 }
 
 @end
