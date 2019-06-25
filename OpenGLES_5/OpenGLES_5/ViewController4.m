@@ -228,17 +228,21 @@ static const GLfloat SceneMoonDistanceFromEarth = 3.0f;
             UIInterfaceOrientationPortrait);
 }
 
+/**
+ * 透视和平截头体
+ */
 - (IBAction)takeShouldUsePerspectiveFrom:(UISwitch *)sender{
     GLfloat aspectRatio = (float)((GLKView *)self.view).drawableWidth / (float)((GLKView *)self.view).drawableHeight;
     
     if ([sender isOn]) {
+        //平截头体
         self.baseEffect.transform.projectionMatrix = GLKMatrix4MakeFrustum(-1.0 * aspectRatio,
                                                                            1.0 * aspectRatio,
                                                                            -1.0,
                                                                            1.0,
                                                                            1.0,
                                                                            120.0);
-    } else {
+    } else { //透视(正射投影)
         self.baseEffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(-1.0 * aspectRatio,
                                                                          1.0 *aspectRatio,
                                                                          -1.0,

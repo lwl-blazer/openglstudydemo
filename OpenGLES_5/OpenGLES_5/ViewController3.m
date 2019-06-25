@@ -86,6 +86,7 @@ static const SceneVertex vertices[] = {
     self.baseEffect.texture2d1.name = textureInfo1.name;
     self.baseEffect.texture2d1.target = textureInfo1.target;
     self.baseEffect.texture2d1.enabled = GL_TRUE;
+    /*设置纹理2的envMode为GLKTextureEnvModeDecal 是和glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)效果和计算公式是一致的*/
     self.baseEffect.texture2d1.envMode = GLKTextureEnvModeDecal;
     
     
@@ -94,6 +95,7 @@ static const SceneVertex vertices[] = {
     [self.baseEffect.texture2d1 aglkSetParameter:GL_TEXTURE_WRAP_T
                                            value:GL_REPEAT];
     
+    //GLKMatrixStackLoadMatrix4()  用新的Matrix替换stack中的顶部Matrix
     /*GLKMatrixStackLoadMatrix4(self.textureMatrixStack,
                               self.baseEffect.textureMatrix2d1);*/
     GLKMatrixStackLoadMatrix4(self.textureMatrixStack, self.baseEffect.textureMatrix2d0);
@@ -128,7 +130,7 @@ static const SceneVertex vertices[] = {
      * GLKMatrixStackPop()函数会移除堆栈最顶部的项，并把前一个顶部矩阵恢复到最顶部的位置
      */
     
-    GLKMatrixStackPush(self.textureMatrixStack);
+    GLKMatrixStackPush(self.textureMatrixStack); //push 就是拿到stack中top matrix
     //Scale and rotate about the center of the texture
     GLKMatrixStackTranslate(self.textureMatrixStack,
                             0.5,

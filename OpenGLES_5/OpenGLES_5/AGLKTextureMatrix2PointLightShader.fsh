@@ -44,15 +44,19 @@ varying lowp vec4 v_diffuseColor1;
 
 varying lowp vec4 v_diffuseColor2;
 
-//多重纹理处理
+/** 多重纹理处理  混合颜色    --- 取代纹理混合 glEnable(GL_BLEND); glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+ *
+ * 这种多重纹理处理就避免了重复和多次绘制，性能比纹理要好，是绘制多个纹理时候的优先选择
+ */
 void main()
 {
+    //纹理0
     //Texture0 contribution to color
     lowp vec2 texCoords = v_texCoord[0];    //纹理坐标
     lowp vec4 texCoordsVec4 = vec4(texCoords.s, texCoords.t, 0, 1.0);
     texCoordsVec4 = u_tex0Matrix * texCoordsVec4;
     texCoords = texCoordsVec4.st;
-    
+    //纹理采样
     lowp vec4 texColor0 = texture2D(u_unit2d[0], texCoords);
     texColor0 = u_tex0Enabled * texColor0;
     
