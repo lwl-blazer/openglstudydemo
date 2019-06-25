@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		254A868B22B9E7A50049EDB6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254A868A22B9E7A50049EDB6 /* main.cpp */; };
+		25360F0F22C1B75300CA81C1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25360F0E22C1B75300CA81C1 /* main.cpp */; };
+		25360F1122C1BF0F00CA81C1 /* 4.1.texture.vs in Resources */ = {isa = PBXBuildFile; fileRef = 25360F1022C1BF0F00CA81C1 /* 4.1.texture.vs */; };
+		25360F1322C1BFE500CA81C1 /* 4.1.texture.fs in Resources */ = {isa = PBXBuildFile; fileRef = 25360F1222C1BFE500CA81C1 /* 4.1.texture.fs */; };
+		25360F1522C1C0E600CA81C1 /* awesomeface.png in Resources */ = {isa = PBXBuildFile; fileRef = 25360F1422C1C0E600CA81C1 /* awesomeface.png */; };
+		25360F1722C1C0FA00CA81C1 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25360F1622C1C0FA00CA81C1 /* container.jpg */; };
+		254A868B22B9E7A50049EDB6 /* main_dynamiclightColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254A868A22B9E7A50049EDB6 /* main_dynamiclightColor.cpp */; };
 		254A868D22BA05900049EDB6 /* 3.1.materials.vs in Resources */ = {isa = PBXBuildFile; fileRef = 254A868C22BA05900049EDB6 /* 3.1.materials.vs */; };
 		254A868F22BA064E0049EDB6 /* 3.1.materials.fs in Resources */ = {isa = PBXBuildFile; fileRef = 254A868E22BA064E0049EDB6 /* 3.1.materials.fs */; };
 		25E2F2B522B332C3001D97BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E2F2B422B332C3001D97BF /* Assets.xcassets */; };
@@ -42,7 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		254A868A22B9E7A50049EDB6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		25360F0E22C1B75300CA81C1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		25360F1022C1BF0F00CA81C1 /* 4.1.texture.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.1.texture.vs; sourceTree = "<group>"; };
+		25360F1222C1BFE500CA81C1 /* 4.1.texture.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 4.1.texture.fs; sourceTree = "<group>"; };
+		25360F1422C1C0E600CA81C1 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = awesomeface.png; path = ../../OpenGLTest_4/OpenGLTest_4/awesomeface.png; sourceTree = "<group>"; };
+		25360F1622C1C0FA00CA81C1 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = container.jpg; path = ../../OpenGLTest_3/OpenGLTest_3/container.jpg; sourceTree = "<group>"; };
+		254A868A22B9E7A50049EDB6 /* main_dynamiclightColor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main_dynamiclightColor.cpp; sourceTree = "<group>"; };
 		254A868C22BA05900049EDB6 /* 3.1.materials.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.1.materials.vs; sourceTree = "<group>"; };
 		254A868E22BA064E0049EDB6 /* 3.1.materials.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.1.materials.fs; sourceTree = "<group>"; };
 		25E2F2AB22B332C1001D97BF /* OpenGLTest_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLTest_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +131,8 @@
 		25E2F2AD22B332C1001D97BF /* OpenGLTest_5 */ = {
 			isa = PBXGroup;
 			children = (
+				25360F1622C1C0FA00CA81C1 /* container.jpg */,
+				25360F1422C1C0E600CA81C1 /* awesomeface.png */,
 				25E2F2F422B33DD7001D97BF /* Camera.cpp */,
 				25E2F2F322B33DD6001D97BF /* Camera.hpp */,
 				25E2F2E622B333AC001D97BF /* glad.c */,
@@ -130,14 +142,17 @@
 				25E2F2B422B332C3001D97BF /* Assets.xcassets */,
 				25E2F2B922B332C3001D97BF /* Info.plist */,
 				25E2F2BC22B332C3001D97BF /* OpenGLTest_5.entitlements */,
-				254A868A22B9E7A50049EDB6 /* main.cpp */,
+				254A868A22B9E7A50049EDB6 /* main_dynamiclightColor.cpp */,
 				25E2F2DE22B332E0001D97BF /* main_baseLight.cpp */,
+				25360F0E22C1B75300CA81C1 /* main.cpp */,
 				25E2F2EB22B33910001D97BF /* 1.colors.vs */,
 				25E2F2ED22B33AEB001D97BF /* 1.colors.fs */,
 				25E2F2EF22B33B4A001D97BF /* 1.lamp.vs */,
 				25E2F2F122B33C0E001D97BF /* 1.lamp.fs */,
 				254A868C22BA05900049EDB6 /* 3.1.materials.vs */,
 				254A868E22BA064E0049EDB6 /* 3.1.materials.fs */,
+				25360F1022C1BF0F00CA81C1 /* 4.1.texture.vs */,
+				25360F1222C1BFE500CA81C1 /* 4.1.texture.fs */,
 			);
 			path = OpenGLTest_5;
 			sourceTree = "<group>";
@@ -273,12 +288,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				25E2F2EC22B33910001D97BF /* 1.colors.vs in Resources */,
+				25360F1322C1BFE500CA81C1 /* 4.1.texture.fs in Resources */,
 				254A868D22BA05900049EDB6 /* 3.1.materials.vs in Resources */,
 				254A868F22BA064E0049EDB6 /* 3.1.materials.fs in Resources */,
 				25E2F2F022B33B4A001D97BF /* 1.lamp.vs in Resources */,
+				25360F1722C1C0FA00CA81C1 /* container.jpg in Resources */,
 				25E2F2EE22B33AEB001D97BF /* 1.colors.fs in Resources */,
 				25E2F2B522B332C3001D97BF /* Assets.xcassets in Resources */,
 				25E2F2F222B33C0E001D97BF /* 1.lamp.fs in Resources */,
+				25360F1522C1C0E600CA81C1 /* awesomeface.png in Resources */,
+				25360F1122C1BF0F00CA81C1 /* 4.1.texture.vs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +324,8 @@
 			files = (
 				25E2F2F522B33DD7001D97BF /* Camera.cpp in Sources */,
 				25E2F2EA22B333AC001D97BF /* Shader.cpp in Sources */,
-				254A868B22B9E7A50049EDB6 /* main.cpp in Sources */,
+				254A868B22B9E7A50049EDB6 /* main_dynamiclightColor.cpp in Sources */,
+				25360F0F22C1B75300CA81C1 /* main.cpp in Sources */,
 				25E2F2E922B333AC001D97BF /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
