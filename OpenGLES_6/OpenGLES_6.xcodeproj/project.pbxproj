@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2517BA4D22C496CB001A9741 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2517BA4C22C496CB001A9741 /* ViewController2.m */; };
+		2517BA5022C4974C001A9741 /* SceneAnimatedMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2517BA4F22C4974C001A9741 /* SceneAnimatedMesh.m */; };
 		25360F2622C1D16E00CA81C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F2522C1D16E00CA81C1 /* AppDelegate.m */; };
 		25360F2922C1D16E00CA81C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F2822C1D16E00CA81C1 /* ViewController.m */; };
 		25360F2C22C1D16E00CA81C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25360F2A22C1D16E00CA81C1 /* Main.storyboard */; };
@@ -48,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2517BA4B22C496CB001A9741 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		2517BA4C22C496CB001A9741 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		2517BA4E22C4974C001A9741 /* SceneAnimatedMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneAnimatedMesh.h; sourceTree = "<group>"; };
+		2517BA4F22C4974C001A9741 /* SceneAnimatedMesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneAnimatedMesh.m; sourceTree = "<group>"; };
 		25360F2122C1D16D00CA81C1 /* OpenGLES_6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25360F2422C1D16E00CA81C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		25360F2522C1D16E00CA81C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 				25360F2522C1D16E00CA81C1 /* AppDelegate.m */,
 				25360F2722C1D16E00CA81C1 /* ViewController.h */,
 				25360F2822C1D16E00CA81C1 /* ViewController.m */,
+				2517BA4B22C496CB001A9741 /* ViewController2.h */,
+				2517BA4C22C496CB001A9741 /* ViewController2.m */,
 				25360F2A22C1D16E00CA81C1 /* Main.storyboard */,
 				25360F2D22C1D17000CA81C1 /* Assets.xcassets */,
 				25360F2F22C1D17000CA81C1 /* LaunchScreen.storyboard */,
@@ -219,6 +227,8 @@
 				25360F7F22C2137100CA81C1 /* SceneCarModel.m */,
 				25360F8622C219F700CA81C1 /* SceneRinkModel.h */,
 				25360F8722C219F700CA81C1 /* SceneRinkModel.m */,
+				2517BA4E22C4974C001A9741 /* SceneAnimatedMesh.h */,
+				2517BA4F22C4974C001A9741 /* SceneAnimatedMesh.m */,
 				25360F8522C217E500CA81C1 /* bumperCar.h */,
 				25360F8922C21A4300CA81C1 /* bumperRink.h */,
 			);
@@ -367,9 +377,11 @@
 				25360F6C22C1D20000CA81C1 /* AGLKViewController.m in Sources */,
 				25360F6B22C1D20000CA81C1 /* AGLKShader.m in Sources */,
 				25360F7622C1D2BA00CA81C1 /* SceneMesh.m in Sources */,
+				2517BA5022C4974C001A9741 /* SceneAnimatedMesh.m in Sources */,
 				25360F6922C1D20000CA81C1 /* AGLKTextureTransformBaseEffect.m in Sources */,
 				25360F6722C1D20000CA81C1 /* AGLKView.m in Sources */,
 				25360F8822C219F700CA81C1 /* SceneRinkModel.m in Sources */,
+				2517BA4D22C496CB001A9741 /* ViewController2.m in Sources */,
 				25360F8322C2137100CA81C1 /* SceneCarModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

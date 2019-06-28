@@ -11,6 +11,7 @@
 #import "AGLKVertexAttribArrayBuffer.h"
 #import "bumperRink.h"
 
+//SceneRinkModel是SceneModel的子类，代表了溜冰场的墙壁和地面的网格
 @implementation SceneRinkModel
 
 - (instancetype)init{

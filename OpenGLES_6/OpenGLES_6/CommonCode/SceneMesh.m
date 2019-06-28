@@ -18,9 +18,10 @@
 
 @end
 
-/**
+/** 网格类
  * SceneMesh 类的存在是为了管理大量的顶点数据以及GPU控制的内存数据的坐标转换。
  * 网格(Mesh)就是共享顶点或者边，同时用于定义3D图形的三角形的一个集合
+ * 通过AGLKVertexAttribArrayBuffer管理顶点数据，发送顶点数据到GPU,分配顶点数据内存，绘制顶点数据
  */
 @implementation SceneMesh
 
@@ -49,7 +50,7 @@
     NSMutableData *indicesData = [[NSMutableData alloc] init];
     
     [indicesData appendBytes:someIndices length:countIndices * sizeof(GLushort)];
-    
+    //把顶点数据转换成二进制
     for (size_t i = 0; i < countPositions; i ++) {
         SceneMeshVertex currentVertex;
         currentVertex.position.x = somePositions[i * 3 + 0];
@@ -75,7 +76,7 @@
 }
 
 - (void)prepareToDraw{
-    if (self.vertexAttributeBuffer == nil && [self.vertexData length] > 0) {
+    if (self.vertexAttributeBuffer == nil && [self.vertexData length] > 0) { //顶点数据还没送至GPU
         self.vertexAttributeBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneMeshVertex)
                                                                               numberOfVertices:(GLsizei)([self.vertexData length]/sizeof(SceneMeshVertex))
                                                                                           data:[self.vertexData bytes]
@@ -83,7 +84,7 @@
         self.vertexData = nil;
     }
     
-    if (self.indexBufferID == 0 && [self.indexData length] > 0) {
+    if (self.indexBufferID == 0 && [self.indexData length] > 0) { //索引缓存
         glGenBuffers(1, &_indexBufferID);
         NSAssert(self.indexBufferID != 0, @"Failed to generate element array buffer");
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.indexBufferID);
@@ -104,6 +105,7 @@
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.indexBufferID);
 }
 
+//不使用索引绘制
 - (void)drawUnidexedWithMode:(GLenum)mode
             startVertexIndex:(GLint)first
             numberOfVertices:(GLsizei)count{
@@ -112,6 +114,7 @@
                                  numberOfVertices:count];
 }
 
+//分配经常改动的内存
 - (void)makeDynamicAndUpdateWithVertices:(const SceneMeshVertex *)someVerts
                         numberOfVertices:(size_t)count{
     NSParameterAssert(someVerts != NULL);

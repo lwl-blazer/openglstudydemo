@@ -19,7 +19,7 @@
 
 @end
 
-/**
+/** 模型类
  * SceneModel 类会绘制全部或者部分的网格。一个单独的模型可能由多个网格组成，多个模型可能共用相同的网格，模型代表了汽车、山脉或人物等3D对象，这些3D对象的形状由网格定义的。模型聚合了描绘3D对象所需的网格。
  */
 
@@ -48,6 +48,7 @@
                    numberOfVertices:self.numberOfVertices];
 }
 
+//顶点数据改变后，重新计算边界
 - (void)updateAlignedBoundingBoxForVertices:(float *)verts
                                       count:(unsigned int)aCount{
     SceneAxisAllignedBoundingBox result = {{0, 0, 0}, {0, 0, 0}};

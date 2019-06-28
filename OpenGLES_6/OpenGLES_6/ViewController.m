@@ -26,8 +26,8 @@
 
 @property(nonatomic, assign) GLKVector3 eyePosition; //当前眼睛位置
 @property(nonatomic, assign) GLKVector3 lookAtPosition; //当前看向的位置
-@property(nonatomic, assign) GLKVector3 targetEyePosition;
-@property(nonatomic, assign) GLKVector3 targetLookAtPosition;
+@property(nonatomic, assign) GLKVector3 targetEyePosition;  //眼睛的目标位置
+@property(nonatomic, assign) GLKVector3 targetLookAtPosition; //方向的目标位置   通过高通滤波器函数和低通滤波器函数实现视角平滑过渡
 
 @end
 
@@ -68,6 +68,7 @@ static const int SceneNumberOfPOVAnimationSeconds = 2.0;
     self.carModel = [[SceneCarModel alloc] init];
     self.rinkModel = [[SceneRinkModel alloc] init];
     
+    //场地
     self.rinkBoundingBox = self.rinkModel.axisAlignedBoundBox;
     NSAssert((self.rinkBoundingBox.max.x - self.rinkBoundingBox.min.x) > 0 && (self.rinkBoundingBox.max.z - self.rinkBoundingBox.min.z) > 0, @"Rink has no area");
     
@@ -201,8 +202,9 @@ static const int SceneNumberOfPOVAnimationSeconds = 2.0;
                                                                      0, 1, 0);
     
     [self.baseEffect prepareToDraw];
-    [self.rinkModel draw];
+    [self.rinkModel draw]; //场地的渲染
     
+    //碰碰车的渲染
     [self.carArray makeObjectsPerformSelector:@selector(drawWithBaseEffect:) withObject:self.baseEffect];
 }
 

@@ -8,6 +8,12 @@
 
 #import "SceneCar.h"
 
+/** car的逻辑类
+ * SceneCar 类封装了每个碰碰车的当前位置、速度、颜色、偏航角和模型。偏航(yaw)是来自轮船和航空的一个术语，代表了围绕垂直轴的旋转度，在这个案例中围绕Y轴。偏航定义了碰碰车的方向并且会随着时间变化而让碰碰车面向它的移动的方向
+ *
+ * 包括car的速度、位置、偏航角、半径、还有滤波函数、cars的碰撞处理、car与场景的碰撞处理、绘制car模型
+ */
+
 @interface SceneCar ()
 
 @property(nonatomic, strong, readwrite) SceneModel *model;
@@ -18,7 +24,7 @@
 @property(nonatomic, assign, readwrite) GLfloat targetYawRadians;
 
 @property(nonatomic, assign, readwrite) GLKVector4 color;
-@property(nonatomic, assign, readwrite) GLfloat radius;
+@property(nonatomic, assign, readwrite) GLfloat radius; //car的半径
 
 @end
 
@@ -42,21 +48,26 @@
         
         SceneAxisAllignedBoundingBox axisAlignedBoundingBox = self.model.axisAlignedBoundBox;
         
+        //通过得到墙壁的最大小边界，得到car的半径
         self.radius = 0.5f * MAX(axisAlignedBoundingBox.max.x - axisAlignedBoundingBox.min.x, axisAlignedBoundingBox.max.z - axisAlignedBoundingBox.min.z);
     }
     return self;
 }
 
+//car与墙壁碰撞模拟
 - (void)bounceOffWallsWithBoundingBox:(SceneAxisAllignedBoundingBox)rinkBoundingBox{
+    //根据car的半径，通过半径+nextPosition与RinkBoundingBox判断是否到达边界,如果到达边界则把对应轴的速度向量反向
     if ((rinkBoundingBox.min.x + self.radius) > self.nextPosition.x) {
+        //下一个点超过了x最小的边界
         self.nextPosition = GLKVector3Make((rinkBoundingBox.min.x + self.radius),
                                            self.nextPosition.y,
                                            self.nextPosition.z);
-        
+        //撞墙后x方向相反
         self.velocity = GLKVector3Make(-self.velocity.x,
                                        self.velocity.y,
                                        self.velocity.z);
     } else if((rinkBoundingBox.max.x - self.radius) < self.nextPosition.x){
+        //下一个点超过了x最大的边界
         self.nextPosition = GLKVector3Make((rinkBoundingBox.max.x - self.radius),
                                            self.nextPosition.y,
                                            self.nextPosition.z);
@@ -66,6 +77,7 @@
                                        self.velocity.z);
     }
     
+    //z的边界判断
     if ((rinkBoundingBox.min.z + self.radius) > self.nextPosition.z) {
         
         self.nextPosition = GLKVector3Make(self.nextPosition.x,
@@ -86,10 +98,17 @@
     }
 }
 
+//car之间的碰撞
 - (void)bounceOffCars:(NSArray *)cars
           elapsedTime:(NSTimeInterval)elapsedTimeSeconds{
     for (SceneCar *currentCar in cars) {
-        
+        /**
+         * 假设两辆车分别为self和other
+         * selfCar的速度为velocity 位置为position, otherCar的速度为otherVelocity位置为otherPosition
+         * 通过position和otherPosition,可以得到一条直线，car的碰撞就发生在这一条线上的方向上
+         
+         * velocity在直线上的分量是tanOwnVelocity,otherVelocity在直线上的分量为tanOtherVelocity,otherVelocity在直线上的分量为tanOtherVelocity
+         */
         if (currentCar != self) {
             float distance = GLKVector3Distance(self.nextPosition,
                                                 currentCar.nextPosition);
@@ -109,8 +128,8 @@
                 GLKVector3 tanOtherVelocity = GLKVector3MultiplyScalar(directionToOtherCar,
                                                                        GLKVector3DotProduct(otherVelocity,
                                                                                             directionToOtherCar));
-                
-                {
+                //碰撞完成后selfCar的速度为velocity - thanOwnVelocity otherCar的速度为otherVelocity - tanOtherVelocity
+                { //更新自己的速度
                     self.velocity = GLKVector3Subtract(ownVelocity,
                                                        tanOwnVelocity);
                     GLKVector3 travelDistance = GLKVector3MultiplyScalar(self.velocity,
@@ -119,7 +138,7 @@
                     self.nextPosition = GLKVector3Add(self.position,
                                                       travelDistance);
                 }
-                {
+                {//更新其它car的速度
                     currentCar.velocity = GLKVector3Subtract(otherVelocity,
                                                              tanOtherVelocity);
                     GLKVector3 traveDistance = GLKVector3MultiplyScalar(currentCar.velocity,
@@ -140,7 +159,10 @@
                                                    self.yawRadians);
 }
 
+
+//更新car的位置、偏航角和速度 模拟与墙和其他car的碰撞
 - (void)updateWithController:(id<SceneCarControllerProtocol>)controller{
+    //0.01秒和0.5秒之间
     NSTimeInterval elapsedTimeSeconds = MIN(MAX([controller timeSinceLastUpdate], 0.01f), 0.5f);
     
     GLKVector3 travelDistance = GLKVector3MultiplyScalar(self.velocity,
@@ -157,21 +179,24 @@
     [self bounceOffWallsWithBoundingBox:rinkBoundingBox];
     
     if (0.1 > GLKVector3Length(self.velocity)) {
+        //速度太小，方向可能是死角，随机换一个方向
         self.velocity = GLKVector3Make((random()/(0.5f * RAND_MAX)) - 1.0f,
                                        0.0f,
                                        (random() / (0.5f * RAND_MAX)) - 1.0f);
     } else if(4 > GLKVector3Length(self.velocity)){
+        //缓慢加速
         self.velocity = GLKVector3MultiplyScalar(self.velocity,
                                                  1.01f);
     }
     
+    //car的方向和标准方向的余弦值
     float dotProduct = GLKVector3DotProduct(GLKVector3Normalize(self.velocity),
                                             GLKVector3Make(0.0,
                                                            0,
                                                            -1.0));
-    if (0.0 > self.velocity.x) {
+    if (0.0 > self.velocity.x) { //偏航角为正
         self.targetYawRadians = acosf(dotProduct);
-    } else {
+    } else { //偏航角为负
         self.targetYawRadians = -acosf(dotProduct);
     }
     
@@ -180,16 +205,19 @@
     self.position = self.nextPosition;
 }
 
+//绘制
 - (void)drawWithBaseEffect:(GLKBaseEffect *)anEffect{
+    //设置当前材质的颜色以匹配碰碰车的颜色，
     GLKMatrix4 savedModelviewMatrix = anEffect.transform.modelviewMatrix;
     GLKVector4 savedDiffuseColor = anEffect.material.diffuseColor;
     GLKVector4 savedAmbientColor = anEffect.material.ambientColor;
     
+    //平移model-view坐标系到碰碰车的当前位置，旋转坐标系以匹配碰碰车的当前偏航角，并绘制碰碰车模型。
     anEffect.transform.modelviewMatrix = GLKMatrix4Translate(savedModelviewMatrix,
                                                              self.position.x,
                                                              self.position.y,
                                                              self.position.z);
-    
+    //旋转Y轴的偏航角
     anEffect.transform.modelviewMatrix = GLKMatrix4Rotate(anEffect.transform.modelviewMatrix,
                                                           self.yawRadians,
                                                           0.0,
@@ -211,11 +239,11 @@
 @end
 
 
-
-GLfloat SceneScalarSlowLowPassFilter(NSTimeInterval timeSinceLastUpdate,
-                                            GLfloat target,
+//高通滤波器函数
+GLfloat SceneScalarFastLowPassFilter(NSTimeInterval timeSinceLastUpdate,
+                                     GLfloat target,
                                      GLfloat current){
-    return current + (4.0 * timeSinceLastUpdate * (target - current));
+    return current + (50.0 * timeSinceLastUpdate * (target - current));  //50是一个可替换的较大的函数。可以模拟撞墙后震动的效果， 因为50比较大，current的值再增加后可能超过target
 }
 
 GLKVector3 SceneVector3FastLowPassFilter(NSTimeInterval timeSinceLastUpdate,
@@ -238,10 +266,10 @@ GLKVector3 SceneVector3FastLowPassFilter(NSTimeInterval timeSinceLastUpdate,
  * 几乎所有的3D模拟都受益于这样或那样的过滤器
  */
 //ease in
-GLfloat SceneScalarFastLowPassFilter(NSTimeInterval timeSinceLastUpdate,
+GLfloat SceneScalarSlowLowPassFilter(NSTimeInterval timeSinceLastUpdate,
                                      GLfloat target,
                                      GLfloat current){
-    return current + (50.0 * timeSinceLastUpdate * (target - current));
+    return current + (4.0 * timeSinceLastUpdate * (target - current)); //4.0是一个可替换的较小的常数，可以模拟视角切换过程的效果，因为4.0比较小，current会逐渐接近target
 }
 
 GLKVector3 SceneVector3SlowLowPassFilter(NSTimeInterval timeSinceLastUpdate,

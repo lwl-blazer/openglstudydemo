@@ -32,11 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, assign, readonly) GLKVector4 color;
 
-
-- (instancetype)initWithModel:(SceneModel *)aModel
-                     position:(GLKVector3)aPosition
-                     velocity:(GLKVector3)aVelocity
-                        color:(GLKVector4)aColor;
+//初始化函数 注意 这里的SceneCar并没有依赖SceneCarModel，而是依赖抽象(基类)SceneModel，实现了解耦。可以新建一个SceneOtherCar 继承SceneModel 传递给SceneCar,不需要修改SceneCar的代码就可以创建出一个新的Car
+- (instancetype)initWithModel:(SceneModel *)aModel //模型类
+                     position:(GLKVector3)aPosition  //位置
+                     velocity:(GLKVector3)aVelocity //速度
+                        color:(GLKVector4)aColor; //颜色
 
 - (void)updateWithController:(id<SceneCarControllerProtocol>)controller;
 - (void)drawWithBaseEffect:(GLKBaseEffect *)anEffect;

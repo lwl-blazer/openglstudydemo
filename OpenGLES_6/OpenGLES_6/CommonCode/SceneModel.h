@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef struct{
     GLKVector3 min;
     GLKVector3 max;
-}SceneAxisAllignedBoundingBox;
+}SceneAxisAllignedBoundingBox; //模型的最大最小边界
 
 @interface SceneModel : NSObject
 
