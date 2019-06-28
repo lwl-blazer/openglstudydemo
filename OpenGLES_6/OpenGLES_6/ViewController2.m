@@ -59,11 +59,10 @@
     [((AGLKContext *)view.context) clear:GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT];
     
     const GLfloat aspectRatio = (GLfloat)view.drawableWidth / (GLfloat)view.drawableHeight;
-    
     self.baseEffect.transform.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(60.0f),
                                                                            aspectRatio,
                                                                            0.1f,
-                                                                           255.0f);
+                                                                           255.0f); //很远
     
     [self.animateMesh updateMeshWithElapsedTime:self.timeSinceLastResume];   //timeSinceLastResume 最后一次发送更新消息后的时间
     
