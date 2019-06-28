@@ -131,6 +131,12 @@
                                           numberOfVertices:(GLsizei)count
                                                      bytes:someVerts];
     }
+    
+    /**
+     * 向GPU控制的内存发送更新的顶点属性，并设置网格的使用提示为GL_DYNAMIC_DRAW来表明顶点属性可能会频繁更新
+     *
+     * 最大限度地减少复制发生的总量是非常重要的，因为内存带宽是嵌入式系统的头号瓶颈。避免复制的一个方法是直接在GPU控制的内存中使用运行在GPU上的一个Shading Language程序来计算新的顶点数据
+     */
 }
 
 

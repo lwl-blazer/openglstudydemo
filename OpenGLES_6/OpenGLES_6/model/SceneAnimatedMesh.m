@@ -74,7 +74,6 @@ static void SceneMeshUpdateMeshWithDefaultPositions(SceneMeshVertex mesh[NUM_MES
 
 /**
  * 通过随着时间改变网格顶点的Y坐标来产生网格动画。碧波荡漾的水波效果是通过在视图控制器的'update'方法中以一个固定的频率调用下面的方法
- *
  */
 - (void)updateMeshWithElapsedTime:(NSTimeInterval)anInterval{ //修改顶点位置和重新计算法线
     int currentRow;
@@ -84,13 +83,19 @@ static void SceneMeshUpdateMeshWithDefaultPositions(SceneMeshVertex mesh[NUM_MES
         const GLfloat phaseOffset = 2.0f * anInterval;
         const GLfloat phase = 4.0 * currentColumn / (float)NUM_MESH_COLUMNS;
         
+        //设置每个顶点的Y坐标的值为一个正弦三角函数的值，这个正弦三角函数的值基于被修改的顶点的当前列和一个时间间隔，每次重新计算值时，时间间隔就会变化，这产生了一个移动的波纹效果
+        //使用正弦只是因为它能产生一个形象有趣的重新样式，使用正弦以外的其他函数也是可以的
         const GLfloat yOffset = 2.0 * sinf(M_PI * (phase + phaseOffset));
+        //const GLfloat yOffset = 2.0 * cosf(phase * phase + phaseOffset);
+        //const GLfloat yOffset = 2.0 * sinf(M_PI * (sinf(phase) + phaseOffset));
         
+        //z轴
         for (currentRow = 0; currentRow < NUM_MESH_ROWS; currentRow++) {
             mesh[currentColumn][currentRow].position.y = yOffset;
         }
     }
     
+    //每次顶点向量发生变化的时候，顶点法向量必须重新计算
     SceneMeshUpdateNormals(mesh);
     
     //动态绘制
@@ -172,6 +177,8 @@ void SceneMeshUpdateNormals(SceneMeshVertex mesh[NUM_MESH_COLUMNS][NUM_MESH_ROWS
                                                                                                           normalDC),
                                                                                             normalAD),
                                                                               0.25);
+            
+            //平均面法线向量会产生一个光滑的而不是多面的灯光效果
         }
     }
     
@@ -186,7 +193,6 @@ void SceneMeshUpdateNormals(SceneMeshVertex mesh[NUM_MESH_COLUMNS][NUM_MESH_ROWS
         mesh[currentColumn][0].normal = mesh[currentColumn][1].normal;
         mesh[currentColumn][NUM_MESH_ROWS - 1].normal = mesh[currentColumn][NUM_MESH_ROWS - 2].normal ;
     }
-    
 }
 
 @end

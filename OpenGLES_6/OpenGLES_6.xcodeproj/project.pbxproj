@@ -30,6 +30,8 @@
 		25360F8322C2137100CA81C1 /* SceneCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F7F22C2137100CA81C1 /* SceneCarModel.m */; };
 		25360F8422C2137100CA81C1 /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F8022C2137100CA81C1 /* SceneCar.m */; };
 		25360F8822C219F700CA81C1 /* SceneRinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F8722C219F700CA81C1 /* SceneRinkModel.m */; };
+		253D129222C60A9900D422B6 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D129122C60A9900D422B6 /* ViewController3.m */; };
+		253D129522C60B3200D422B6 /* SceneCanLightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D129422C60B3200D422B6 /* SceneCanLightModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,11 @@
 		25360F8622C219F700CA81C1 /* SceneRinkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneRinkModel.h; sourceTree = "<group>"; };
 		25360F8722C219F700CA81C1 /* SceneRinkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneRinkModel.m; sourceTree = "<group>"; };
 		25360F8922C21A4300CA81C1 /* bumperRink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bumperRink.h; sourceTree = "<group>"; };
+		253D129022C60A9900D422B6 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		253D129122C60A9900D422B6 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		253D129322C60B3200D422B6 /* SceneCanLightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCanLightModel.h; sourceTree = "<group>"; };
+		253D129422C60B3200D422B6 /* SceneCanLightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCanLightModel.m; sourceTree = "<group>"; };
+		253D129622C60B6E00D422B6 /* canLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = canLight.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +164,8 @@
 				25360F2822C1D16E00CA81C1 /* ViewController.m */,
 				2517BA4B22C496CB001A9741 /* ViewController2.h */,
 				2517BA4C22C496CB001A9741 /* ViewController2.m */,
+				253D129022C60A9900D422B6 /* ViewController3.h */,
+				253D129122C60A9900D422B6 /* ViewController3.m */,
 				25360F2A22C1D16E00CA81C1 /* Main.storyboard */,
 				25360F2D22C1D17000CA81C1 /* Assets.xcassets */,
 				25360F2F22C1D17000CA81C1 /* LaunchScreen.storyboard */,
@@ -187,22 +196,22 @@
 		25360F5622C1D20000CA81C1 /* tool */ = {
 			isa = PBXGroup;
 			children = (
+				25360F5F22C1D20000CA81C1 /* AGLKView.h */,
 				25360F5722C1D20000CA81C1 /* AGLKView.m */,
+				25360F6122C1D20000CA81C1 /* AGLKTextureInfo.h */,
 				25360F5822C1D20000CA81C1 /* AGLKTextureInfo.m */,
+				25360F6022C1D20000CA81C1 /* AGLKTextureTransformBaseEffect.h */,
 				25360F5922C1D20000CA81C1 /* AGLKTextureTransformBaseEffect.m */,
+				25360F6322C1D20000CA81C1 /* AGLKContext.h */,
 				25360F5A22C1D20000CA81C1 /* AGLKContext.m */,
+				25360F6222C1D20000CA81C1 /* AGLKShader.h */,
 				25360F5B22C1D20000CA81C1 /* AGLKShader.m */,
-				25360F5C22C1D20000CA81C1 /* AGLKViewController.m */,
+				25360F6522C1D20000CA81C1 /* AGLKVertexAttribArrayBuffer.h */,
 				25360F5D22C1D20000CA81C1 /* AGLKVertexAttribArrayBuffer.m */,
 				25360F5E22C1D20000CA81C1 /* GLKEffectPropertyTexture+AGLKAdditions.h */,
-				25360F5F22C1D20000CA81C1 /* AGLKView.h */,
-				25360F6022C1D20000CA81C1 /* AGLKTextureTransformBaseEffect.h */,
-				25360F6122C1D20000CA81C1 /* AGLKTextureInfo.h */,
-				25360F6222C1D20000CA81C1 /* AGLKShader.h */,
-				25360F6322C1D20000CA81C1 /* AGLKContext.h */,
 				25360F6422C1D20000CA81C1 /* GLKEffectPropertyTexture+AGLKAdditions.m */,
-				25360F6522C1D20000CA81C1 /* AGLKVertexAttribArrayBuffer.h */,
 				25360F6622C1D20000CA81C1 /* AGLKViewController.h */,
+				25360F5C22C1D20000CA81C1 /* AGLKViewController.m */,
 			);
 			path = tool;
 			sourceTree = "<group>";
@@ -229,8 +238,11 @@
 				25360F8722C219F700CA81C1 /* SceneRinkModel.m */,
 				2517BA4E22C4974C001A9741 /* SceneAnimatedMesh.h */,
 				2517BA4F22C4974C001A9741 /* SceneAnimatedMesh.m */,
+				253D129322C60B3200D422B6 /* SceneCanLightModel.h */,
+				253D129422C60B3200D422B6 /* SceneCanLightModel.m */,
 				25360F8522C217E500CA81C1 /* bumperCar.h */,
 				25360F8922C21A4300CA81C1 /* bumperRink.h */,
+				253D129622C60B6E00D422B6 /* canLight.h */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -368,6 +380,8 @@
 				25360F2922C1D16E00CA81C1 /* ViewController.m in Sources */,
 				25360F8422C2137100CA81C1 /* SceneCar.m in Sources */,
 				25360F7922C1F08700CA81C1 /* SceneModel.m in Sources */,
+				253D129222C60A9900D422B6 /* ViewController3.m in Sources */,
+				253D129522C60B3200D422B6 /* SceneCanLightModel.m in Sources */,
 				25360F3422C1D17000CA81C1 /* main.m in Sources */,
 				25360F6D22C1D20000CA81C1 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				25360F6E22C1D20000CA81C1 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
