@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SceneAnimatedMesh : SceneMesh
 
-- (void)drawEntireMesh;
+- (void)drawEntireMesh; //利用glDrawElements()函数进行绘制
 - (void)updateMeshWithDefaultPositions;
-- (void)updateMeshWithElapsedTime:(NSTimeInterval)anInterval;
+- (void)updateMeshWithElapsedTime:(NSTimeInterval)anInterval; //本例子的核心方法
 
 @end
 

@@ -90,6 +90,7 @@
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.indexBufferID);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, [self.indexData length], [self.indexData bytes], GL_STATIC_DRAW);
         self.indexData = nil;
+        /**索引顶点提供了一个优化，这个优化可以消除奢侈的顶点数据复制。当使用索引顶点时，每个顶点只需要在内存中保存一次，无论有多少个三角形使用了这个顶点*/
     }
     
     [self.vertexAttributeBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
