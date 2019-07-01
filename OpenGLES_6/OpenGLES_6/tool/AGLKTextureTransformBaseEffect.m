@@ -233,7 +233,6 @@ enum{
         }
         
 #ifdef DEBUG
-        
         GLenum error = glGetError();
         if (error != GL_NO_ERROR) {
             NSLog(@"GL Error");
