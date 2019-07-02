@@ -49,7 +49,8 @@
     NSMutableData *vertexAttributesData = [[NSMutableData alloc] init];
     NSMutableData *indicesData = [[NSMutableData alloc] init];
     
-    [indicesData appendBytes:someIndices length:countIndices * sizeof(GLushort)];
+    [indicesData appendBytes:someIndices
+                      length:countIndices * sizeof(GLushort)];
     //把顶点数据转换成二进制
     for (size_t i = 0; i < countPositions; i ++) {
         SceneMeshVertex currentVertex;
@@ -69,10 +70,12 @@
             currentVertex.texCoords0.t = 0.0f;
         }
         
-        [vertexAttributesData appendBytes:&currentVertex length:sizeof(currentVertex)];
+        [vertexAttributesData appendBytes:&currentVertex
+                                   length:sizeof(currentVertex)];
     }
     
-    return [self initWithVertexAttributeData:vertexAttributesData indexData:indicesData];
+    return [self initWithVertexAttributeData:vertexAttributesData
+                                   indexData:indicesData];
 }
 
 - (void)prepareToDraw{
@@ -96,6 +99,11 @@
     [self.vertexAttributeBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
                                     numberOfCoordinates:3
                                            attribOffset:offsetof(SceneMeshVertex, position)
+                                           shouldEnable:YES];
+    
+    [self.vertexAttributeBuffer prepareToDrawWithAttrib:GLKVertexAttribNormal
+                                    numberOfCoordinates:3
+                                           attribOffset:offsetof(SceneMeshVertex, normal)
                                            shouldEnable:YES];
     
     [self.vertexAttributeBuffer prepareToDrawWithAttrib:GLKVertexAttribTexCoord0

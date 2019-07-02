@@ -64,7 +64,7 @@ enum{
         
         //关掉父类GLKBaseEffect的一些属性
         self.texture2d0.enabled = GL_FALSE;
-        self.texture2d0.enabled = GL_FALSE;
+        self.texture2d1.enabled = GL_FALSE;
         
         self.material.ambientColor = GLKVector4Make(1.0f,
                                                     1.0f,

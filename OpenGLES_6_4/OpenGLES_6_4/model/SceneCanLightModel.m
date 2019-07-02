@@ -22,8 +22,6 @@
                                                                 indices:NULL
                                                         numberOfIndices:0];
     
-    
-    
     self = [super initWithName:@"canLight"
                           mesh:canLightMesh
               numberOfVertices:canLightNumVerts];
