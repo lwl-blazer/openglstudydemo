@@ -10,6 +10,7 @@
 		253CFDDF22CAF66A00C4B051 /* RadiusSelectionTool.png in Resources */ = {isa = PBXBuildFile; fileRef = 253CFDDE22CAF66A00C4B051 /* RadiusSelectionTool.png */; };
 		253CFDE222CB065400C4B051 /* AGLKTextureMatrix2PointLightShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 253CFDE022CB065300C4B051 /* AGLKTextureMatrix2PointLightShader.fsh */; };
 		253CFDE322CB065400C4B051 /* AGLKTextureMatrix2PointLightShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 253CFDE122CB065400C4B051 /* AGLKTextureMatrix2PointLightShader.vsh */; };
+		253CFE4D22CB486600C4B051 /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 253CFE4C22CB486600C4B051 /* ViewController5.m */; };
 		258902B022CA099F002C6C50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902AF22CA099F002C6C50 /* AppDelegate.m */; };
 		258902B322CA099F002C6C50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902B222CA099F002C6C50 /* ViewController.m */; };
 		258902B622CA099F002C6C50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258902B422CA099F002C6C50 /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 		253CFDDE22CAF66A00C4B051 /* RadiusSelectionTool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RadiusSelectionTool.png; sourceTree = "<group>"; };
 		253CFDE022CB065300C4B051 /* AGLKTextureMatrix2PointLightShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AGLKTextureMatrix2PointLightShader.fsh; sourceTree = "<group>"; };
 		253CFDE122CB065400C4B051 /* AGLKTextureMatrix2PointLightShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AGLKTextureMatrix2PointLightShader.vsh; sourceTree = "<group>"; };
+		253CFE4B22CB486600C4B051 /* ViewController5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController5.h; sourceTree = "<group>"; };
+		253CFE4C22CB486600C4B051 /* ViewController5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController5.m; sourceTree = "<group>"; };
 		258902AB22CA099F002C6C50 /* OpenGLES_6_4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_6_4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		258902AE22CA099F002C6C50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		258902AF22CA099F002C6C50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				258902AF22CA099F002C6C50 /* AppDelegate.m */,
 				258902B122CA099F002C6C50 /* ViewController.h */,
 				258902B222CA099F002C6C50 /* ViewController.m */,
+				253CFE4B22CB486600C4B051 /* ViewController5.h */,
+				253CFE4C22CB486600C4B051 /* ViewController5.m */,
 				258902B422CA099F002C6C50 /* Main.storyboard */,
 				253CFDDE22CAF66A00C4B051 /* RadiusSelectionTool.png */,
 				253CFDE022CB065300C4B051 /* AGLKTextureMatrix2PointLightShader.fsh */,
@@ -361,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				253CFE4D22CB486600C4B051 /* ViewController5.m in Sources */,
 				2589030222CA0FCE002C6C50 /* SceneMesh.m in Sources */,
 				2589030322CA0FCE002C6C50 /* SceneModel.m in Sources */,
 				258902B322CA099F002C6C50 /* ViewController.m in Sources */,

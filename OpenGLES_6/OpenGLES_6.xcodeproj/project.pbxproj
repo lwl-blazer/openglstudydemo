@@ -25,11 +25,11 @@
 		25360F6C22C1D20000CA81C1 /* AGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F5C22C1D20000CA81C1 /* AGLKViewController.m */; };
 		25360F6D22C1D20000CA81C1 /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F5D22C1D20000CA81C1 /* AGLKVertexAttribArrayBuffer.m */; };
 		25360F6E22C1D20000CA81C1 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F6422C1D20000CA81C1 /* GLKEffectPropertyTexture+AGLKAdditions.m */; };
-		25360F7622C1D2BA00CA81C1 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F7522C1D2BA00CA81C1 /* SceneMesh.m */; };
-		25360F7922C1F08700CA81C1 /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F7822C1F08700CA81C1 /* SceneModel.m */; };
 		25360F8322C2137100CA81C1 /* SceneCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F7F22C2137100CA81C1 /* SceneCarModel.m */; };
 		25360F8422C2137100CA81C1 /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F8022C2137100CA81C1 /* SceneCar.m */; };
 		25360F8822C219F700CA81C1 /* SceneRinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25360F8722C219F700CA81C1 /* SceneRinkModel.m */; };
+		253CFE4622CB416700C4B051 /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 253CFE4322CB416700C4B051 /* SceneModel.m */; };
+		253CFE4722CB416700C4B051 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 253CFE4422CB416700C4B051 /* SceneMesh.m */; };
 		253D129222C60A9900D422B6 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D129122C60A9900D422B6 /* ViewController3.m */; };
 		253D129522C60B3200D422B6 /* SceneCanLightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D129422C60B3200D422B6 /* SceneCanLightModel.m */; };
 /* End PBXBuildFile section */
@@ -88,10 +88,6 @@
 		25360F6422C1D20000CA81C1 /* GLKEffectPropertyTexture+AGLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GLKEffectPropertyTexture+AGLKAdditions.m"; sourceTree = "<group>"; };
 		25360F6522C1D20000CA81C1 /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
 		25360F6622C1D20000CA81C1 /* AGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKViewController.h; sourceTree = "<group>"; };
-		25360F7422C1D2BA00CA81C1 /* SceneMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
-		25360F7522C1D2BA00CA81C1 /* SceneMesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
-		25360F7722C1F08700CA81C1 /* SceneModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneModel.h; sourceTree = "<group>"; };
-		25360F7822C1F08700CA81C1 /* SceneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneModel.m; sourceTree = "<group>"; };
 		25360F7F22C2137100CA81C1 /* SceneCarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneCarModel.m; sourceTree = "<group>"; };
 		25360F8022C2137100CA81C1 /* SceneCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneCar.m; sourceTree = "<group>"; };
 		25360F8122C2137100CA81C1 /* SceneCarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneCarModel.h; sourceTree = "<group>"; };
@@ -100,6 +96,10 @@
 		25360F8622C219F700CA81C1 /* SceneRinkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneRinkModel.h; sourceTree = "<group>"; };
 		25360F8722C219F700CA81C1 /* SceneRinkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneRinkModel.m; sourceTree = "<group>"; };
 		25360F8922C21A4300CA81C1 /* bumperRink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bumperRink.h; sourceTree = "<group>"; };
+		253CFE4222CB416700C4B051 /* SceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
+		253CFE4322CB416700C4B051 /* SceneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneModel.m; sourceTree = "<group>"; };
+		253CFE4422CB416700C4B051 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
+		253CFE4522CB416700C4B051 /* SceneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneModel.h; sourceTree = "<group>"; };
 		253D129022C60A9900D422B6 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		253D129122C60A9900D422B6 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		253D129322C60B3200D422B6 /* SceneCanLightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCanLightModel.h; sourceTree = "<group>"; };
@@ -155,8 +155,8 @@
 		25360F2322C1D16D00CA81C1 /* OpenGLES_6 */ = {
 			isa = PBXGroup;
 			children = (
+				253CFE4122CB416700C4B051 /* CommonCode */,
 				25360F7E22C2137100CA81C1 /* model */,
-				25360F6F22C1D23000CA81C1 /* CommonCode */,
 				25360F5622C1D20000CA81C1 /* tool */,
 				25360F2422C1D16E00CA81C1 /* AppDelegate.h */,
 				25360F2522C1D16E00CA81C1 /* AppDelegate.m */,
@@ -216,18 +216,6 @@
 			path = tool;
 			sourceTree = "<group>";
 		};
-		25360F6F22C1D23000CA81C1 /* CommonCode */ = {
-			isa = PBXGroup;
-			children = (
-				25360F7422C1D2BA00CA81C1 /* SceneMesh.h */,
-				25360F7522C1D2BA00CA81C1 /* SceneMesh.m */,
-				25360F7722C1F08700CA81C1 /* SceneModel.h */,
-				25360F7822C1F08700CA81C1 /* SceneModel.m */,
-			);
-			name = CommonCode;
-			path = tool/CommonCode;
-			sourceTree = "<group>";
-		};
 		25360F7E22C2137100CA81C1 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +234,17 @@
 				253D129622C60B6E00D422B6 /* canLight.h */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		253CFE4122CB416700C4B051 /* CommonCode */ = {
+			isa = PBXGroup;
+			children = (
+				253CFE4222CB416700C4B051 /* SceneMesh.h */,
+				253CFE4322CB416700C4B051 /* SceneModel.m */,
+				253CFE4422CB416700C4B051 /* SceneMesh.m */,
+				253CFE4522CB416700C4B051 /* SceneModel.h */,
+			);
+			path = CommonCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,18 +379,18 @@
 			files = (
 				25360F2922C1D16E00CA81C1 /* ViewController.m in Sources */,
 				25360F8422C2137100CA81C1 /* SceneCar.m in Sources */,
-				25360F7922C1F08700CA81C1 /* SceneModel.m in Sources */,
 				253D129222C60A9900D422B6 /* ViewController3.m in Sources */,
 				253D129522C60B3200D422B6 /* SceneCanLightModel.m in Sources */,
 				25360F3422C1D17000CA81C1 /* main.m in Sources */,
 				25360F6D22C1D20000CA81C1 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				25360F6E22C1D20000CA81C1 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
 				25360F6A22C1D20000CA81C1 /* AGLKContext.m in Sources */,
+				253CFE4622CB416700C4B051 /* SceneModel.m in Sources */,
+				253CFE4722CB416700C4B051 /* SceneMesh.m in Sources */,
 				25360F6822C1D20000CA81C1 /* AGLKTextureInfo.m in Sources */,
 				25360F2622C1D16E00CA81C1 /* AppDelegate.m in Sources */,
 				25360F6C22C1D20000CA81C1 /* AGLKViewController.m in Sources */,
 				25360F6B22C1D20000CA81C1 /* AGLKShader.m in Sources */,
-				25360F7622C1D2BA00CA81C1 /* SceneMesh.m in Sources */,
 				2517BA5022C4974C001A9741 /* SceneAnimatedMesh.m in Sources */,
 				25360F6922C1D20000CA81C1 /* AGLKTextureTransformBaseEffect.m in Sources */,
 				25360F6722C1D20000CA81C1 /* AGLKView.m in Sources */,
