@@ -15,6 +15,18 @@
 		258902BE22CA09A3002C6C50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902BD22CA09A3002C6C50 /* main.m */; };
 		258902C822CA09A3002C6C50 /* OpenGLES_6_4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902C722CA09A3002C6C50 /* OpenGLES_6_4Tests.m */; };
 		258902D322CA09A3002C6C50 /* OpenGLES_6_4UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902D222CA09A3002C6C50 /* OpenGLES_6_4UITests.m */; };
+		258902F122CA0DEE002C6C50 /* AGLKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902E122CA0DEE002C6C50 /* AGLKView.m */; };
+		258902F222CA0DEE002C6C50 /* AGLKTextureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902E222CA0DEE002C6C50 /* AGLKTextureInfo.m */; };
+		258902F322CA0DEE002C6C50 /* AGLKTextureTransformBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902E322CA0DEE002C6C50 /* AGLKTextureTransformBaseEffect.m */; };
+		258902F422CA0DEE002C6C50 /* AGLKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902E422CA0DEE002C6C50 /* AGLKContext.m */; };
+		258902F522CA0DEE002C6C50 /* AGLKShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902E522CA0DEE002C6C50 /* AGLKShader.m */; };
+		258902F622CA0DEE002C6C50 /* AGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902E622CA0DEE002C6C50 /* AGLKViewController.m */; };
+		258902F722CA0DEE002C6C50 /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902E722CA0DEE002C6C50 /* AGLKVertexAttribArrayBuffer.m */; };
+		258902F822CA0DEE002C6C50 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902EE22CA0DEE002C6C50 /* GLKEffectPropertyTexture+AGLKAdditions.m */; };
+		2589030222CA0FCE002C6C50 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902FA22CA0DFC002C6C50 /* SceneMesh.m */; };
+		2589030322CA0FCE002C6C50 /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902FC22CA0DFC002C6C50 /* SceneModel.m */; };
+		2589030622CA105E002C6C50 /* SceneAnimatedMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589030422CA105E002C6C50 /* SceneAnimatedMesh.m */; };
+		2589030A22CA109E002C6C50 /* SceneCanLightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589030922CA109E002C6C50 /* SceneCanLightModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +63,31 @@
 		258902CE22CA09A3002C6C50 /* OpenGLES_6_4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGLES_6_4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		258902D222CA09A3002C6C50 /* OpenGLES_6_4UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_6_4UITests.m; sourceTree = "<group>"; };
 		258902D422CA09A3002C6C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		258902E122CA0DEE002C6C50 /* AGLKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKView.m; sourceTree = "<group>"; };
+		258902E222CA0DEE002C6C50 /* AGLKTextureInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureInfo.m; sourceTree = "<group>"; };
+		258902E322CA0DEE002C6C50 /* AGLKTextureTransformBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureTransformBaseEffect.m; sourceTree = "<group>"; };
+		258902E422CA0DEE002C6C50 /* AGLKContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKContext.m; sourceTree = "<group>"; };
+		258902E522CA0DEE002C6C50 /* AGLKShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKShader.m; sourceTree = "<group>"; };
+		258902E622CA0DEE002C6C50 /* AGLKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKViewController.m; sourceTree = "<group>"; };
+		258902E722CA0DEE002C6C50 /* AGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
+		258902E822CA0DEE002C6C50 /* GLKEffectPropertyTexture+AGLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLKEffectPropertyTexture+AGLKAdditions.h"; sourceTree = "<group>"; };
+		258902E922CA0DEE002C6C50 /* AGLKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKView.h; sourceTree = "<group>"; };
+		258902EA22CA0DEE002C6C50 /* AGLKTextureTransformBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKTextureTransformBaseEffect.h; sourceTree = "<group>"; };
+		258902EB22CA0DEE002C6C50 /* AGLKTextureInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKTextureInfo.h; sourceTree = "<group>"; };
+		258902EC22CA0DEE002C6C50 /* AGLKShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKShader.h; sourceTree = "<group>"; };
+		258902ED22CA0DEE002C6C50 /* AGLKContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKContext.h; sourceTree = "<group>"; };
+		258902EE22CA0DEE002C6C50 /* GLKEffectPropertyTexture+AGLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GLKEffectPropertyTexture+AGLKAdditions.m"; sourceTree = "<group>"; };
+		258902EF22CA0DEE002C6C50 /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
+		258902F022CA0DEE002C6C50 /* AGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKViewController.h; sourceTree = "<group>"; };
+		258902F922CA0DFC002C6C50 /* SceneMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
+		258902FA22CA0DFC002C6C50 /* SceneMesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
+		258902FB22CA0DFC002C6C50 /* SceneModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneModel.h; sourceTree = "<group>"; };
+		258902FC22CA0DFC002C6C50 /* SceneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneModel.m; sourceTree = "<group>"; };
+		2589030422CA105E002C6C50 /* SceneAnimatedMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneAnimatedMesh.m; path = ../../../OpenGLES_6/OpenGLES_6/model/SceneAnimatedMesh.m; sourceTree = "<group>"; };
+		2589030522CA105E002C6C50 /* SceneAnimatedMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneAnimatedMesh.h; path = ../../../OpenGLES_6/OpenGLES_6/model/SceneAnimatedMesh.h; sourceTree = "<group>"; };
+		2589030722CA108D002C6C50 /* canLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = canLight.h; path = ../../../OpenGLES_6/OpenGLES_6/model/canLight.h; sourceTree = "<group>"; };
+		2589030822CA109E002C6C50 /* SceneCanLightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCanLightModel.h; sourceTree = "<group>"; };
+		2589030922CA109E002C6C50 /* SceneCanLightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCanLightModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +138,9 @@
 		258902AD22CA099F002C6C50 /* OpenGLES_6_4 */ = {
 			isa = PBXGroup;
 			children = (
+				258902FE22CA0E36002C6C50 /* model */,
+				258902FD22CA0DFC002C6C50 /* CommonCode */,
+				258902E022CA0DEE002C6C50 /* tool */,
 				258902AE22CA099F002C6C50 /* AppDelegate.h */,
 				258902AF22CA099F002C6C50 /* AppDelegate.m */,
 				258902B122CA099F002C6C50 /* ViewController.h */,
@@ -130,6 +170,53 @@
 				258902D422CA09A3002C6C50 /* Info.plist */,
 			);
 			path = OpenGLES_6_4UITests;
+			sourceTree = "<group>";
+		};
+		258902E022CA0DEE002C6C50 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				258902E922CA0DEE002C6C50 /* AGLKView.h */,
+				258902E122CA0DEE002C6C50 /* AGLKView.m */,
+				258902EB22CA0DEE002C6C50 /* AGLKTextureInfo.h */,
+				258902E222CA0DEE002C6C50 /* AGLKTextureInfo.m */,
+				258902E322CA0DEE002C6C50 /* AGLKTextureTransformBaseEffect.m */,
+				258902E422CA0DEE002C6C50 /* AGLKContext.m */,
+				258902E522CA0DEE002C6C50 /* AGLKShader.m */,
+				258902E622CA0DEE002C6C50 /* AGLKViewController.m */,
+				258902E722CA0DEE002C6C50 /* AGLKVertexAttribArrayBuffer.m */,
+				258902E822CA0DEE002C6C50 /* GLKEffectPropertyTexture+AGLKAdditions.h */,
+				258902EA22CA0DEE002C6C50 /* AGLKTextureTransformBaseEffect.h */,
+				258902EC22CA0DEE002C6C50 /* AGLKShader.h */,
+				258902ED22CA0DEE002C6C50 /* AGLKContext.h */,
+				258902EE22CA0DEE002C6C50 /* GLKEffectPropertyTexture+AGLKAdditions.m */,
+				258902EF22CA0DEE002C6C50 /* AGLKVertexAttribArrayBuffer.h */,
+				258902F022CA0DEE002C6C50 /* AGLKViewController.h */,
+			);
+			name = tool;
+			path = ../../OpenGLES_6/OpenGLES_6/tool;
+			sourceTree = "<group>";
+		};
+		258902FD22CA0DFC002C6C50 /* CommonCode */ = {
+			isa = PBXGroup;
+			children = (
+				258902F922CA0DFC002C6C50 /* SceneMesh.h */,
+				258902FA22CA0DFC002C6C50 /* SceneMesh.m */,
+				258902FB22CA0DFC002C6C50 /* SceneModel.h */,
+				258902FC22CA0DFC002C6C50 /* SceneModel.m */,
+			);
+			path = CommonCode;
+			sourceTree = "<group>";
+		};
+		258902FE22CA0E36002C6C50 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2589030522CA105E002C6C50 /* SceneAnimatedMesh.h */,
+				2589030422CA105E002C6C50 /* SceneAnimatedMesh.m */,
+				2589030822CA109E002C6C50 /* SceneCanLightModel.h */,
+				2589030922CA109E002C6C50 /* SceneCanLightModel.m */,
+				2589030722CA108D002C6C50 /* canLight.h */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +349,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2589030222CA0FCE002C6C50 /* SceneMesh.m in Sources */,
+				2589030322CA0FCE002C6C50 /* SceneModel.m in Sources */,
 				258902B322CA099F002C6C50 /* ViewController.m in Sources */,
 				258902BE22CA09A3002C6C50 /* main.m in Sources */,
+				258902F722CA0DEE002C6C50 /* AGLKVertexAttribArrayBuffer.m in Sources */,
+				258902F822CA0DEE002C6C50 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
+				258902F422CA0DEE002C6C50 /* AGLKContext.m in Sources */,
+				258902F222CA0DEE002C6C50 /* AGLKTextureInfo.m in Sources */,
+				2589030622CA105E002C6C50 /* SceneAnimatedMesh.m in Sources */,
 				258902B022CA099F002C6C50 /* AppDelegate.m in Sources */,
+				258902F622CA0DEE002C6C50 /* AGLKViewController.m in Sources */,
+				258902F522CA0DEE002C6C50 /* AGLKShader.m in Sources */,
+				258902F322CA0DEE002C6C50 /* AGLKTextureTransformBaseEffect.m in Sources */,
+				258902F122CA0DEE002C6C50 /* AGLKView.m in Sources */,
+				2589030A22CA109E002C6C50 /* SceneCanLightModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ME92NL5RP7;
 				INFOPLIST_FILE = OpenGLES_6_4/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ME92NL5RP7;
 				INFOPLIST_FILE = OpenGLES_6_4/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

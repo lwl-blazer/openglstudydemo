@@ -224,7 +224,8 @@
 				25360F7722C1F08700CA81C1 /* SceneModel.h */,
 				25360F7822C1F08700CA81C1 /* SceneModel.m */,
 			);
-			path = CommonCode;
+			name = CommonCode;
+			path = tool/CommonCode;
 			sourceTree = "<group>";
 		};
 		25360F7E22C2137100CA81C1 /* model */ = {
