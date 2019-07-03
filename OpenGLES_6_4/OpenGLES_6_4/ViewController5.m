@@ -106,14 +106,18 @@ static const int numberOfFramesPerSecond = 15;
     self.spotLight1TiltAboutZAngleDeg = 30.0f * sinf(self.timeSinceLastResume);
 }
 
+//纹理贴图集
 - (void)updateTextureTransform{
-    int movieFrameNumber = (int)floor(self.timeSinceLastResume * numberOfFramesPerSecond) % numberOfMovieFrames;
-    
+    //当前播放哪一帧
+    int movieFrameNumber = (int)floor(self.timeSinceLastResume * numberOfFramesPerSecond) % numberOfMovieFrames; //floor 向下取整   原理就是用时间秒 乘以 每秒多少帧 取余总共多少帧  得到就是小于或于总共多少帧的数字
+  
+    //在0.0到1.0范围内的S和T纹理坐标到网格顶点之间。不用对纹理矩阵做任何修改，整个贴图集会被映射到网格几何图形上。但每次只需要渲染一个动画帧覆盖的网格。
     GLfloat currentRowPosition = (movieFrameNumber % numberOfMovieFramePerRow) * 1.0f / numberOfMovieFramePerRow;
     GLfloat currentColumPosition = (movieFrameNumber / numberOfMovieFramesPerColumn) * 1.0f / numberOfMovieFramesPerColumn;
-    
-    self.baseEffect.textureMatrix2d0 = GLKMatrix4MakeTranslation(currentRowPosition, currentColumPosition, 0.0f);
-    self.baseEffect.textureMatrix2d0 = GLKMatrix4Scale(self.baseEffect.textureMatrix2d0,
+        
+    //移动到计算出来的位置
+    self.baseEffect.textureMatrix2d0 = GLKMatrix4MakeTranslation(currentRowPosition, currentColumPosition, 0.0f); //首先平移纹理坐标系以使原点{0.0， 0.0}对应于当前动画帧的左下角
+    self.baseEffect.textureMatrix2d0 = GLKMatrix4Scale(self.baseEffect.textureMatrix2d0,    //缩放纹理坐标系以使当前帧能够覆盖网格几何体
                                                        1.0f/numberOfMovieFramePerRow,
                                                        1.0f/numberOfMovieFramesPerColumn,
                                                        1.0f);

@@ -30,8 +30,8 @@
 		2589030322CA0FCE002C6C50 /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 258902FC22CA0DFC002C6C50 /* SceneModel.m */; };
 		2589030622CA105E002C6C50 /* SceneAnimatedMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589030422CA105E002C6C50 /* SceneAnimatedMesh.m */; };
 		2589030A22CA109E002C6C50 /* SceneCanLightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589030922CA109E002C6C50 /* SceneCanLightModel.m */; };
-		25BCEE7522CC395C00AB5BBC /* RabbitTextureAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 25BCEE7422CC395C00AB5BBC /* RabbitTextureAtlas.png */; };
 		25BCEE7722CC396F00AB5BBC /* RadiusSelectionTool.png in Resources */ = {isa = PBXBuildFile; fileRef = 25BCEE7622CC396F00AB5BBC /* RadiusSelectionTool.png */; };
+		25BCEE7922CC49C000AB5BBC /* RabbitTextureAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 25BCEE7822CC49BF00AB5BBC /* RabbitTextureAtlas.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +97,8 @@
 		2589030722CA108D002C6C50 /* canLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = canLight.h; path = ../../../OpenGLES_6/OpenGLES_6/model/canLight.h; sourceTree = "<group>"; };
 		2589030822CA109E002C6C50 /* SceneCanLightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCanLightModel.h; sourceTree = "<group>"; };
 		2589030922CA109E002C6C50 /* SceneCanLightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCanLightModel.m; sourceTree = "<group>"; };
-		25BCEE7422CC395C00AB5BBC /* RabbitTextureAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RabbitTextureAtlas.png; path = ../../../../../Downloads/RabbitTextureAtlas.png; sourceTree = "<group>"; };
 		25BCEE7622CC396F00AB5BBC /* RadiusSelectionTool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RadiusSelectionTool.png; sourceTree = "<group>"; };
+		25BCEE7822CC49BF00AB5BBC /* RabbitTextureAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RabbitTextureAtlas.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +161,8 @@
 				258902B422CA099F002C6C50 /* Main.storyboard */,
 				253CFDE022CB065300C4B051 /* AGLKTextureMatrix2PointLightShader.fsh */,
 				253CFDE122CB065400C4B051 /* AGLKTextureMatrix2PointLightShader.vsh */,
+				25BCEE7822CC49BF00AB5BBC /* RabbitTextureAtlas.png */,
 				25BCEE7622CC396F00AB5BBC /* RadiusSelectionTool.png */,
-				25BCEE7422CC395C00AB5BBC /* RabbitTextureAtlas.png */,
 				258902B722CA09A3002C6C50 /* Assets.xcassets */,
 				258902B922CA09A3002C6C50 /* LaunchScreen.storyboard */,
 				258902BC22CA09A3002C6C50 /* Info.plist */,
@@ -342,7 +342,7 @@
 				258902BB22CA09A3002C6C50 /* LaunchScreen.storyboard in Resources */,
 				253CFDE322CB065400C4B051 /* AGLKTextureMatrix2PointLightShader.vsh in Resources */,
 				253CFDE222CB065400C4B051 /* AGLKTextureMatrix2PointLightShader.fsh in Resources */,
-				25BCEE7522CC395C00AB5BBC /* RabbitTextureAtlas.png in Resources */,
+				25BCEE7922CC49C000AB5BBC /* RabbitTextureAtlas.png in Resources */,
 				258902B822CA09A3002C6C50 /* Assets.xcassets in Resources */,
 				25BCEE7722CC396F00AB5BBC /* RadiusSelectionTool.png in Resources */,
 				258902B622CA099F002C6C50 /* Main.storyboard in Resources */,
