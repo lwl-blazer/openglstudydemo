@@ -67,6 +67,7 @@ static const int numberOfFramesPerSecond = 15;
                                                            0.8f,
                                                            1.0f);
     self.baseEffect.lightModelAmbientColor = GLKVector4Make(0.8f, 0.8f, 0.8f, 1.0f);
+    
     self.baseEffect.lightingType = GLKLightingTypePerVertex;
     self.baseEffect.lightModelTwoSided = GL_FALSE;
     self.baseEffect.lightModelAmbientColor = GLKVector4Make(0.6f, 0.6f, 0.6f, 1.0f);
@@ -90,7 +91,7 @@ static const int numberOfFramesPerSecond = 15;
     self.baseEffect.material.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     self.baseEffect.material.specularColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f);
     
-    CGImageRef imageRef0 = [[UIImage imageNamed:@""] CGImage];
+    CGImageRef imageRef0 = [[UIImage imageNamed:@"RabbitTextureAtlas.png"] CGImage];
     GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:imageRef0
                                                                options:nil
                                                                  error:NULL];
@@ -151,15 +152,68 @@ static const int numberOfFramesPerSecond = 15;
                                                                     spotLight1Position.y,
                                                                     spotLight1Position.z);
     
-    self.baseEffect.transform.modelviewMatrix = GLKMatrix4Scale(self.baseEffect.transform.modelviewMatrix,
-                                                                GLKMathDegreesToRadians(self.spot), <#float sy#>, <#float sz#>)
+    self.baseEffect.transform.modelviewMatrix = GLKMatrix4Rotate(self.baseEffect.transform.modelviewMatrix,
+                                                                 GLKMathDegreesToRadians(self.spotLight1TiltAboutXAngleDeg),
+                                                                 1,
+                                                                 0,
+                                                                 0);
+    self.baseEffect.transform.modelviewMatrix = GLKMatrix4Rotate(self.baseEffect.transform.modelviewMatrix,
+                                                                 GLKMathDegreesToRadians(self.spotLight1TiltAboutZAngleDeg),
+                                                                 0, 0, 1);
     
+    self.baseEffect.light1Position = GLKVector4Make(0, 0, 0, 1);
+    self.baseEffect.light1SpotDirection = GLKVector3Make(0, -1, 0);
+    self.baseEffect.texture2d0.enabled = GL_FALSE;
+    
+    [self.baseEffect prepareToDrawMultitextures];
+    [self.canLightModel draw];
+    
+    self.baseEffect.transform.modelviewMatrix = savedModelviewMatrix;
 }
 
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
+    [self updateSpotLightDirection];
+    [self updateTextureTransform];
+    
+    [((AGLKContext *)view.context) clear:GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT];
+    
+    const GLfloat aspectRatio = (GLfloat)view.drawableWidth / (GLfloat)view.drawableHeight;
+    self.baseEffect.transform.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(80.0f),
+                                                                           aspectRatio,
+                                                                           0.1f, 255.0f);
+    self.baseEffect.transform.projectionMatrix = GLKMatrix4Rotate(self.baseEffect.transform.projectionMatrix,
+                                                                  GLKMathDegreesToRadians(-90.0f),
+                                                                  0.0f,
+                                                                  0.0f,
+                                                                  1.0f);
+    [self drawLight0];
+    [self drawLight1];
+    
+    if (self.shouldRipple) {
+        [self.animatedMesh updateMeshWithElapsedTime:self.timeSinceLastResume];
+    }
+    
+    self.baseEffect.texture2d0.enabled = GL_TRUE;
+    [self.baseEffect prepareToDrawMultitextures];
+    [self.animatedMesh prepareToDraw];
+    [self.animatedMesh drawEntireMesh];
+}
 
+- (void)dealloc{
+    GLKView *view = (GLKView *)self.view;
+    [AGLKContext setCurrentContext:view.context];
+    
+    [EAGLContext setCurrentContext:nil];
+    
+    self.animatedMesh = nil;
+    self.canLightModel = nil;
+}
 
 - (IBAction)takeShouldRippleFrom:(UISwitch *)sender{
-    
+    self.shouldRipple = [sender isOn];
+    if (!self.shouldRipple) {
+        [self.animatedMesh updateMeshWithDefaultPositions];
+    }
 }
 
 @end
