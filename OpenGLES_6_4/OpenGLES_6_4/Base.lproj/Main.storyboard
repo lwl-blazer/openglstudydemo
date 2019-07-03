@@ -18,15 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egx-uS-fdt">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="egx-uS-fdt">
                                 <rect key="frame" x="345" y="44" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="IZO-Bd-wtf"/>
+                                    <constraint firstAttribute="width" constant="47" id="UH8-So-54Q"/>
+                                </constraints>
                                 <connections>
                                     <action selector="takeShouldRippleFrom:" destination="BYZ-38-t0r" eventType="valueChanged" id="Nqn-dj-wgd"/>
                                 </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="egx-uS-fdt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7g0-nT-RJr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egx-uS-fdt" secondAttribute="trailing" constant="22" id="DY2-Nb-Lho"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
