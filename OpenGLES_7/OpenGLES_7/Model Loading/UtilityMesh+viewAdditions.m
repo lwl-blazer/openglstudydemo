@@ -27,7 +27,8 @@
             NSAssert(vertexBufferID_ != 0, @"Failed to generate vertex array buffer");
             
             glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID_);
-            glBufferData(GL_ARRAY_BUFFER, [self.vertexData length], [self.vertexData bytes], GL_STATIC_DRAW);
+            glBufferData(GL_ARRAY_BUFFER, [self.vertexData length],
+                         [self.vertexData bytes], GL_STATIC_DRAW);
         } else {
             glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID_);
         }
@@ -148,7 +149,7 @@
         NSParameterAssert(lastCommandIndex < [self.commands count]);
         
         const GLushort *indices = (const GLushort *)[self.indexData bytes];
-        for (NSUInteger i = aRange.location; i < lastCommandIndex; i ++) {
+        for (NSUInteger i = aRange.location; i <= lastCommandIndex; i ++) {
             NSDictionary *currentCommand = [self.commands objectAtIndex:i];
             
             size_t numberOfIndices = (size_t)[[currentCommand objectForKey:UtilityMeshCommandNumberOfIndices] unsignedIntegerValue];

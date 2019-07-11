@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SceneCar.h"
-#import "AGLKAxisAllignedBoundingBox.h"
+
 #import "UtilityModel+viewAdditions.h"
 #import "UtilityModelManager.h"
 #import "UtilityTextureInfo.h"
@@ -17,7 +17,7 @@
 @interface ViewController ()<SceneCarControllerProtocol>
 
 @property(nonatomic, strong) NSMutableArray *cars;
-@property(nonatomic, assign) AGLKAxisAllignedBoundingBox rinkBoudingBox;
+@property(nonatomic, assign, readwrite) AGLKAxisAllignedBoundingBox rinkBoudingBox;
 
 @property(nonatomic, strong) UtilityModelManager *modelManager;
 @property(nonatomic, strong) GLKBaseEffect *baseEffect;
@@ -88,8 +88,63 @@
                                                 velocity:GLKVector3Make(1.5, 0.0, 1.5)
                                                    color:GLKVector4Make(0.0, 0.5, 0.0, 1.0)]];
     
+    [self.cars addObject:[[SceneCar alloc] initWithModel:self.carModel
+                                                position:GLKVector3Make(-1.0, 0.0, 1.0)
+                                                velocity:GLKVector3Make(-1.5, 0.0, 1.5)
+                                                   color:GLKVector4Make(0.5, 0.5, 0.0, 1.0)]];
     
+    [self.cars addObject:[[SceneCar alloc] initWithModel:self.carModel
+                                                position:GLKVector3Make(1.0, 0.0, -1.0)
+                                                velocity:GLKVector3Make(-1.5, 0.0, -1.0)
+                                                   color:GLKVector4Make(0.5, 0.5, 0.0, 1.0)]];
+    
+    [self.cars addObject:[[SceneCar alloc] initWithModel:self.carModel
+                                                position:GLKVector3Make(2.0, 0.0, -2.0)
+                                                velocity:GLKVector3Make(-1.5, 0.0, -0.5)
+                                                   color:GLKVector4Make(0.3, 0.0, 0.3, 1.0)]];
+    
+    self.baseEffect.transform.modelviewMatrix = GLKMatrix4MakeLookAt(10.5, 5.0, 0.0,
+                                                                     0.0, 0.5, 0.0,
+                                                                     0.0, 1.0, 0.0);
+    
+    self.baseEffect.texture2d0.name = self.modelManager.textureInfo.name;
+    self.baseEffect.texture2d0.target = self.modelManager.textureInfo.target;
 }
 
+- (void)update{
+    [self.cars makeObjectsPerformSelector:@selector(updateWithController:) withObject:self];
+}
+
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
+    [((AGLKContext *)view.context) clear:GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT];
+    [((AGLKContext *)view.context) enable:GL_CULL_FACE];
+    
+    const GLfloat aspectRatio = (GLfloat)view.drawableWidth / (GLfloat)view.drawableHeight;
+    
+    self.baseEffect.transform.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(35.0f),
+                                                                           aspectRatio,
+                                                                           4.0f,
+                                                                           20.0f);
+    [self.modelManager prepareToDraw];
+    [self.baseEffect prepareToDraw];
+    
+    [self.rinkModelFloor draw];
+    [self.rinkModelWalls draw];
+    
+    [self.cars makeObjectsPerformSelector:@selector(drawWithBaseEffect:) withObject:self.baseEffect];
+}
+
+- (void)dealloc{
+    GLKView *view = (GLKView *)self.view;
+    [AGLKContext setCurrentContext:view.context];
+    
+    [EAGLContext setCurrentContext:nil];
+    
+    self.baseEffect = nil;
+    self.cars = nil;
+    self.carModel = nil;
+    self.rinkModelFloor = nil;
+    self.rinkModelWalls = nil;
+}
 
 @end

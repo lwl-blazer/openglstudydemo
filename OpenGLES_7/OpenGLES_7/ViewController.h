@@ -7,9 +7,11 @@
 //
 
 #import <GLKit/GLKit.h>
+#import "AGLKAxisAllignedBoundingBox.h"
 
 @interface ViewController : GLKViewController
 
+@property(nonatomic, assign, readonly) AGLKAxisAllignedBoundingBox rinkBoudingBox;
 
 @end
 

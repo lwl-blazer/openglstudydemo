@@ -12,6 +12,8 @@
 		251336C122D6D92900FE376F /* UtilityTextureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C022D6D92900FE376F /* UtilityTextureInfo.m */; };
 		251336C422D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C322D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m */; };
 		251336C722D6E29300FE376F /* UtilityModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C622D6E29300FE376F /* UtilityModelManager.m */; };
+		251336C922D70A4900FE376F /* bumper.modelplist in Resources */ = {isa = PBXBuildFile; fileRef = 251336C822D70A4900FE376F /* bumper.modelplist */; };
+		251336CC22D7137400FE376F /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336CB22D7137400FE376F /* SceneCar.m */; };
 		25B7DBB822D5D88B00306665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBB722D5D88B00306665 /* AppDelegate.m */; };
 		25B7DBBB22D5D88B00306665 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBBA22D5D88B00306665 /* ViewController.m */; };
 		25B7DBBE22D5D88B00306665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B7DBBC22D5D88B00306665 /* Main.storyboard */; };
@@ -28,7 +30,6 @@
 		25B7DC0822D5D9A400306665 /* AGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBF122D5D9A400306665 /* AGLKViewController.m */; };
 		25B7DC0922D5D9A400306665 /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBF222D5D9A400306665 /* AGLKVertexAttribArrayBuffer.m */; };
 		25B7DC0A22D5D9A400306665 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBF922D5D9A400306665 /* GLKEffectPropertyTexture+AGLKAdditions.m */; };
-		25B7DC0B22D5D9A400306665 /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBFC22D5D9A400306665 /* SceneCar.m */; };
 		25B7DC0C22D5D9A400306665 /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBFF22D5D9A400306665 /* SceneModel.m */; };
 		25B7DC0D22D5D9A400306665 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC0022D5D9A400306665 /* SceneMesh.m */; };
 		25B7DC1222D5DAA100306665 /* UtilityMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC1122D5DAA100306665 /* UtilityMesh.m */; };
@@ -66,6 +67,9 @@
 		251336C322D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityTextureInfo+viewAdditions.m"; sourceTree = "<group>"; };
 		251336C522D6E29300FE376F /* UtilityModelManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityModelManager.h; sourceTree = "<group>"; };
 		251336C622D6E29300FE376F /* UtilityModelManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityModelManager.m; sourceTree = "<group>"; };
+		251336C822D70A4900FE376F /* bumper.modelplist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = bumper.modelplist; sourceTree = "<group>"; };
+		251336CA22D7137400FE376F /* SceneCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneCar.h; sourceTree = "<group>"; };
+		251336CB22D7137400FE376F /* SceneCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneCar.m; sourceTree = "<group>"; };
 		25B7DBB322D5D88B00306665 /* OpenGLES_7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B7DBB622D5D88B00306665 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		25B7DBB722D5D88B00306665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,12 +102,10 @@
 		25B7DBF922D5D9A400306665 /* GLKEffectPropertyTexture+AGLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GLKEffectPropertyTexture+AGLKAdditions.m"; sourceTree = "<group>"; };
 		25B7DBFA22D5D9A400306665 /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
 		25B7DBFB22D5D9A400306665 /* AGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKViewController.h; sourceTree = "<group>"; };
-		25B7DBFC22D5D9A400306665 /* SceneCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneCar.m; sourceTree = "<group>"; };
 		25B7DBFE22D5D9A400306665 /* SceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
 		25B7DBFF22D5D9A400306665 /* SceneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneModel.m; sourceTree = "<group>"; };
 		25B7DC0022D5D9A400306665 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
 		25B7DC0122D5D9A400306665 /* SceneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneModel.h; sourceTree = "<group>"; };
-		25B7DC0222D5D9A400306665 /* SceneCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneCar.h; sourceTree = "<group>"; };
 		25B7DC0E22D5D9F400306665 /* AGLKAxisAllignedBoundingBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKAxisAllignedBoundingBox.h; sourceTree = "<group>"; };
 		25B7DC1022D5DAA100306665 /* UtilityMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityMesh.h; sourceTree = "<group>"; };
 		25B7DC1122D5DAA100306665 /* UtilityMesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityMesh.m; sourceTree = "<group>"; };
@@ -166,11 +168,11 @@
 		25B7DBB522D5D88B00306665 /* OpenGLES_7 */ = {
 			isa = PBXGroup;
 			children = (
+				251336CA22D7137400FE376F /* SceneCar.h */,
+				251336CB22D7137400FE376F /* SceneCar.m */,
 				25B7DC1622D5E86400306665 /* Utility */,
 				25B7DC0F22D5DA7600306665 /* Model Loading */,
 				25B7DBFD22D5D9A400306665 /* CommonCode */,
-				25B7DC0222D5D9A400306665 /* SceneCar.h */,
-				25B7DBFC22D5D9A400306665 /* SceneCar.m */,
 				25B7DBEB22D5D9A300306665 /* tool */,
 				25B7DBB622D5D88B00306665 /* AppDelegate.h */,
 				25B7DBB722D5D88B00306665 /* AppDelegate.m */,
@@ -182,6 +184,7 @@
 				25B7DBC122D5D88D00306665 /* LaunchScreen.storyboard */,
 				25B7DBC422D5D88D00306665 /* Info.plist */,
 				25B7DBC522D5D88D00306665 /* main.m */,
+				251336C822D70A4900FE376F /* bumper.modelplist */,
 			);
 			path = OpenGLES_7;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				25B7DBC322D5D88D00306665 /* LaunchScreen.storyboard in Resources */,
 				25B7DBC022D5D88D00306665 /* Assets.xcassets in Resources */,
 				25B7DBBE22D5D88B00306665 /* Main.storyboard in Resources */,
+				251336C922D70A4900FE376F /* bumper.modelplist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +416,6 @@
 				25B7DBBB22D5D88B00306665 /* ViewController.m in Sources */,
 				25B7DC1C22D5E8DE00306665 /* UtilityMesh+viewAdditions.m in Sources */,
 				251336C422D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */,
-				25B7DC0B22D5D9A400306665 /* SceneCar.m in Sources */,
 				25B7DBC622D5D88D00306665 /* main.m in Sources */,
 				25B7DC0922D5D9A400306665 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				25B7DC0A22D5D9A400306665 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
@@ -431,6 +434,7 @@
 				25B7DC0522D5D9A400306665 /* AGLKTextureTransformBaseEffect.m in Sources */,
 				25B7DC0322D5D9A400306665 /* AGLKView.m in Sources */,
 				25B7DC0C22D5D9A400306665 /* SceneModel.m in Sources */,
+				251336CC22D7137400FE376F /* SceneCar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
