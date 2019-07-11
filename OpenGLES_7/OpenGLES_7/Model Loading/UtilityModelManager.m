@@ -59,10 +59,12 @@
     return result;
 }
 
+//解析文件数据
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError{
     
     NSDictionary *documentDictionary = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
+    //纹理图片 并设置纹理参数
     self.textureInfo = [GLKTextureInfo textureInfoFromUtilityPlistRepresention:[documentDictionary objectForKey:UtilityModelManagerTextureImageInfo]];
     
     self.consolidatedMesh = [[UtilityMesh alloc] initWithPlistRepresentation:[documentDictionary objectForKey:UtilityModelManagerMesh]];

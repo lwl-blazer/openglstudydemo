@@ -13,6 +13,7 @@
 @implementation UtilityMesh (viewAdditions)
 
 - (void)prepareToDraw{
+    //绑定顶点缓冲对象
     if (vertexArrayID_ != 0) {
         glBindVertexArray(vertexArrayID_);
     } else if (0 < [self.vertexData length]) {
@@ -66,6 +67,7 @@
                               (GLbyte *)NULL + offsetof(UtilityMeshVertex, texCoords1));
     }
     
+    //绑定索引缓冲对象
     if (indexBufferID_ != 0) {
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID_);
     } else if (0 < [self.indexData length]) {
@@ -133,10 +135,11 @@
             
             GLenum model = (GLenum)[[currentCommand objectForKey:@"command"] unsignedIntegerValue];
             
-            glDrawElements(model,
-                           (GLsizei)numberOfIndices,
-                           GL_UNSIGNED_SHORT,
-                           (GLushort *)NULL + firstIndex);
+            //EBO 索引缓冲对象:专门存储索引,OpenGL调用这些顶点的索引来决定绘制哪个顶点。
+            glDrawElements(model,                    //绘制的模式 model = 4 也就是GL_TRIANGLES
+                           (GLsizei)numberOfIndices, //绘制的顶点个数
+                           GL_UNSIGNED_SHORT,        //索引的类型
+                           (GLushort *)NULL + firstIndex);   //偏移量
         }
     }
 }

@@ -42,9 +42,9 @@ NSString *const UtilityMeshCommandFirstIndex = @"firstIndex";
 - (instancetype)initWithPlistRepresentation:(NSDictionary *)aDictionary{
     self = [self init];
     if (self) {
-        [_mutableVertexData appendData:[aDictionary objectForKey:@"vertexAttributeData"]];
-        [_mutableIndexData appendData:[aDictionary objectForKey:@"indexData"]];
-        self.commands = [self.commands arrayByAddingObjectsFromArray:[aDictionary objectForKey:@"commands"]];
+        [_mutableVertexData appendData:[aDictionary objectForKey:@"vertexAttributeData"]];  //顶点数据
+        [_mutableIndexData appendData:[aDictionary objectForKey:@"indexData"]];  //索引数据
+        self.commands = [self.commands arrayByAddingObjectsFromArray:[aDictionary objectForKey:@"commands"]]; //索引绘制用的数据   包括绘制模式 起始顶点  一次绘制的顶点个数
     }
     return self;
 }
