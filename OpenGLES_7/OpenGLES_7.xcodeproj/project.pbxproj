@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		251336BB22D6CAB400FE376F /* UtilityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336BA22D6CAB400FE376F /* UtilityModel.m */; };
-		251336BE22D6D61700FE376F /* UtilityModel+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336BD22D6D61700FE376F /* UtilityModel+viewAdditions.m */; };
-		251336C122D6D92900FE376F /* UtilityTextureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C022D6D92900FE376F /* UtilityTextureInfo.m */; };
-		251336C422D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C322D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m */; };
-		251336C722D6E29300FE376F /* UtilityModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C622D6E29300FE376F /* UtilityModelManager.m */; };
 		251336C922D70A4900FE376F /* bumper.modelplist in Resources */ = {isa = PBXBuildFile; fileRef = 251336C822D70A4900FE376F /* bumper.modelplist */; };
-		251336CC22D7137400FE376F /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336CB22D7137400FE376F /* SceneCar.m */; };
+		251336F722D7262B00FE376F /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336E722D7262B00FE376F /* SceneCar.m */; };
+		251336F822D7262B00FE376F /* UtilityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336EA22D7262B00FE376F /* UtilityModel.m */; };
+		251336F922D7262B00FE376F /* UtilityMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336EE22D7262B00FE376F /* UtilityMesh.m */; };
+		251336FA22D7262B00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336EF22D7262B00FE376F /* UtilityTextureInfo+viewAdditions.m */; };
+		251336FB22D7262B00FE376F /* UtilityTextureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336F122D7262B00FE376F /* UtilityTextureInfo.m */; };
+		251336FC22D7262B00FE376F /* UtilityModel+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336F222D7262B00FE376F /* UtilityModel+viewAdditions.m */; };
+		251336FD22D7262B00FE376F /* UtilityMesh+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336F422D7262B00FE376F /* UtilityMesh+viewAdditions.m */; };
+		251336FE22D7262B00FE376F /* UtilityModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336F522D7262B00FE376F /* UtilityModelManager.m */; };
 		25B7DBB822D5D88B00306665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBB722D5D88B00306665 /* AppDelegate.m */; };
 		25B7DBBB22D5D88B00306665 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBBA22D5D88B00306665 /* ViewController.m */; };
 		25B7DBBE22D5D88B00306665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B7DBBC22D5D88B00306665 /* Main.storyboard */; };
@@ -32,10 +34,8 @@
 		25B7DC0A22D5D9A400306665 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBF922D5D9A400306665 /* GLKEffectPropertyTexture+AGLKAdditions.m */; };
 		25B7DC0C22D5D9A400306665 /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBFF22D5D9A400306665 /* SceneModel.m */; };
 		25B7DC0D22D5D9A400306665 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC0022D5D9A400306665 /* SceneMesh.m */; };
-		25B7DC1222D5DAA100306665 /* UtilityMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC1122D5DAA100306665 /* UtilityMesh.m */; };
 		25B7DC1522D5E15300306665 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B7DC1422D5E15300306665 /* OpenGLES.framework */; };
 		25B7DC1922D5E8A500306665 /* UtilityEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC1822D5E8A500306665 /* UtilityEffect.m */; };
-		25B7DC1C22D5E8DE00306665 /* UtilityMesh+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC1B22D5E8DE00306665 /* UtilityMesh+viewAdditions.m */; };
 		25B7DC1F22D5EDA900306665 /* UtilityModelEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC1E22D5EDA900306665 /* UtilityModelEffect.m */; };
 /* End PBXBuildFile section */
 
@@ -57,19 +57,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		251336B922D6CAB400FE376F /* UtilityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityModel.h; sourceTree = "<group>"; };
-		251336BA22D6CAB400FE376F /* UtilityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityModel.m; sourceTree = "<group>"; };
-		251336BC22D6D61700FE376F /* UtilityModel+viewAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityModel+viewAdditions.h"; sourceTree = "<group>"; };
-		251336BD22D6D61700FE376F /* UtilityModel+viewAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityModel+viewAdditions.m"; sourceTree = "<group>"; };
-		251336BF22D6D92900FE376F /* UtilityTextureInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityTextureInfo.h; sourceTree = "<group>"; };
-		251336C022D6D92900FE376F /* UtilityTextureInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityTextureInfo.m; sourceTree = "<group>"; };
-		251336C222D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityTextureInfo+viewAdditions.h"; sourceTree = "<group>"; };
-		251336C322D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityTextureInfo+viewAdditions.m"; sourceTree = "<group>"; };
-		251336C522D6E29300FE376F /* UtilityModelManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityModelManager.h; sourceTree = "<group>"; };
-		251336C622D6E29300FE376F /* UtilityModelManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityModelManager.m; sourceTree = "<group>"; };
 		251336C822D70A4900FE376F /* bumper.modelplist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = bumper.modelplist; sourceTree = "<group>"; };
-		251336CA22D7137400FE376F /* SceneCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneCar.h; sourceTree = "<group>"; };
-		251336CB22D7137400FE376F /* SceneCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneCar.m; sourceTree = "<group>"; };
+		251336E622D7262B00FE376F /* SceneCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneCar.h; sourceTree = "<group>"; };
+		251336E722D7262B00FE376F /* SceneCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneCar.m; sourceTree = "<group>"; };
+		251336E922D7262B00FE376F /* UtilityTextureInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityTextureInfo.h; sourceTree = "<group>"; };
+		251336EA22D7262B00FE376F /* UtilityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityModel.m; sourceTree = "<group>"; };
+		251336EB22D7262B00FE376F /* UtilityModel+viewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UtilityModel+viewAdditions.h"; sourceTree = "<group>"; };
+		251336EC22D7262B00FE376F /* UtilityModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityModelManager.h; sourceTree = "<group>"; };
+		251336ED22D7262B00FE376F /* UtilityMesh+viewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UtilityMesh+viewAdditions.h"; sourceTree = "<group>"; };
+		251336EE22D7262B00FE376F /* UtilityMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityMesh.m; sourceTree = "<group>"; };
+		251336EF22D7262B00FE376F /* UtilityTextureInfo+viewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UtilityTextureInfo+viewAdditions.m"; sourceTree = "<group>"; };
+		251336F022D7262B00FE376F /* UtilityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityModel.h; sourceTree = "<group>"; };
+		251336F122D7262B00FE376F /* UtilityTextureInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityTextureInfo.m; sourceTree = "<group>"; };
+		251336F222D7262B00FE376F /* UtilityModel+viewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UtilityModel+viewAdditions.m"; sourceTree = "<group>"; };
+		251336F322D7262B00FE376F /* UtilityMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityMesh.h; sourceTree = "<group>"; };
+		251336F422D7262B00FE376F /* UtilityMesh+viewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UtilityMesh+viewAdditions.m"; sourceTree = "<group>"; };
+		251336F522D7262B00FE376F /* UtilityModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityModelManager.m; sourceTree = "<group>"; };
+		251336F622D7262B00FE376F /* UtilityTextureInfo+viewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UtilityTextureInfo+viewAdditions.h"; sourceTree = "<group>"; };
 		25B7DBB322D5D88B00306665 /* OpenGLES_7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B7DBB622D5D88B00306665 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		25B7DBB722D5D88B00306665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,13 +111,9 @@
 		25B7DC0022D5D9A400306665 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
 		25B7DC0122D5D9A400306665 /* SceneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneModel.h; sourceTree = "<group>"; };
 		25B7DC0E22D5D9F400306665 /* AGLKAxisAllignedBoundingBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKAxisAllignedBoundingBox.h; sourceTree = "<group>"; };
-		25B7DC1022D5DAA100306665 /* UtilityMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityMesh.h; sourceTree = "<group>"; };
-		25B7DC1122D5DAA100306665 /* UtilityMesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityMesh.m; sourceTree = "<group>"; };
 		25B7DC1422D5E15300306665 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		25B7DC1722D5E8A500306665 /* UtilityEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityEffect.h; sourceTree = "<group>"; };
 		25B7DC1822D5E8A500306665 /* UtilityEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityEffect.m; sourceTree = "<group>"; };
-		25B7DC1A22D5E8DE00306665 /* UtilityMesh+viewAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityMesh+viewAdditions.h"; sourceTree = "<group>"; };
-		25B7DC1B22D5E8DE00306665 /* UtilityMesh+viewAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityMesh+viewAdditions.m"; sourceTree = "<group>"; };
 		25B7DC1D22D5EDA800306665 /* UtilityModelEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityModelEffect.h; sourceTree = "<group>"; };
 		25B7DC1E22D5EDA900306665 /* UtilityModelEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityModelEffect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +144,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		251336E822D7262B00FE376F /* Model Loading */ = {
+			isa = PBXGroup;
+			children = (
+				251336E922D7262B00FE376F /* UtilityTextureInfo.h */,
+				251336EA22D7262B00FE376F /* UtilityModel.m */,
+				251336EB22D7262B00FE376F /* UtilityModel+viewAdditions.h */,
+				251336EC22D7262B00FE376F /* UtilityModelManager.h */,
+				251336ED22D7262B00FE376F /* UtilityMesh+viewAdditions.h */,
+				251336EE22D7262B00FE376F /* UtilityMesh.m */,
+				251336EF22D7262B00FE376F /* UtilityTextureInfo+viewAdditions.m */,
+				251336F022D7262B00FE376F /* UtilityModel.h */,
+				251336F122D7262B00FE376F /* UtilityTextureInfo.m */,
+				251336F222D7262B00FE376F /* UtilityModel+viewAdditions.m */,
+				251336F322D7262B00FE376F /* UtilityMesh.h */,
+				251336F422D7262B00FE376F /* UtilityMesh+viewAdditions.m */,
+				251336F522D7262B00FE376F /* UtilityModelManager.m */,
+				251336F622D7262B00FE376F /* UtilityTextureInfo+viewAdditions.h */,
+			);
+			path = "Model Loading";
+			sourceTree = "<group>";
+		};
 		25B7DBAA22D5D88B00306665 = {
 			isa = PBXGroup;
 			children = (
@@ -168,10 +189,10 @@
 		25B7DBB522D5D88B00306665 /* OpenGLES_7 */ = {
 			isa = PBXGroup;
 			children = (
-				251336CA22D7137400FE376F /* SceneCar.h */,
-				251336CB22D7137400FE376F /* SceneCar.m */,
+				251336E822D7262B00FE376F /* Model Loading */,
+				251336E622D7262B00FE376F /* SceneCar.h */,
+				251336E722D7262B00FE376F /* SceneCar.m */,
 				25B7DC1622D5E86400306665 /* Utility */,
-				25B7DC0F22D5DA7600306665 /* Model Loading */,
 				25B7DBFD22D5D9A400306665 /* CommonCode */,
 				25B7DBEB22D5D9A300306665 /* tool */,
 				25B7DBB622D5D88B00306665 /* AppDelegate.h */,
@@ -234,32 +255,11 @@
 			isa = PBXGroup;
 			children = (
 				25B7DBFE22D5D9A400306665 /* SceneMesh.h */,
-				25B7DBFF22D5D9A400306665 /* SceneModel.m */,
 				25B7DC0022D5D9A400306665 /* SceneMesh.m */,
 				25B7DC0122D5D9A400306665 /* SceneModel.h */,
+				25B7DBFF22D5D9A400306665 /* SceneModel.m */,
 			);
 			path = CommonCode;
-			sourceTree = "<group>";
-		};
-		25B7DC0F22D5DA7600306665 /* Model Loading */ = {
-			isa = PBXGroup;
-			children = (
-				25B7DC1022D5DAA100306665 /* UtilityMesh.h */,
-				25B7DC1122D5DAA100306665 /* UtilityMesh.m */,
-				25B7DC1A22D5E8DE00306665 /* UtilityMesh+viewAdditions.h */,
-				25B7DC1B22D5E8DE00306665 /* UtilityMesh+viewAdditions.m */,
-				251336B922D6CAB400FE376F /* UtilityModel.h */,
-				251336BA22D6CAB400FE376F /* UtilityModel.m */,
-				251336BC22D6D61700FE376F /* UtilityModel+viewAdditions.h */,
-				251336BD22D6D61700FE376F /* UtilityModel+viewAdditions.m */,
-				251336BF22D6D92900FE376F /* UtilityTextureInfo.h */,
-				251336C022D6D92900FE376F /* UtilityTextureInfo.m */,
-				251336C222D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.h */,
-				251336C322D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m */,
-				251336C522D6E29300FE376F /* UtilityModelManager.h */,
-				251336C622D6E29300FE376F /* UtilityModelManager.m */,
-			);
-			path = "Model Loading";
 			sourceTree = "<group>";
 		};
 		25B7DC1322D5E15300306665 /* Frameworks */ = {
@@ -412,29 +412,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				251336BB22D6CAB400FE376F /* UtilityModel.m in Sources */,
 				25B7DBBB22D5D88B00306665 /* ViewController.m in Sources */,
-				25B7DC1C22D5E8DE00306665 /* UtilityMesh+viewAdditions.m in Sources */,
-				251336C422D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */,
 				25B7DBC622D5D88D00306665 /* main.m in Sources */,
 				25B7DC0922D5D9A400306665 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				25B7DC0A22D5D9A400306665 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
 				25B7DC0622D5D9A400306665 /* AGLKContext.m in Sources */,
 				25B7DC0422D5D9A400306665 /* AGLKTextureInfo.m in Sources */,
-				251336C722D6E29300FE376F /* UtilityModelManager.m in Sources */,
-				251336C122D6D92900FE376F /* UtilityTextureInfo.m in Sources */,
-				251336BE22D6D61700FE376F /* UtilityModel+viewAdditions.m in Sources */,
 				25B7DC0D22D5D9A400306665 /* SceneMesh.m in Sources */,
-				25B7DC1222D5DAA100306665 /* UtilityMesh.m in Sources */,
 				25B7DBB822D5D88B00306665 /* AppDelegate.m in Sources */,
 				25B7DC1F22D5EDA900306665 /* UtilityModelEffect.m in Sources */,
+				251336F722D7262B00FE376F /* SceneCar.m in Sources */,
+				251336FE22D7262B00FE376F /* UtilityModelManager.m in Sources */,
 				25B7DC0822D5D9A400306665 /* AGLKViewController.m in Sources */,
 				25B7DC1922D5E8A500306665 /* UtilityEffect.m in Sources */,
 				25B7DC0722D5D9A400306665 /* AGLKShader.m in Sources */,
 				25B7DC0522D5D9A400306665 /* AGLKTextureTransformBaseEffect.m in Sources */,
 				25B7DC0322D5D9A400306665 /* AGLKView.m in Sources */,
+				251336FA22D7262B00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */,
+				251336FB22D7262B00FE376F /* UtilityTextureInfo.m in Sources */,
+				251336F822D7262B00FE376F /* UtilityModel.m in Sources */,
 				25B7DC0C22D5D9A400306665 /* SceneModel.m in Sources */,
-				251336CC22D7137400FE376F /* SceneCar.m in Sources */,
+				251336FC22D7262B00FE376F /* UtilityModel+viewAdditions.m in Sources */,
+				251336FD22D7262B00FE376F /* UtilityMesh+viewAdditions.m in Sources */,
+				251336F922D7262B00FE376F /* UtilityMesh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,8 +605,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ME92NL5RP7;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = OpenGLES_7/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -623,8 +626,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ME92NL5RP7;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = OpenGLES_7/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

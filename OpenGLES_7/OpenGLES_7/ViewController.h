@@ -7,11 +7,14 @@
 //
 
 #import <GLKit/GLKit.h>
-#import "AGLKAxisAllignedBoundingBox.h"
+#import "SceneCar.h"
 
-@interface ViewController : GLKViewController
+@interface ViewController : GLKViewController<SceneCarControllerProtocol>
 
-@property(nonatomic, assign, readonly) AGLKAxisAllignedBoundingBox rinkBoudingBox;
+@property(nonatomic, assign, readonly) AGLKAxisAllignedBoundingBox rinkBoundingBox;
+@property(nonatomic, strong, readonly) NSArray *cars;
 
 @end
+
+
 
