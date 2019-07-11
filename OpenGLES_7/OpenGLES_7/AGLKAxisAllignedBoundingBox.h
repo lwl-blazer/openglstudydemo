@@ -14,8 +14,6 @@
 typedef struct{
     GLKVector3 min;
     GLKVector3 max;
-}AGLKAxisAllignedBoundingBox;
-
-
+}AGLKAxisAllignedBoundingBox;  //模型的最大最小边界
 
 #endif /* AGLKAxisAllignedBoundingBox_h */

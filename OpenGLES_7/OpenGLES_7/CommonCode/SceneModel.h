@@ -8,19 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
+#import "AGLKAxisAllignedBoundingBox.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class AGLKVertexAttribArrayBuffer, SceneMesh;
 
-typedef struct{
-    GLKVector3 min;
-    GLKVector3 max;
-}SceneAxisAllignedBoundingBox; //模型的最大最小边界
-
 @interface SceneModel : NSObject
 
 @property(nonatomic, copy, readonly) NSString *name;
-@property(nonatomic, assign, readonly) SceneAxisAllignedBoundingBox axisAlignedBoundBox;
+@property(nonatomic, assign, readonly) AGLKAxisAllignedBoundingBox axisAlignedBoundBox;
 
 - (instancetype)initWithName:(NSString *)name
                         mesh:(SceneMesh *)aMesh

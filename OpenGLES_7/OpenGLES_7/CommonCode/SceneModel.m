@@ -13,7 +13,7 @@
 @interface SceneModel ()
 
 @property(nonatomic, strong, readwrite) SceneMesh *mesh;
-@property(nonatomic, assign, readwrite) SceneAxisAllignedBoundingBox axisAlignedBoundBox;
+@property(nonatomic, assign, readwrite) AGLKAxisAllignedBoundingBox axisAlignedBoundBox;
 @property(nonatomic, assign) GLsizei numberOfVertices;
 @property(nonatomic, copy, readwrite) NSString *name;
 
@@ -51,7 +51,7 @@
 //顶点数据改变后，重新计算边界
 - (void)updateAlignedBoundingBoxForVertices:(float *)verts
                                       count:(unsigned int)aCount{
-    SceneAxisAllignedBoundingBox result = {{0, 0, 0}, {0, 0, 0}};
+    AGLKAxisAllignedBoundingBox result = {{0, 0, 0}, {0, 0, 0}};
     const GLKVector3 *positions = (const GLKVector3 *)verts;
     
     if (aCount > 0) {

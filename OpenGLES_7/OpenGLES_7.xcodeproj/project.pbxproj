@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		251336BB22D6CAB400FE376F /* UtilityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336BA22D6CAB400FE376F /* UtilityModel.m */; };
+		251336BE22D6D61700FE376F /* UtilityModel+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336BD22D6D61700FE376F /* UtilityModel+viewAdditions.m */; };
+		251336C122D6D92900FE376F /* UtilityTextureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C022D6D92900FE376F /* UtilityTextureInfo.m */; };
+		251336C422D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C322D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m */; };
+		251336C722D6E29300FE376F /* UtilityModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336C622D6E29300FE376F /* UtilityModelManager.m */; };
 		25B7DBB822D5D88B00306665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBB722D5D88B00306665 /* AppDelegate.m */; };
 		25B7DBBB22D5D88B00306665 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBBA22D5D88B00306665 /* ViewController.m */; };
 		25B7DBBE22D5D88B00306665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B7DBBC22D5D88B00306665 /* Main.storyboard */; };
@@ -51,6 +56,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		251336B922D6CAB400FE376F /* UtilityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityModel.h; sourceTree = "<group>"; };
+		251336BA22D6CAB400FE376F /* UtilityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityModel.m; sourceTree = "<group>"; };
+		251336BC22D6D61700FE376F /* UtilityModel+viewAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityModel+viewAdditions.h"; sourceTree = "<group>"; };
+		251336BD22D6D61700FE376F /* UtilityModel+viewAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityModel+viewAdditions.m"; sourceTree = "<group>"; };
+		251336BF22D6D92900FE376F /* UtilityTextureInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityTextureInfo.h; sourceTree = "<group>"; };
+		251336C022D6D92900FE376F /* UtilityTextureInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityTextureInfo.m; sourceTree = "<group>"; };
+		251336C222D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityTextureInfo+viewAdditions.h"; sourceTree = "<group>"; };
+		251336C322D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityTextureInfo+viewAdditions.m"; sourceTree = "<group>"; };
+		251336C522D6E29300FE376F /* UtilityModelManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityModelManager.h; sourceTree = "<group>"; };
+		251336C622D6E29300FE376F /* UtilityModelManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityModelManager.m; sourceTree = "<group>"; };
 		25B7DBB322D5D88B00306665 /* OpenGLES_7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B7DBB622D5D88B00306665 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		25B7DBB722D5D88B00306665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -230,6 +245,16 @@
 				25B7DC1122D5DAA100306665 /* UtilityMesh.m */,
 				25B7DC1A22D5E8DE00306665 /* UtilityMesh+viewAdditions.h */,
 				25B7DC1B22D5E8DE00306665 /* UtilityMesh+viewAdditions.m */,
+				251336B922D6CAB400FE376F /* UtilityModel.h */,
+				251336BA22D6CAB400FE376F /* UtilityModel.m */,
+				251336BC22D6D61700FE376F /* UtilityModel+viewAdditions.h */,
+				251336BD22D6D61700FE376F /* UtilityModel+viewAdditions.m */,
+				251336BF22D6D92900FE376F /* UtilityTextureInfo.h */,
+				251336C022D6D92900FE376F /* UtilityTextureInfo.m */,
+				251336C222D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.h */,
+				251336C322D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m */,
+				251336C522D6E29300FE376F /* UtilityModelManager.h */,
+				251336C622D6E29300FE376F /* UtilityModelManager.m */,
 			);
 			path = "Model Loading";
 			sourceTree = "<group>";
@@ -383,14 +408,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251336BB22D6CAB400FE376F /* UtilityModel.m in Sources */,
 				25B7DBBB22D5D88B00306665 /* ViewController.m in Sources */,
 				25B7DC1C22D5E8DE00306665 /* UtilityMesh+viewAdditions.m in Sources */,
+				251336C422D6DE6A00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */,
 				25B7DC0B22D5D9A400306665 /* SceneCar.m in Sources */,
 				25B7DBC622D5D88D00306665 /* main.m in Sources */,
 				25B7DC0922D5D9A400306665 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				25B7DC0A22D5D9A400306665 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,
 				25B7DC0622D5D9A400306665 /* AGLKContext.m in Sources */,
 				25B7DC0422D5D9A400306665 /* AGLKTextureInfo.m in Sources */,
+				251336C722D6E29300FE376F /* UtilityModelManager.m in Sources */,
+				251336C122D6D92900FE376F /* UtilityTextureInfo.m in Sources */,
+				251336BE22D6D61700FE376F /* UtilityModel+viewAdditions.m in Sources */,
 				25B7DC0D22D5D9A400306665 /* SceneMesh.m in Sources */,
 				25B7DC1222D5DAA100306665 /* UtilityMesh.m in Sources */,
 				25B7DBB822D5D88B00306665 /* AppDelegate.m in Sources */,

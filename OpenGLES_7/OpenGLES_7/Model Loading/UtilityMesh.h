@@ -18,8 +18,8 @@ typedef struct {
     GLKVector2 texCoords1;
 } UtilityMeshVertex;
 
-NSString *const UtilityMeshCommandNumberOfIndices;
-NSString *const UtilityMeshCommandFirstIndex;
+extern NSString *const UtilityMeshCommandNumberOfIndices;
+extern NSString *const UtilityMeshCommandFirstIndex;
 
 
 @interface UtilityMesh : NSObject

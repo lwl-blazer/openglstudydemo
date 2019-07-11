@@ -7,6 +7,7 @@
 //
 
 #import "SceneCar.h"
+#import "UtilityModel+viewAdditions.h"
 
 /** car的逻辑类
  * SceneCar 类封装了每个碰碰车的当前位置、速度、颜色、偏航角和模型。偏航(yaw)是来自轮船和航空的一个术语，代表了围绕垂直轴的旋转度，在这个案例中围绕Y轴。偏航定义了碰碰车的方向并且会随着时间变化而让碰碰车面向它的移动的方向
@@ -16,7 +17,7 @@
 
 @interface SceneCar ()
 
-@property(nonatomic, strong, readwrite) SceneModel *model;
+@property(nonatomic, strong, readwrite) UtilityModel *model;
 @property(nonatomic, assign, readwrite) GLKVector3 position;
 @property(nonatomic, assign, readwrite) GLKVector3 nextPosition;
 @property(nonatomic, assign, readwrite) GLKVector3 velocity;
@@ -35,7 +36,7 @@
     return nil;
 }
 
-- (instancetype)initWithModel:(SceneModel *)aModel
+- (instancetype)initWithModel:(UtilityModel *)aModel
                      position:(GLKVector3)aPosition
                      velocity:(GLKVector3)aVelocity
                         color:(GLKVector4)aColor{
@@ -46,7 +47,7 @@
         self.velocity = aVelocity;
         self.model = aModel;
         
-        SceneAxisAllignedBoundingBox axisAlignedBoundingBox = self.model.axisAlignedBoundBox;
+        AGLKAxisAllignedBoundingBox axisAlignedBoundingBox = self.model.axisAlignedBoundingBox;
         
         //通过得到墙壁的最大小边界，得到car的半径
         self.radius = 0.5f * MAX(axisAlignedBoundingBox.max.x - axisAlignedBoundingBox.min.x, axisAlignedBoundingBox.max.z - axisAlignedBoundingBox.min.z);
@@ -55,7 +56,7 @@
 }
 
 //car与墙壁碰撞模拟
-- (void)bounceOffWallsWithBoundingBox:(SceneAxisAllignedBoundingBox)rinkBoundingBox{
+- (void)bounceOffWallsWithBoundingBox:(AGLKAxisAllignedBoundingBox)rinkBoundingBox{
     //根据car的半径，通过半径+nextPosition与RinkBoundingBox判断是否到达边界,如果到达边界则把对应轴的速度向量反向
     if ((rinkBoundingBox.min.x + self.radius) > self.nextPosition.x) {
         //下一个点超过了x最小的边界
@@ -171,7 +172,7 @@
     self.nextPosition = GLKVector3Add(self.position,
                                       travelDistance);
     
-    SceneAxisAllignedBoundingBox rinkBoundingBox = [controller rinkBoundingBox];
+    AGLKAxisAllignedBoundingBox rinkBoundingBox = [controller rinkBoundingBox];
     
     [self bounceOffCars:[controller cars]
             elapsedTime:elapsedTimeSeconds];
