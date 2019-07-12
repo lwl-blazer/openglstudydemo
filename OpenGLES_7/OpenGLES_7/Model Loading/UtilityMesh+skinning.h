@@ -17,7 +17,8 @@ typedef struct {
 
 @interface UtilityMesh (skinning)
 
-- (void)setJointInfluence:(UtilityMeshJointInfluence)vertexIndex;
+- (void)setJointInfluence:(UtilityMeshJointInfluence)aJointInfluence
+                  atIndex:(GLsizei)vertexIndex;
 - (void)prepareToDrawWithJointInfluence;
 
 @end
