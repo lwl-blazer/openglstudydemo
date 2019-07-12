@@ -17,6 +17,10 @@
 		251336FD22D7262B00FE376F /* UtilityMesh+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336F422D7262B00FE376F /* UtilityMesh+viewAdditions.m */; };
 		251336FE22D7262B00FE376F /* UtilityModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 251336F522D7262B00FE376F /* UtilityModelManager.m */; };
 		253D2F9A22D85A3800C8CD01 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D2F9922D85A3800C8CD01 /* ViewController2.m */; };
+		253D2F9D22D8631F00C8CD01 /* UtilityModel+skinning.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D2F9C22D8631F00C8CD01 /* UtilityModel+skinning.m */; };
+		253D2FA022D863BF00C8CD01 /* UtilityMesh+skinning.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D2F9F22D863BF00C8CD01 /* UtilityMesh+skinning.m */; };
+		253D2FA322D86BDF00C8CD01 /* UtilityJoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D2FA222D86BDF00C8CD01 /* UtilityJoint.m */; };
+		253D2FA622D8706100C8CD01 /* UtilityArmatureBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D2FA522D8706100C8CD01 /* UtilityArmatureBaseEffect.m */; };
 		25B7DBB822D5D88B00306665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBB722D5D88B00306665 /* AppDelegate.m */; };
 		25B7DBBB22D5D88B00306665 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DBBA22D5D88B00306665 /* ViewController.m */; };
 		25B7DBBE22D5D88B00306665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B7DBBC22D5D88B00306665 /* Main.storyboard */; };
@@ -77,6 +81,14 @@
 		251336F622D7262B00FE376F /* UtilityTextureInfo+viewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UtilityTextureInfo+viewAdditions.h"; sourceTree = "<group>"; };
 		253D2F9822D85A3800C8CD01 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		253D2F9922D85A3800C8CD01 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		253D2F9B22D8631F00C8CD01 /* UtilityModel+skinning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityModel+skinning.h"; sourceTree = "<group>"; };
+		253D2F9C22D8631F00C8CD01 /* UtilityModel+skinning.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityModel+skinning.m"; sourceTree = "<group>"; };
+		253D2F9E22D863BF00C8CD01 /* UtilityMesh+skinning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityMesh+skinning.h"; sourceTree = "<group>"; };
+		253D2F9F22D863BF00C8CD01 /* UtilityMesh+skinning.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityMesh+skinning.m"; sourceTree = "<group>"; };
+		253D2FA122D86BDF00C8CD01 /* UtilityJoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityJoint.h; sourceTree = "<group>"; };
+		253D2FA222D86BDF00C8CD01 /* UtilityJoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityJoint.m; sourceTree = "<group>"; };
+		253D2FA422D8706100C8CD01 /* UtilityArmatureBaseEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityArmatureBaseEffect.h; sourceTree = "<group>"; };
+		253D2FA522D8706100C8CD01 /* UtilityArmatureBaseEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityArmatureBaseEffect.m; sourceTree = "<group>"; };
 		25B7DBB322D5D88B00306665 /* OpenGLES_7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES_7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B7DBB622D5D88B00306665 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		25B7DBB722D5D88B00306665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -156,14 +168,22 @@
 				251336EA22D7262B00FE376F /* UtilityModel.m */,
 				251336EB22D7262B00FE376F /* UtilityModel+viewAdditions.h */,
 				251336F222D7262B00FE376F /* UtilityModel+viewAdditions.m */,
+				253D2F9B22D8631F00C8CD01 /* UtilityModel+skinning.h */,
+				253D2F9C22D8631F00C8CD01 /* UtilityModel+skinning.m */,
 				251336F322D7262B00FE376F /* UtilityMesh.h */,
 				251336EE22D7262B00FE376F /* UtilityMesh.m */,
 				251336ED22D7262B00FE376F /* UtilityMesh+viewAdditions.h */,
 				251336F422D7262B00FE376F /* UtilityMesh+viewAdditions.m */,
+				253D2F9E22D863BF00C8CD01 /* UtilityMesh+skinning.h */,
+				253D2F9F22D863BF00C8CD01 /* UtilityMesh+skinning.m */,
 				251336E922D7262B00FE376F /* UtilityTextureInfo.h */,
 				251336F122D7262B00FE376F /* UtilityTextureInfo.m */,
 				251336F622D7262B00FE376F /* UtilityTextureInfo+viewAdditions.h */,
 				251336EF22D7262B00FE376F /* UtilityTextureInfo+viewAdditions.m */,
+				253D2FA122D86BDF00C8CD01 /* UtilityJoint.h */,
+				253D2FA222D86BDF00C8CD01 /* UtilityJoint.m */,
+				253D2FA422D8706100C8CD01 /* UtilityArmatureBaseEffect.h */,
+				253D2FA522D8706100C8CD01 /* UtilityArmatureBaseEffect.m */,
 			);
 			path = "Model Loading";
 			sourceTree = "<group>";
@@ -424,6 +444,7 @@
 				25B7DC0622D5D9A400306665 /* AGLKContext.m in Sources */,
 				253D2F9A22D85A3800C8CD01 /* ViewController2.m in Sources */,
 				25B7DC0422D5D9A400306665 /* AGLKTextureInfo.m in Sources */,
+				253D2FA622D8706100C8CD01 /* UtilityArmatureBaseEffect.m in Sources */,
 				25B7DC0D22D5D9A400306665 /* SceneMesh.m in Sources */,
 				25B7DBB822D5D88B00306665 /* AppDelegate.m in Sources */,
 				25B7DC1F22D5EDA900306665 /* UtilityModelEffect.m in Sources */,
@@ -436,6 +457,9 @@
 				25B7DC0322D5D9A400306665 /* AGLKView.m in Sources */,
 				251336FA22D7262B00FE376F /* UtilityTextureInfo+viewAdditions.m in Sources */,
 				251336FB22D7262B00FE376F /* UtilityTextureInfo.m in Sources */,
+				253D2FA322D86BDF00C8CD01 /* UtilityJoint.m in Sources */,
+				253D2F9D22D8631F00C8CD01 /* UtilityModel+skinning.m in Sources */,
+				253D2FA022D863BF00C8CD01 /* UtilityMesh+skinning.m in Sources */,
 				251336F822D7262B00FE376F /* UtilityModel.m in Sources */,
 				25B7DC0C22D5D9A400306665 /* SceneModel.m in Sources */,
 				251336FC22D7262B00FE376F /* UtilityModel+viewAdditions.m in Sources */,
