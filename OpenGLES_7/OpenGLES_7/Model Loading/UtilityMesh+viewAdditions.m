@@ -119,6 +119,7 @@
     }
 }
 
+//使用模型命令范围内的命令循环调用glDrawElements()函数
 - (void)drawCommandsInRange:(NSRange)aRange{
     if (0 < aRange.length) {
         const NSUInteger lastCommandIndex = (aRange.location + aRange.length) - 1;

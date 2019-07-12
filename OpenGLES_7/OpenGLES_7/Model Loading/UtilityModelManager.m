@@ -59,7 +59,7 @@
     return result;
 }
 
-//解析文件数据
+//解析文件数据 提取模型，网格和纹理对象
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError{
     
     NSDictionary *documentDictionary = [NSKeyedUnarchiver unarchiveObjectWithData:data];

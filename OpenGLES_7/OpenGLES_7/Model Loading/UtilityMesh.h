@@ -36,6 +36,7 @@ extern NSString *const UtilityMeshCommandFirstIndex;
 @property(nonatomic, strong, readonly) NSMutableData *extraVertexData;
 @property(nonatomic, assign, readonly) NSUInteger numberOfIndices;
 
+//用于保存绘制多种模式的数组(如：GL_TRIANGLES 或GL_TRIANGLE_STRIP)
 @property(nonatomic, strong, readonly) NSArray *commands;
 @property(nonatomic, strong, readonly) NSDictionary *plistRepresentation;
 

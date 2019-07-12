@@ -68,7 +68,7 @@
                                                           ofType:@"modelplist"];
     self.modelManager = [[UtilityModelManager alloc] initWithModelPath:modelPath];
     
-    
+    //四个Model
     self.carModel = [self.modelManager modelNamed:@"bumperCar"];
     NSAssert(self.carModel != nil, @"Failed to load car model");
     
@@ -115,6 +115,7 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
     [((AGLKContext *)view.context) clear:GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT];
+    //背面剔除
     [((AGLKContext *)view.context) enable:GL_CULL_FACE];
     
     const GLfloat aspectRatio = (GLfloat)view.drawableWidth / (GLfloat)view.drawableHeight;
