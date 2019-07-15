@@ -72,7 +72,7 @@
     
     self.bone0 = [self.modelManager modelNamed:@"bone0"];
     NSAssert(self.bone0 != nil, @"Failed to load bone0 faile");
-    [self.bone0 assignJoint:0];
+    [self.bone0 assignJoint:0]; //设置关节索引 
     
     self.bone1 = [self.modelManager modelNamed:@"bone1"];
     NSAssert(self.bone1 != nil, @"Failed to load bone1 faile");
@@ -82,6 +82,7 @@
     NSAssert(self.bone2 != nil, @"Failed to load bone2 faile");
     [self.bone2 assignJoint:2];
     
+    //关节位置是用加载模型的轴对齐边界框进行初始化。关节位置和方向通常是直接从模型文件中加载来的，而不是计算出来的。这里只是为了方便和简单
     UtilityJoint *bone0Joint = [[UtilityJoint alloc] initWithDisplacement:GLKVector3Make(0, 0, 0)
                                                                 parent:nil];
     float bone0Length = self.bone0.axisAlignedBoundingBox.max.y - self.bone0.axisAlignedBoundingBox.min.y;

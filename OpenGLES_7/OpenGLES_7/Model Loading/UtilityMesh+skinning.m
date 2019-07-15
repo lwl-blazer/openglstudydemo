@@ -12,12 +12,13 @@
 
 @implementation UtilityMesh (skinning)
 
+//关节的权重和
 - (void)setJointInfluence:(UtilityMeshJointInfluence)aJointInfluence atIndex:(GLsizei)vertexIndex{
     NSMutableData *jointControlsData = self.extraVertexData;
     
-    if ([jointControlsData length] < (self.numberOfIndices * sizeof(UtilityMeshJointInfluence))) {
+    if ([jointControlsData length] < (self.numberOfIndices * sizeof(UtilityMeshJointInfluence))) { //确保有足够的空间来存储关节的影响
         const UtilityMeshJointInfluence defaultInfluence = {{0, 0, 0, 0}, {1, 0, 0, 0}};
-        
+        //初始化UtilityMesh的extraVertexData，
         for (int i = 0; i < self.numberOfIndices; i++) {
             [jointControlsData appendBytes:&defaultInfluence
                                     length:sizeof(UtilityMeshJointInfluence)];
@@ -29,6 +30,10 @@
     
     jointControlsPtr[vertexIndex] = aJointInfluence;
     
+    
+    /**
+     如果GPU缓存中已经存在对关节控制的Buffer,这时，如果GPU要更新buffer的内容，最直接和简单的方法，删除当前的当前buffer 然后重新创建
+     */
     if (vertexExtraBufferID_ != 0) {
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         glDeleteBuffers(1, &vertexExtraBufferID_);
@@ -39,6 +44,7 @@
 - (void)prepareToDrawWithJointInfluence{
     [self prepareToDraw];
     
+    //额外添加了两个属性 UtilityMesh类会把关节信息保存在一个缓存中，并会以一个与其他每顶点属性相似的方向向GPU发送额外的值
     if (vertexArrayID_ == 0 || vertexExtraBufferID_ == 0) {
         
         if (vertexExtraBufferID_ == 0) {

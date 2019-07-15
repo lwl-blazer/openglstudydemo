@@ -12,6 +12,7 @@
 
 @implementation UtilityModel (skinning)
 
+//每个模型都被赋给了一个单独的关节索引
 - (void)assignJoint:(NSUInteger)anIndex{
     const NSUInteger lastCommandIndex = self.indexOfFirstCommand + self.numberOfCommands;
     

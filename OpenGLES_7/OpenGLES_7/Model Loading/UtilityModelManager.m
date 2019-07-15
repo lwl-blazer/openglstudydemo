@@ -67,8 +67,10 @@
     //纹理图片 并设置纹理参数
     self.textureInfo = [GLKTextureInfo textureInfoFromUtilityPlistRepresention:[documentDictionary objectForKey:UtilityModelManagerTextureImageInfo]];
     
+    //网格
     self.consolidatedMesh = [[UtilityMesh alloc] initWithPlistRepresentation:[documentDictionary objectForKey:UtilityModelManagerMesh]];
     
+    //保存的所有的关节model  并关联到一个Mesh中
     self.modelDictionary = [self modelsFromPlistRepresentation:[documentDictionary objectForKey:UtilityModelManagerModels]
                                                           mesh:self.consolidatedMesh];
     

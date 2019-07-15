@@ -69,6 +69,7 @@ enum{
     return self;
 }
 
+//在运行时更新关节属性，通过prepareToDrawArmature发送消息(信息是指Shading Language 程序重新计算GPU当前内存中的顶点和法向量所需要的信息)，
 - (void)prepareToDrawArmature{
     GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.transform.projectionMatrix, self.transform.modelviewMatrix);
     

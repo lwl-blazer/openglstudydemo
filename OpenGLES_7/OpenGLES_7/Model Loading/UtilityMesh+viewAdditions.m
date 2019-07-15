@@ -13,17 +13,18 @@
 @implementation UtilityMesh (viewAdditions)
 
 - (void)prepareToDraw{
-    //绑定顶点缓冲对象
     if (vertexArrayID_ != 0) {
+        //绑定顶点缓冲对象
         glBindVertexArray(vertexArrayID_);
-    } else if (0 < [self.vertexData length]) {
-        if (self.shouldUseVAOExtension) {
+    } else if (0 < [self.vertexData length]) { //只在第一次运行的时候，进行创建和绑定顶点、索引缓存数组
+        
+        if (self.shouldUseVAOExtension) { //顶点数组对象 VAO
             glGenVertexArrays(1, &vertexArrayID_);
             NSAssert(0 != vertexArrayID_, @"Unable to create VAO");
             glBindVertexArray(vertexArrayID_);
         }
         
-        if (vertexBufferID_ == 0) {
+        if (vertexBufferID_ == 0) {//顶点缓存对象 VBO
             glGenBuffers(1, &vertexBufferID_);
             NSAssert(vertexBufferID_ != 0, @"Failed to generate vertex array buffer");
             
@@ -33,7 +34,7 @@
         } else {
             glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID_);
         }
-        
+
         glEnableVertexAttribArray(UtilityVertexAttribPosition);
         glVertexAttribPointer(UtilityVertexAttribPosition,
                               3,
