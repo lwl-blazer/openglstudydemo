@@ -156,7 +156,7 @@ static GLfloat UtilityVector3DistanceSquared(GLKVector3 positionA, GLKVector3 po
         
         GLsizei lastIndex = firstIndex + numberOfIndices;
         for (GLsizei j = firstIndex; j < lastIndex; j++) {
-            UtilityMeshVertex currentVertex = [self.mesh vertexAtIndex:i];
+            UtilityMeshVertex currentVertex = [self.mesh vertexAtIndex:j];
             
             UtilityMeshJointInfluence influences = [self closestJointsToPosition:currentVertex.position
                                                                           joints:joints];
