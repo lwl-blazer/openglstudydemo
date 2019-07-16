@@ -147,14 +147,16 @@ enum{
         }
         
         
-        //
+        //每个关节的mvp
         glUniformMatrix4fv(_uniforms[AGLKMVPJointMatrices], MAX_INDEXED_MATRICES,
                            GL_FALSE,
                            self.mvpArmatureJointMatrices[0].m);
+        //每个关节的法线向量
         glUniformMatrix3fv(_uniforms[AGLKNormalJointNormalMatrices], MAX_INDEXED_MATRICES,
                            GL_FALSE,
                            self.normalArmatureJointNormalMatrices[0].m);
         
+        //是否需要绑定纹理
         glActiveTexture(GL_TEXTURE0);
         if (self.texture2d0.name != 0 && self.texture2d0.enabled) {
             glBindTexture(GL_TEXTURE_2D, self.texture2d0.name);

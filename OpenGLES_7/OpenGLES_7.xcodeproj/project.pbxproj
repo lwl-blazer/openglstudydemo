@@ -20,6 +20,8 @@
 		251809EF22DC15ED0092A862 /* armature.modelplist in Resources */ = {isa = PBXBuildFile; fileRef = 251809EE22DC15ED0092A862 /* armature.modelplist */; };
 		251809F122DC16C10092A862 /* UtilityArmaturePointLightShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 251809F022DC16C10092A862 /* UtilityArmaturePointLightShader.vsh */; };
 		251809F322DC16C90092A862 /* UtilityArmaturePointLightShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 251809F222DC16C90092A862 /* UtilityArmaturePointLightShader.fsh */; };
+		252096F622DDA240006525E1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 252096F522DDA240006525E1 /* ViewController3.m */; };
+		252096F822DDABF1006525E1 /* armatureSkin.modelplist in Resources */ = {isa = PBXBuildFile; fileRef = 252096F722DDABF1006525E1 /* armatureSkin.modelplist */; };
 		253D2F9A22D85A3800C8CD01 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D2F9922D85A3800C8CD01 /* ViewController2.m */; };
 		253D2F9D22D8631F00C8CD01 /* UtilityModel+skinning.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D2F9C22D8631F00C8CD01 /* UtilityModel+skinning.m */; };
 		253D2FA022D863BF00C8CD01 /* UtilityMesh+skinning.m in Sources */ = {isa = PBXBuildFile; fileRef = 253D2F9F22D863BF00C8CD01 /* UtilityMesh+skinning.m */; };
@@ -88,6 +90,9 @@
 		251809EE22DC15ED0092A862 /* armature.modelplist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = armature.modelplist; sourceTree = "<group>"; };
 		251809F022DC16C10092A862 /* UtilityArmaturePointLightShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = UtilityArmaturePointLightShader.vsh; sourceTree = "<group>"; };
 		251809F222DC16C90092A862 /* UtilityArmaturePointLightShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = UtilityArmaturePointLightShader.fsh; sourceTree = "<group>"; };
+		252096F422DDA240006525E1 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		252096F522DDA240006525E1 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		252096F722DDABF1006525E1 /* armatureSkin.modelplist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = armatureSkin.modelplist; sourceTree = "<group>"; };
 		253D2F9822D85A3800C8CD01 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		253D2F9922D85A3800C8CD01 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		253D2F9B22D8631F00C8CD01 /* UtilityModel+skinning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityModel+skinning.h"; sourceTree = "<group>"; };
@@ -236,6 +241,8 @@
 				25B7DBBA22D5D88B00306665 /* ViewController.m */,
 				253D2F9822D85A3800C8CD01 /* ViewController2.h */,
 				253D2F9922D85A3800C8CD01 /* ViewController2.m */,
+				252096F422DDA240006525E1 /* ViewController3.h */,
+				252096F522DDA240006525E1 /* ViewController3.m */,
 				25B7DBBC22D5D88B00306665 /* Main.storyboard */,
 				25B7DBBF22D5D88D00306665 /* Assets.xcassets */,
 				25B7DBC122D5D88D00306665 /* LaunchScreen.storyboard */,
@@ -245,6 +252,7 @@
 				251809F222DC16C90092A862 /* UtilityArmaturePointLightShader.fsh */,
 				251336C822D70A4900FE376F /* bumper.modelplist */,
 				251809EE22DC15ED0092A862 /* armature.modelplist */,
+				252096F722DDABF1006525E1 /* armatureSkin.modelplist */,
 			);
 			path = OpenGLES_7;
 			sourceTree = "<group>";
@@ -423,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				252096F822DDABF1006525E1 /* armatureSkin.modelplist in Resources */,
 				25B7DBC322D5D88D00306665 /* LaunchScreen.storyboard in Resources */,
 				251809EF22DC15ED0092A862 /* armature.modelplist in Resources */,
 				251809F122DC16C10092A862 /* UtilityArmaturePointLightShader.vsh in Resources */,
@@ -468,6 +477,7 @@
 				251336F722D7262B00FE376F /* SceneCar.m in Sources */,
 				251336FE22D7262B00FE376F /* UtilityModelManager.m in Sources */,
 				25B7DC0822D5D9A400306665 /* AGLKViewController.m in Sources */,
+				252096F622DDA240006525E1 /* ViewController3.m in Sources */,
 				251809ED22DC0A040092A862 /* UtilityModelManager+skinning.m in Sources */,
 				25B7DC1922D5E8A500306665 /* UtilityEffect.m in Sources */,
 				25B7DC0722D5D9A400306665 /* AGLKShader.m in Sources */,
