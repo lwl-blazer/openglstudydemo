@@ -69,21 +69,27 @@ enum{
     return self;
 }
 
+//此方法是整个例子的核心
 //在运行时更新关节属性，通过prepareToDrawArmature发送消息(信息是指Shading Language 程序重新计算GPU当前内存中的顶点和法向量所需要的信息)，
 - (void)prepareToDrawArmature{
+    
+    //mvp  模型-视图-投影矩阵
     GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.transform.projectionMatrix, self.transform.modelviewMatrix);
     
     self.mvpArmatureJointMatrices[0] = modelViewProjectionMatrix;
     self.normalArmatureJointNormalMatrices[0] = self.transform.normalMatrix;
     
     NSUInteger jointMatrixIndex = 1;
-    for (UtilityJoint *joint in self.jointsArray) {
-        
+    for (UtilityJoint *joint in self.jointsArray) { //3
+        //把mvp跟每个关节的matrix 串联在一起形成一个新的mvp
         if (jointMatrixIndex < MAX_INDEXED_MATRICES) {
             
+            //mvp
             GLKMatrix4 tempMatrix = joint.cumulativeTransforms;
             self.mvpArmatureJointMatrices[jointMatrixIndex] = GLKMatrix4Multiply(modelViewProjectionMatrix,
                                                                                  tempMatrix);
+            
+            //法向量变换矩阵
             bool isInvertible;
             GLKMatrix3 jointNormalMatrix = GLKMatrix4GetMatrix3(GLKMatrix4InvertAndTranspose(tempMatrix,
                                                                                              &isInvertible));
@@ -109,6 +115,7 @@ enum{
         
         glUniformMatrix4fv(_uniforms[AGLKModelviewMatrix], 1, GL_FALSE, self.transform.modelviewMatrix.m);
         glUniformMatrix4fv(_uniforms[AGLKMVPMatrix], 1, 0, modelViewProjectionMatrix.m);
+        
         glUniformMatrix3fv(_uniforms[AGLKNormalMatrix], 1, GL_FALSE, self.transform.normalMatrix.m);
         
         glUniformMatrix4fv(_uniforms[AGLKTex0Matrix], 1, GL_FALSE, self.textureMatrix2d0.m);
@@ -116,6 +123,7 @@ enum{
         
         glUniform1iv(_uniforms[AGLKSamplers2D], 2, (const GLint *)samplerIDs);
         
+        //光照
         GLKVector4 globalAmbient = GLKVector4Multiply(self.lightModelAmbientColor,
                                                       self.material.ambientColor);
         if (self.light0.enabled) {
@@ -124,10 +132,11 @@ enum{
         }
         glUniform4fv(_uniforms[AGLKGlobalAmbient], 1, globalAmbient.v);
         
-        
+        //纹理
         glUniform1f(_uniforms[AGLKTex0Enabled], self.texture2d0.enabled ? 1.0 : 0.0);
         glUniform1f(_uniforms[AGLKTex1Enabled], self.texture2d1.enabled ? 1.0 : 0.0);
         
+        //光照
         if (self.light0.enabled) {
             GLKVector3 normalizedEyePosition = GLKVector3Normalize(self.light0EyePosition);
             glUniform3fv(_uniforms[AGLKLight0EyePosition], 1, normalizedEyePosition.v);
@@ -137,6 +146,8 @@ enum{
             glUniform4fv(_uniforms[AGLKLight0Diffuse], 1, GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f).v);
         }
         
+        
+        //
         glUniformMatrix4fv(_uniforms[AGLKMVPJointMatrices], MAX_INDEXED_MATRICES,
                            GL_FALSE,
                            self.mvpArmatureJointMatrices[0].m);
@@ -165,6 +176,11 @@ enum{
         }
 #endif
     }
+    /**
+     * UtilityArmatureBaseEffect会从关节层次结构中提取出包含累积变换的关节矩阵，并把它们与model-view矩阵和投影矩阵级联。与此同时，它还为变换法向量计算新矩阵。UtilityArmatureBaseEffect会向GPU发送一个结果矩阵的数组。每个顶点的UtilityArmatureVertexAttribJointMatrixIndices属性决定了每个顶点会受到UtilityArmatureBaseEffect提供的数组中的那些矩阵的影响
+     *
+     * 法向量变换矩阵是model-view累积变换的逆矩阵。 GLBaseEffect会自动按需计算"法线矩阵"。类似的，UtilityArmatureBaseEffect类会按需计算一个“法线矩阵”的数组
+     */
 }
 
 - (GLKVector4)light0Position{

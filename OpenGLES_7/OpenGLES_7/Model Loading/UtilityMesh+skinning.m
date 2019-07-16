@@ -12,7 +12,7 @@
 
 @implementation UtilityMesh (skinning)
 
-//关节的权重和
+//关节的权重
 - (void)setJointInfluence:(UtilityMeshJointInfluence)aJointInfluence atIndex:(GLsizei)vertexIndex{
     NSMutableData *jointControlsData = self.extraVertexData;
     
@@ -32,7 +32,7 @@
     
     
     /**
-     如果GPU缓存中已经存在对关节控制的Buffer,这时，如果GPU要更新buffer的内容，最直接和简单的方法，删除当前的当前buffer 然后重新创建
+     如果GPU缓存中已经存在对关节控制的Buffer,这时，如果GPU要更新buffer的内容，最直接和简单的方法，删除当前的当前buffer 然后重新创建(-prepareToDrawWithJointInfluence)
      */
     if (vertexExtraBufferID_ != 0) {
         glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -59,6 +59,7 @@
         } else {
             glBindBuffer(GL_ARRAY_BUFFER, vertexExtraBufferID_);
         }
+        
         glEnableVertexAttribArray(UtilityArmatureVertexAttribJointMatrixIndices);
         glVertexAttribPointer(UtilityArmatureVertexAttribJointMatrixIndices,
                               4,

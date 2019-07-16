@@ -119,8 +119,8 @@
                                                                            4.0f,
                                                                            20.0f);
     
-    [self.modelManager prepareToDrawWithJointInfluence];
-    [self.baseEffect prepareToDrawArmature];
+    [self.modelManager prepareToDrawWithJointInfluence];   //准备绘制  比如glBindBuffer()
+    [self.baseEffect prepareToDrawArmature]; //把数据传给shader
     
     [self.bone0 draw];
     [self.bone1 draw];
@@ -151,10 +151,10 @@
 
 - (void)setJoint0AngleRadians:(float)joint0AngleRadians{
     _joint0AngleRadians = joint0AngleRadians;
-    GLKMatrix4 rotateZMatrix = GLKMatrix4MakeRotation(joint0AngleRadians * M_PI * 0.5,
+    GLKMatrix4 rotateZMatrix = GLKMatrix4MakeRotation(joint0AngleRadians * M_PI * 0.5,     //M_PI 等于180度 也就是π(pi) *0.5 代表在90度的正负值范围内
                                                       0,
                                                       0,
-                                                      1);
+                                                      1); //rotation z轴
     
     [(UtilityJoint *)[self.baseEffect.jointsArray objectAtIndex:0] setMatrix:rotateZMatrix];
 }

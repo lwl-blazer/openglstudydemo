@@ -22,7 +22,7 @@
 
 @implementation UtilityModel
 
-static AGLKAxisAllignedBoundingBox UtilityBoundingBoxFromString(NSString *aString){
+static AGLKAxisAllignedBoundingBox UtilityBoundingBoxFromString(NSString *aString){ //根据字符串 分隔出数据
     NSCParameterAssert(nil != aString);
     
     aString = [aString stringByReplacingOccurrencesOfString:@"{"
@@ -57,7 +57,8 @@ static AGLKAxisAllignedBoundingBox UtilityBoundingBoxFromString(NSString *aStrin
 - (instancetype)initWithName:(NSString *)aName
                         mesh:(UtilityMesh *)aMesh
          indexOfFirstCommand:(NSUInteger)aFirstIndex
-            numberOfCommands:(NSUInteger)count axisAlignedBoundingBox:(AGLKAxisAllignedBoundingBox)aBoundingBox{
+            numberOfCommands:(NSUInteger)count
+      axisAlignedBoundingBox:(AGLKAxisAllignedBoundingBox)aBoundingBox{
     self = [super init];
     if (self) {
         self.mesh = aMesh;
