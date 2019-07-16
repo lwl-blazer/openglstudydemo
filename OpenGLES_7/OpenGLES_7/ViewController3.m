@@ -158,6 +158,7 @@
     [self.modelManager prepareToDrawWithJointInfluence];
     [self.baseEffect prepareToDrawArmature];
     
+    //大网格的绘制，而不是多个不同的骨头模型
     [self.tube draw];
 #ifdef DEBUG
     {  // Report any errors

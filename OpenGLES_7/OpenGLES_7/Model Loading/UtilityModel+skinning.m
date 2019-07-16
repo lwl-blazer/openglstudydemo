@@ -37,6 +37,16 @@ static GLfloat UtilityVector3DistanceSquared(GLKVector3 positionA, GLKVector3 po
     return GLKVector3DotProduct(vectorFromAtoB, vectorFromAtoB);
 }
 
+/**
+ * 在ViewController2中的例子中，当关节方向变化时，模型之间会出现缺口。产生这个结果是因为每个顶点只受一个关节的影响，并且不同的"骨头"是用不同的模型绘制的。当一个单独的网格内的顶点直接受到多个关节的影响时，就有可能获得更有机、更平滑的网格动画。
+ 
+ * 为了实现这一点，需要在每个顶点内保存多个关节索引。Shading Language程序会查询每个顶点引用的所有关节。每个关节对于一个顶点的最终位置的影响取决与缩放因数,又叫做权重(weights).
+ * 一个关节可能有50%的影响力，另一个关节可能有30%的影响力，然后还有两个关节每个起10%的作用。这个比率并不重要，只要总影响力加起来等于100%。
+ 
+ * 设置每个顶点的关节索引和权重的过程就叫蒙皮(skinning).按比例混合多个关节对于每个网格顶点的影响力来变形网格，就好像在骨骼上拉伸皮肤
+ */
+
+//平滑的蒙皮的核心代码
 - (UtilityMeshJointInfluence)closestJointsToPosition:(GLKVector3)position
                                               joints:(NSArray *)joints{
     struct jointInfo {
@@ -106,6 +116,7 @@ static GLfloat UtilityVector3DistanceSquared(GLKVector3 positionA, GLKVector3 po
     return result;
 }
 
+//僵硬的蒙皮的核心代码
 - (UtilityMeshJointInfluence)jointBelowPosition:(GLKVector3)position
                                          joints:(NSArray *)joints{
     struct jointInfo {
@@ -145,6 +156,7 @@ static GLfloat UtilityVector3DistanceSquared(GLKVector3 positionA, GLKVector3 po
     return result;
 }
 
+//平滑式的蒙皮
 - (void)automaticallySkinSmoothWithJoints:(NSArray *)joints{
     const NSUInteger lastCommandIndex = self.indexOfFirstCommand + self.numberOfCommands;
     
@@ -167,6 +179,7 @@ static GLfloat UtilityVector3DistanceSquared(GLKVector3 positionA, GLKVector3 po
     }
 }
 
+//僵硬的蒙皮
 - (void)automaticallySkinRigidWithJoints:(NSArray *)joints{
     const NSUInteger lastCommandIndex = self.indexOfFirstCommand + self.numberOfCommands;
     
