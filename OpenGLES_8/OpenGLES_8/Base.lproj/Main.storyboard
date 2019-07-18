@@ -40,5 +40,59 @@
             </objects>
             <point key="canvasLocation" x="935" y="138"/>
         </scene>
+        <!--View Controller3-->
+        <scene sceneID="0eH-yz-jpw">
+            <objects>
+                <viewController id="f8e-HU-jYl" customClass="ViewController3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jTV-Mo-MF4" customClass="GLKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bgG-Ub-Udq">
+                                <rect key="frame" x="64.5" y="835" width="285" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="UKE-YE-nNu"/>
+                                    <constraint firstAttribute="width" constant="285" id="oRo-a3-93g"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                </segments>
+                                <connections>
+                                    <action selector="takeSelectedTextureFrom:" destination="f8e-HU-jYl" eventType="valueChanged" id="c4r-Wk-18y"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wq1-2o-ga0">
+                                <rect key="frame" x="91.5" y="44" width="231" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="QEv-qL-8IN"/>
+                                    <constraint firstAttribute="width" constant="231" id="cQe-CP-Npo"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Ball"/>
+                                    <segment title="Burst"/>
+                                    <segment title="Smoke"/>
+                                </segments>
+                                <connections>
+                                    <action selector="takeSelectedEmitterFrom:" destination="f8e-HU-jYl" eventType="valueChanged" id="es8-ty-WN7"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wq1-2o-ga0" firstAttribute="centerX" secondItem="jTV-Mo-MF4" secondAttribute="centerX" id="2Dh-ek-Cms"/>
+                            <constraint firstItem="bgG-Ub-Udq" firstAttribute="centerX" secondItem="jTV-Mo-MF4" secondAttribute="centerX" id="7Kv-ix-14d"/>
+                            <constraint firstItem="bgG-Ub-Udq" firstAttribute="bottom" secondItem="dfR-tw-N3X" secondAttribute="bottom" id="E3L-nK-gqs"/>
+                            <constraint firstItem="Wq1-2o-ga0" firstAttribute="top" secondItem="dfR-tw-N3X" secondAttribute="top" id="E86-jh-5RJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dfR-tw-N3X"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IeB-UZ-jiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763.7681159420292" y="137.94642857142856"/>
+        </scene>
     </scenes>
 </document>

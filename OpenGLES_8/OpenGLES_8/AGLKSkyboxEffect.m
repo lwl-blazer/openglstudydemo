@@ -50,7 +50,7 @@ enum{
         self.ySize = 1.0f;
         self.zSize = 1.0f;
         
-        //纹理坐标
+        //天空盒子的顶点数据  立方体的每个面的长度是1.0(-0.5到0.5)。使用这个尺寸可以方便地把天空盒缩放为任意的大小
         const float vertices[AGLKSkyboxNumCoords] = {
             -0.5, -0.5,  0.5,
              0.5, -0.5,  0.5,
@@ -62,6 +62,7 @@ enum{
              0.5,  0.5, -0.5,
         };
         
+        //顶点缓存数组
         glGenBuffers(1, &vertexBufferID);
         glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
         glBufferData(GL_ARRAY_BUFFER,
@@ -83,6 +84,10 @@ enum{
                      sizeof(indices),
                      indices,
                      GL_STATIC_DRAW);
+        
+        /**
+         * 利用一个顶点属性数组缓存和一个元素数组缓存绘制立方体。绘制天空盒的u诀窍是确保三解形带中的每个三角形的前面朝向天空盒内部。否则，从天空盒内部渲染场景时就会产生错误的结果。每个三角形的顶点顺序决定了哪一面是前面
+         */
     }
     return self;
 }
@@ -110,6 +115,7 @@ enum{
     }
 }
 
+//准备绘制
 - (void)prepareToDraw{
     if (program == 0) {
         [self loadShaders];
@@ -118,18 +124,20 @@ enum{
     if (program != 0) {
         glUseProgram(program);
         
+        //平移天空盒的坐标系，走到天空盒的中心处在center属性所指定的位置，最后使用xSize,ySize和zSize属性所指定的尺寸缩放天空盒的坐标系。这些变换会施加到天空盒的modelviewMatrix上，
         GLKMatrix4 skyboxModelView = GLKMatrix4Translate(self.transform.modelviewMatrix,
                                                          self.center.x,
                                                          self.center.y,
                                                          self.center.z);
-        
         skyboxModelView = GLKMatrix4Scale(skyboxModelView,
                                           self.xSize,
                                           self.ySize,
                                           self.zSize);
-        
+        //这些变换会施加到天空盒的modelviewMatrix上，在天空盒准备好绘制时modelviewMatrix矩阵已经包含了视点的变换
         GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.transform.projectionMatrix,
                                                                   skyboxModelView);
+        
+        //把数据传递给shader
         glUniformMatrix4fv(uniforms[AGLKMVPMatrix],
                            1,
                            0,
@@ -137,8 +145,10 @@ enum{
         
         glUniform1i(uniforms[AGLKSamplersCube], 0);
         
+        //绑定并配置天空盒的顶点属性数组缓存和元素数组缓存
         if (vertexArrayID == 0) {
-            glGenBuffers(1, &vertexArrayID);
+            //创建VAO
+            glGenVertexArrays(1, &vertexArrayID);
             glBindVertexArray(vertexArrayID);  //先绑定VAO  再处理VBO
             
             glEnableVertexAttribArray(GLKVertexAttribPosition);

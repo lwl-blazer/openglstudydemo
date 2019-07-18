@@ -32,6 +32,7 @@
 		2520976722DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2520975522DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.m */; };
 		2520976D22DDC290006525E1 /* UtilityEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2520976A22DDC290006525E1 /* UtilityEffect.m */; };
 		2520976E22DDC290006525E1 /* UtilityModelEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2520976B22DDC290006525E1 /* UtilityModelEffect.m */; };
+		25B0B2F422E04C44002D1A84 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0B2F322E04C44002D1A84 /* ViewController3.m */; };
 		25CBAC4D22DEC98B00811CA7 /* skybox0.png in Resources */ = {isa = PBXBuildFile; fileRef = 25CBAC4B22DEC98B00811CA7 /* skybox0.png */; };
 		25CBAC4E22DEC98B00811CA7 /* boat.modelplist in Resources */ = {isa = PBXBuildFile; fileRef = 25CBAC4C22DEC98B00811CA7 /* boat.modelplist */; };
 		25CBAC5122DED21A00811CA7 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBAC5022DED21A00811CA7 /* ViewController2.m */; };
@@ -109,6 +110,8 @@
 		2520976A22DDC290006525E1 /* UtilityEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityEffect.m; sourceTree = "<group>"; };
 		2520976B22DDC290006525E1 /* UtilityModelEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityModelEffect.m; sourceTree = "<group>"; };
 		2520976C22DDC290006525E1 /* UtilityEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityEffect.h; sourceTree = "<group>"; };
+		25B0B2F222E04C44002D1A84 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		25B0B2F322E04C44002D1A84 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		25CBAC4B22DEC98B00811CA7 /* skybox0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skybox0.png; sourceTree = "<group>"; };
 		25CBAC4C22DEC98B00811CA7 /* boat.modelplist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = boat.modelplist; sourceTree = "<group>"; };
 		25CBAC4F22DED21A00811CA7 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				2520970922DDC05C006525E1 /* ViewController.m */,
 				25CBAC4F22DED21A00811CA7 /* ViewController2.h */,
 				25CBAC5022DED21A00811CA7 /* ViewController2.m */,
+				25B0B2F222E04C44002D1A84 /* ViewController3.h */,
+				25B0B2F322E04C44002D1A84 /* ViewController3.m */,
 				25CBAC5222DED31900811CA7 /* AGLKSkyboxEffect.h */,
 				25CBAC5322DED31900811CA7 /* AGLKSkyboxEffect.m */,
 				2520970B22DDC05C006525E1 /* Main.storyboard */,
@@ -402,6 +407,7 @@
 				2520976122DDC16E006525E1 /* AGLKTextureInfo.m in Sources */,
 				25CBAC5422DED31900811CA7 /* AGLKSkyboxEffect.m in Sources */,
 				2520970A22DDC05C006525E1 /* ViewController.m in Sources */,
+				25B0B2F422E04C44002D1A84 /* ViewController3.m in Sources */,
 				2520976322DDC16E006525E1 /* AGLKContext.m in Sources */,
 				2520975D22DDC16E006525E1 /* UtilityModel+viewAdditions.m in Sources */,
 				2520975F22DDC16E006525E1 /* UtilityModelManager.m in Sources */,
