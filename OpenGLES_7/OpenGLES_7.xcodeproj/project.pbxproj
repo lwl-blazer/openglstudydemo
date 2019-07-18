@@ -93,6 +93,7 @@
 		252096F422DDA240006525E1 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		252096F522DDA240006525E1 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		252096F722DDABF1006525E1 /* armatureSkin.modelplist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = armatureSkin.modelplist; sourceTree = "<group>"; };
+		2520973722DDC0D1006525E1 /* AGLKAxisAllignedBoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKAxisAllignedBoundingBox.h; sourceTree = "<group>"; };
 		253D2F9822D85A3800C8CD01 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		253D2F9922D85A3800C8CD01 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		253D2F9B22D8631F00C8CD01 /* UtilityModel+skinning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityModel+skinning.h"; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 		25B7DBFF22D5D9A400306665 /* SceneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneModel.m; sourceTree = "<group>"; };
 		25B7DC0022D5D9A400306665 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
 		25B7DC0122D5D9A400306665 /* SceneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneModel.h; sourceTree = "<group>"; };
-		25B7DC0E22D5D9F400306665 /* AGLKAxisAllignedBoundingBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKAxisAllignedBoundingBox.h; sourceTree = "<group>"; };
 		25B7DC1422D5E15300306665 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		25B7DC1722D5E8A500306665 /* UtilityEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityEffect.h; sourceTree = "<group>"; };
 		25B7DC1822D5E8A500306665 /* UtilityEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityEffect.m; sourceTree = "<group>"; };
@@ -236,7 +236,6 @@
 				25B7DBEB22D5D9A300306665 /* tool */,
 				25B7DBB622D5D88B00306665 /* AppDelegate.h */,
 				25B7DBB722D5D88B00306665 /* AppDelegate.m */,
-				25B7DC0E22D5D9F400306665 /* AGLKAxisAllignedBoundingBox.h */,
 				25B7DBB922D5D88B00306665 /* ViewController.h */,
 				25B7DBBA22D5D88B00306665 /* ViewController.m */,
 				253D2F9822D85A3800C8CD01 /* ViewController2.h */,
@@ -278,6 +277,7 @@
 		25B7DBEB22D5D9A300306665 /* tool */ = {
 			isa = PBXGroup;
 			children = (
+				2520973722DDC0D1006525E1 /* AGLKAxisAllignedBoundingBox.h */,
 				25B7DBEC22D5D9A300306665 /* AGLKView.m */,
 				25B7DBED22D5D9A300306665 /* AGLKTextureInfo.m */,
 				25B7DBEE22D5D9A300306665 /* AGLKTextureTransformBaseEffect.m */,
