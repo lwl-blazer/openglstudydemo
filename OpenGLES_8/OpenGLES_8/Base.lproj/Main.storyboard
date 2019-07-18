@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e0w-fb-j6f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f8e-HU-jYl">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -61,7 +61,7 @@
                                     <segment title="4"/>
                                 </segments>
                                 <connections>
-                                    <action selector="takeSelectedTextureFrom:" destination="f8e-HU-jYl" eventType="valueChanged" id="c4r-Wk-18y"/>
+                                    <action selector="takeSelectedEmitterFrom:" destination="f8e-HU-jYl" eventType="valueChanged" id="XpW-22-YCr"/>
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wq1-2o-ga0">
@@ -76,7 +76,7 @@
                                     <segment title="Smoke"/>
                                 </segments>
                                 <connections>
-                                    <action selector="takeSelectedEmitterFrom:" destination="f8e-HU-jYl" eventType="valueChanged" id="es8-ty-WN7"/>
+                                    <action selector="takeSelectedTextureFrom:" destination="f8e-HU-jYl" eventType="valueChanged" id="VCx-bs-8Om"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
