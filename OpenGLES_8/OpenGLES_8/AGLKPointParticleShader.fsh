@@ -12,3 +12,4 @@ void main()
     textureColor.a = textureColor.a * v_particleOpacity;
     gl_FragColor = textureColor;
 }
+

@@ -18,10 +18,12 @@ void main()
     
     highp vec3 velocity = a_emissionVelocity + ((a_emissionForce + u_gravity) * elapsedTime);
     
-    highp vec3 untransformedPosition = a_emissionPosition + 0.5 * (a_emissionVelocity * velocity) * elapsedTime;
+    highp vec3 untransformedPosition = a_emissionPosition + 0.5 * (a_emissionVelocity + velocity) * elapsedTime;
     
     gl_Position = u_mvpMatrix * vec4(untransformedPosition, 1.0);
     gl_PointSize = a_size.x / gl_Position.w;
     
     v_particleOpacity = max(0.0, min(1.0, (a_emissionAndDeathTimes.y - u_elapsedSeconds)/max(a_size.y, 0.00001)));
 }
+
+
