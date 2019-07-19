@@ -9,13 +9,15 @@
 #import "AGLKPointParticleEffect.h"
 #import "AGLKVertexAttribArrayBuffer.h"
 
+//粒子的属性:
 typedef struct {
-    GLKVector3 emissionPosition;
-    GLKVector3 emissionVelocity;
-    GLKVector3 emissionForce;
-    GLKVector2 size;
-    GLKVector2 emissionTimeAndLife;
+    GLKVector3 emissionPosition; //初始位置
+    GLKVector3 emissionVelocity; //速度
+    GLKVector3 emissionForce;   //力向量
+    GLKVector2 size;  //尺寸
+    GLKVector2 emissionTimeAndLife;    //时间
 }AGLKParticleAttributes;
+//每个粒子的力向量都会随着时间改变粒子的速度。模拟的全局重力也会影响每个粒子的速度。最后每个粒子都会随着时间褪色，直到完全透明，并且每个粒子都有一个寿命，超过这个寿命后，这个粒子就不会再绘制了
 
 
 enum {
@@ -34,6 +36,7 @@ typedef enum {
     AGLKParticleEmissionTimeAndLife
 } AGLKParticleAttrib;
 
+/** 地球引力(地球表面重力加速度) {0, (-9.80665 m/s/s), 0} assuming +Y up coordinate system    m/s/s 每平方秒每米*/
 const GLKVector3 AGLKDefaultGravity = {0.0f, -9.80665f, 0.0f};
 
 @interface AGLKPointParticleEffect()
@@ -68,7 +71,7 @@ const GLKVector3 AGLKDefaultGravity = {0.0f, -9.80665f, 0.0f};
         self.texture2d0.envMode = GLKTextureEnvModeReplace;
         
         self.transform = [[GLKEffectPropertyTransform alloc] init];
-        self.gravity = AGLKDefaultGravity;
+        self.gravity = AGLKDefaultGravity; 
         
         self.elapsedSeconds = 0.0f;
         self.particleAttributesData = [NSMutableData data];
@@ -139,16 +142,17 @@ const GLKVector3 AGLKDefaultGravity = {0.0f, -9.80665f, 0.0f};
     
     if (program != 0) {
         glUseProgram(program);
-        
+        //重新计算MVP
         GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.transform.projectionMatrix,
                                                                   self.transform.modelviewMatrix);
         glUniformMatrix4fv(uniforms[AGLKMVPMatrix],
                            1,
                            0,
                            modelViewProjectionMatrix.m);
-        
+        //一个纹理采样器
         glUniform1i(uniforms[AGLKSamplers2D], 0);
         
+        //粒子物理学
         glUniform3fv(uniforms[AGLKGravity], 1, self.gravity.v);
         glUniform1fv(uniforms[AGLKElapsedSeconds], 1, &_elapsedSeconds);
         
@@ -201,11 +205,27 @@ const GLKVector3 AGLKDefaultGravity = {0.0f, -9.80665f, 0.0f};
 }
 
 - (void)draw{
-    glDepthMask(GL_FALSE);
+    /**
+     * glDepthMask()  允许或禁止向深度缓冲区写入数据
+     * 多边形的绘图顺序极大地影响了最终的混合效果，为了应对不同深度的图形显示我们要开启深度缓冲区
+     * 对已开启深度缓冲区的图形来说，如果一个不透明的物理如果离观察点较近，那么它所遮挡的部分就不会进行绘制
+     * 对于存在透明度的图形来说要复杂一些，如果一个透明的物体靠近观察点较近。那么它所遮挡的部分也需要绘制的
+     * 使用方法如下面的代码步骤：
+     */
+    glDepthMask(GL_FALSE);  //step 1
     [self.particleAttributeBuffer drawArrayWithMode:GL_POINTS
                                    startVertexIndex:0
-                                   numberOfVertices:(GLsizei)self.numberOfParticles];
-    glDepthMask(GL_TRUE);
+                                   numberOfVertices:(GLsizei)self.numberOfParticles];  //step 2 绘制
+    glDepthMask(GL_TRUE);  //step 3 
+    
+    /** 点精灵
+     * 球面粒子效果可以使用与视平截体的近面和远面平行的纹理矩形来创建。每次渲染场景时，都是使用视平截体定义3D可见视域的
+     *
+     * 不过OpenGL ES还包含一个叫做点精灵(point sprites)的功能，这个甚至要比用两个三角形定义矩形渲染起来更高效
+     * 当你用glDrawArrays() 或者 glDrawElements()函数指定GL_POINTS模式后，OpenGL ES 2.0就会渲染点精灵。
+     *
+     * 点精灵会产生以这个点精灵的位置为中心的正方形内的每个像素颜色渲染缓存的片元。点精灵正方形的长和宽等于在像素颜色渲染缓存坐标系中的当前点精灵的尺寸。不幸的是，自定义shading language程序需要控制每个点精灵的尺寸
+     */
 }
 
 - (BOOL)loadShaders{

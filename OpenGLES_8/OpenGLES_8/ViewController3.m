@@ -5,7 +5,12 @@
 //  Created by luowailin on 2019/7/18.
 //  Copyright © 2019 luowailin. All rights reserved.
 //
-
+/**
+ * 本实例的缺陷，在某此粒子上出现的黑色轮廓的可视瑕疵，这些瑕疵是由粒子渲染的顺序导致的。每个粒子都会与像素颜色渲染缓存中的现存的内容相融合。
+ *
+ * 涉及的重点是无法排序顶点，顶点通常是按顺序提交给GPU的
+ 
+ */
 #import "ViewController3.h"
 #import "AGLKContext.h"
 #import "AGLKPointParticleEffect.h"
@@ -166,6 +171,8 @@
 }
 
 - (void)update{
+    // gravity和elapsedSeconds用于控制支配粒子运动的物理引擎。gravity属性默认与地球重力加速度相匹配：-9.80665(下落物体的速度每秒增加9.8米/秒)。在准备一个用于绘图的AGLKPointParticleEffect实例之前，必须要设置elapsedSeconds属性.粒子的当前位置是基于连续增加的elapsedSeconds属性计算出来的。
+    
     NSTimeInterval timeElapsed = self.timeSinceLastResume;
     self.particleEffect.elapsedSeconds = timeElapsed;
     
