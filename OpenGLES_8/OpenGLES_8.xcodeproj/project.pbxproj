@@ -32,6 +32,10 @@
 		2520976722DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2520975522DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.m */; };
 		2520976D22DDC290006525E1 /* UtilityEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2520976A22DDC290006525E1 /* UtilityEffect.m */; };
 		2520976E22DDC290006525E1 /* UtilityModelEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2520976B22DDC290006525E1 /* UtilityModelEffect.m */; };
+		25494F5622E557790028D866 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 25494F5522E557790028D866 /* ViewController4.m */; };
+		25494F5922E5588F0028D866 /* UtilityBillboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 25494F5822E5588F0028D866 /* UtilityBillboard.m */; };
+		25494F5C22E558BC0028D866 /* UtilityBillboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25494F5B22E558BC0028D866 /* UtilityBillboardManager.m */; };
+		25494F5F22E558E20028D866 /* UtilityBillboardManager+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25494F5E22E558E20028D866 /* UtilityBillboardManager+viewAdditions.m */; };
 		25B0B2F422E04C44002D1A84 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0B2F322E04C44002D1A84 /* ViewController3.m */; };
 		25B0B2F722E04FC4002D1A84 /* AGLKPointParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0B2F622E04FC4002D1A84 /* AGLKPointParticleEffect.m */; };
 		25B0B2F922E06786002D1A84 /* AGLKPointParticleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 25B0B2F822E06786002D1A84 /* AGLKPointParticleShader.fsh */; };
@@ -116,6 +120,14 @@
 		2520976A22DDC290006525E1 /* UtilityEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityEffect.m; sourceTree = "<group>"; };
 		2520976B22DDC290006525E1 /* UtilityModelEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityModelEffect.m; sourceTree = "<group>"; };
 		2520976C22DDC290006525E1 /* UtilityEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityEffect.h; sourceTree = "<group>"; };
+		25494F5422E557790028D866 /* ViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		25494F5522E557790028D866 /* ViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
+		25494F5722E5588F0028D866 /* UtilityBillboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityBillboard.h; sourceTree = "<group>"; };
+		25494F5822E5588F0028D866 /* UtilityBillboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityBillboard.m; sourceTree = "<group>"; };
+		25494F5A22E558BC0028D866 /* UtilityBillboardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityBillboardManager.h; sourceTree = "<group>"; };
+		25494F5B22E558BC0028D866 /* UtilityBillboardManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityBillboardManager.m; sourceTree = "<group>"; };
+		25494F5D22E558E20028D866 /* UtilityBillboardManager+viewAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityBillboardManager+viewAdditions.h"; sourceTree = "<group>"; };
+		25494F5E22E558E20028D866 /* UtilityBillboardManager+viewAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityBillboardManager+viewAdditions.m"; sourceTree = "<group>"; };
 		25B0B2F222E04C44002D1A84 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		25B0B2F322E04C44002D1A84 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		25B0B2F522E04FC4002D1A84 /* AGLKPointParticleEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKPointParticleEffect.h; sourceTree = "<group>"; };
@@ -188,12 +200,20 @@
 				2520974722DDC16E006525E1 /* tool */,
 				2520970522DDC05C006525E1 /* AppDelegate.h */,
 				2520970622DDC05C006525E1 /* AppDelegate.m */,
+				25494F5722E5588F0028D866 /* UtilityBillboard.h */,
+				25494F5822E5588F0028D866 /* UtilityBillboard.m */,
+				25494F5A22E558BC0028D866 /* UtilityBillboardManager.h */,
+				25494F5B22E558BC0028D866 /* UtilityBillboardManager.m */,
+				25494F5D22E558E20028D866 /* UtilityBillboardManager+viewAdditions.h */,
+				25494F5E22E558E20028D866 /* UtilityBillboardManager+viewAdditions.m */,
 				2520970822DDC05C006525E1 /* ViewController.h */,
 				2520970922DDC05C006525E1 /* ViewController.m */,
 				25CBAC4F22DED21A00811CA7 /* ViewController2.h */,
 				25CBAC5022DED21A00811CA7 /* ViewController2.m */,
 				25B0B2F222E04C44002D1A84 /* ViewController3.h */,
 				25B0B2F322E04C44002D1A84 /* ViewController3.m */,
+				25494F5422E557790028D866 /* ViewController4.h */,
+				25494F5522E557790028D866 /* ViewController4.m */,
 				25CBAC5222DED31900811CA7 /* AGLKSkyboxEffect.h */,
 				25CBAC5322DED31900811CA7 /* AGLKSkyboxEffect.m */,
 				25B0B2F522E04FC4002D1A84 /* AGLKPointParticleEffect.h */,
@@ -237,20 +257,20 @@
 		2520973822DDC16E006525E1 /* Model Loading */ = {
 			isa = PBXGroup;
 			children = (
-				2520973922DDC16E006525E1 /* UtilityTextureInfo.h */,
-				2520973A22DDC16E006525E1 /* UtilityModel.m */,
-				2520973B22DDC16E006525E1 /* UtilityModel+viewAdditions.h */,
-				2520973C22DDC16E006525E1 /* UtilityModelManager.h */,
-				2520973D22DDC16E006525E1 /* UtilityMesh+viewAdditions.h */,
-				2520973E22DDC16E006525E1 /* UtilityMesh.m */,
-				2520973F22DDC16E006525E1 /* UtilityTextureInfo+viewAdditions.m */,
 				2520974022DDC16E006525E1 /* UtilityModel.h */,
-				2520974122DDC16E006525E1 /* UtilityTextureInfo.m */,
-				2520974222DDC16E006525E1 /* UtilityModel+viewAdditions.m */,
-				2520974322DDC16E006525E1 /* UtilityMesh.h */,
-				2520974422DDC16E006525E1 /* UtilityMesh+viewAdditions.m */,
+				2520973A22DDC16E006525E1 /* UtilityModel.m */,
+				2520973C22DDC16E006525E1 /* UtilityModelManager.h */,
 				2520974522DDC16E006525E1 /* UtilityModelManager.m */,
+				2520973D22DDC16E006525E1 /* UtilityMesh+viewAdditions.h */,
+				2520974322DDC16E006525E1 /* UtilityMesh.h */,
+				2520973E22DDC16E006525E1 /* UtilityMesh.m */,
 				2520974622DDC16E006525E1 /* UtilityTextureInfo+viewAdditions.h */,
+				2520973F22DDC16E006525E1 /* UtilityTextureInfo+viewAdditions.m */,
+				2520973922DDC16E006525E1 /* UtilityTextureInfo.h */,
+				2520974122DDC16E006525E1 /* UtilityTextureInfo.m */,
+				2520973B22DDC16E006525E1 /* UtilityModel+viewAdditions.h */,
+				2520974222DDC16E006525E1 /* UtilityModel+viewAdditions.m */,
+				2520974422DDC16E006525E1 /* UtilityMesh+viewAdditions.m */,
 			);
 			path = "Model Loading";
 			sourceTree = "<group>";
@@ -258,23 +278,23 @@
 		2520974722DDC16E006525E1 /* tool */ = {
 			isa = PBXGroup;
 			children = (
-				2520974822DDC16E006525E1 /* AGLKView.m */,
-				2520974922DDC16E006525E1 /* AGLKTextureInfo.m */,
-				2520974A22DDC16E006525E1 /* AGLKTextureTransformBaseEffect.m */,
-				2520974B22DDC16E006525E1 /* AGLKContext.m */,
-				2520974C22DDC16E006525E1 /* AGLKShader.m */,
-				2520974D22DDC16E006525E1 /* AGLKViewController.m */,
-				2520974E22DDC16E006525E1 /* AGLKVertexAttribArrayBuffer.m */,
-				2520974F22DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.h */,
 				2520975022DDC16E006525E1 /* AGLKView.h */,
+				2520974822DDC16E006525E1 /* AGLKView.m */,
 				2520975122DDC16E006525E1 /* AGLKTextureTransformBaseEffect.h */,
-				2520975222DDC16E006525E1 /* AGLKTextureInfo.h */,
-				2520975322DDC16E006525E1 /* AGLKShader.h */,
+				2520974A22DDC16E006525E1 /* AGLKTextureTransformBaseEffect.m */,
 				2520975422DDC16E006525E1 /* AGLKContext.h */,
-				2520975522DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.m */,
-				2520975622DDC16E006525E1 /* AGLKVertexAttribArrayBuffer.h */,
-				2520975722DDC16E006525E1 /* AGLKAxisAllignedBoundingBox.h */,
+				2520974B22DDC16E006525E1 /* AGLKContext.m */,
 				2520975822DDC16E006525E1 /* AGLKViewController.h */,
+				2520974D22DDC16E006525E1 /* AGLKViewController.m */,
+				2520974F22DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.h */,
+				2520975522DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.m */,
+				2520975222DDC16E006525E1 /* AGLKTextureInfo.h */,
+				2520974922DDC16E006525E1 /* AGLKTextureInfo.m */,
+				2520975322DDC16E006525E1 /* AGLKShader.h */,
+				2520974C22DDC16E006525E1 /* AGLKShader.m */,
+				2520975622DDC16E006525E1 /* AGLKVertexAttribArrayBuffer.h */,
+				2520974E22DDC16E006525E1 /* AGLKVertexAttribArrayBuffer.m */,
+				2520975722DDC16E006525E1 /* AGLKAxisAllignedBoundingBox.h */,
 			);
 			path = tool;
 			sourceTree = "<group>";
@@ -430,6 +450,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2520976122DDC16E006525E1 /* AGLKTextureInfo.m in Sources */,
+				25494F5F22E558E20028D866 /* UtilityBillboardManager+viewAdditions.m in Sources */,
+				25494F5C22E558BC0028D866 /* UtilityBillboardManager.m in Sources */,
 				25CBAC5422DED31900811CA7 /* AGLKSkyboxEffect.m in Sources */,
 				2520970A22DDC05C006525E1 /* ViewController.m in Sources */,
 				25B0B2F422E04C44002D1A84 /* ViewController3.m in Sources */,
@@ -439,12 +461,14 @@
 				2520975F22DDC16E006525E1 /* UtilityModelManager.m in Sources */,
 				2520976D22DDC290006525E1 /* UtilityEffect.m in Sources */,
 				2520971522DDC05F006525E1 /* main.m in Sources */,
+				25494F5922E5588F0028D866 /* UtilityBillboard.m in Sources */,
 				2520975C22DDC16E006525E1 /* UtilityTextureInfo.m in Sources */,
 				2520976422DDC16E006525E1 /* AGLKShader.m in Sources */,
 				2520976622DDC16E006525E1 /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				2520975922DDC16E006525E1 /* UtilityModel.m in Sources */,
 				2520975E22DDC16E006525E1 /* UtilityMesh+viewAdditions.m in Sources */,
 				2520975B22DDC16E006525E1 /* UtilityTextureInfo+viewAdditions.m in Sources */,
+				25494F5622E557790028D866 /* ViewController4.m in Sources */,
 				2520976222DDC16E006525E1 /* AGLKTextureTransformBaseEffect.m in Sources */,
 				25CBAC5122DED21A00811CA7 /* ViewController2.m in Sources */,
 				2520976722DDC16E006525E1 /* GLKEffectPropertyTexture+AGLKAdditions.m in Sources */,

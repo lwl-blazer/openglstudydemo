@@ -253,7 +253,6 @@
             self.particleEffect.texture2d0.name = 0;
             break;
     }
-    
 }
 
 @end
