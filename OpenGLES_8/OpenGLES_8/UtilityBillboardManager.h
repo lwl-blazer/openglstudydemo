@@ -9,7 +9,7 @@
 #import <GLKit/GLKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+//UtilityBillboardManager 类跟踪公告牌并渲染它们的方式
 @class UtilityBillboard;
 @interface UtilityBillboardManager : NSObject
 
@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateWithEyePosition:(GLKVector3)eyePosition
                 lookDirection:(GLKVector3)lookDirection;
 
+//添加要管理的公告牌
 - (void)addBillboard:(UtilityBillboard *)aBillboard;
 
 - (void)addBillboardAtPosition:(GLKVector3)aPosition

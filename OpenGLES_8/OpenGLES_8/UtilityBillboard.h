@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign, readonly) GLKVector2 size;
 @property(nonatomic, assign, readonly) GLfloat distanceSquared;
 
-
+//UtilityBillboard类来为每个公告牌存储位置、大小和纹理坐标
 - (instancetype)initWithPosition:(GLKVector3)aPosition
                             size:(GLKVector2)aSize
                 minTextureCoords:(GLKVector2)minCoords

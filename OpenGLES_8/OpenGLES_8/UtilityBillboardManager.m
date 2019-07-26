@@ -29,15 +29,18 @@
     return self;
 }
 
+//计算每一个公告牌与眼睛位置之间的一个有符号的距离 并排序
 - (void)updateWithEyePosition:(GLKVector3)eyePosition
                 lookDirection:(GLKVector3)lookDirection{
     lookDirection = GLKVector3Normalize(lookDirection);
     
     for (UtilityBillboard *currentBillboard in self.sortedBillboards) {
+        //计算
         [currentBillboard updateWithEyePosition:eyePosition
                                   lookDirection:lookDirection];
     }
     
+    //排序
     [self.mutableSortedBillboards sortUsingFunction:UtilityCompareBillboardDistance
                                             context:NULL];
 }
