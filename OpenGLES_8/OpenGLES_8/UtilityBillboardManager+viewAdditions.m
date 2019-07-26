@@ -37,6 +37,7 @@ typedef struct {
     
     NSMutableData *billboardVertices = [NSMutableData data];
     
+    //绘制的时候，根据公告牌中的distanceSquared的排序来处理
     for (UtilityBillboard *billboard in [self.sortedBillboards reverseObjectEnumerator]) {
         if (0 <= billboard.distanceSquared) {
             break;

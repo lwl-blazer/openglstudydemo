@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f8e-HU-jYl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2vZ-OU-uR8">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -98,16 +98,44 @@
         <scene sceneID="NPX-A6-kbq">
             <objects>
                 <viewController id="2vZ-OU-uR8" customClass="ViewController4" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fc7-VZ-ceB">
+                    <view key="view" contentMode="scaleToFill" id="fc7-VZ-ceB" customClass="GLKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGD-gP-C74">
+                                <rect key="frame" x="347" y="52" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="5D8-ah-LJ5"/>
+                                    <constraint firstAttribute="height" constant="31" id="WCV-i3-JlW"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="takeShouldRenderSpherical:" destination="2vZ-OU-uR8" eventType="valueChanged" id="FlC-j8-eY8"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Render Spherical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMv-P7-2Qc">
+                                <rect key="frame" x="192" y="58" width="147" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="2FZ-uA-yKx"/>
+                                    <constraint firstAttribute="height" constant="25" id="Y2g-1g-wzz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UGD-gP-C74" firstAttribute="leading" secondItem="vMv-P7-2Qc" secondAttribute="trailing" constant="8" id="3La-4x-pj3"/>
+                            <constraint firstItem="RHW-mk-MOT" firstAttribute="trailing" secondItem="UGD-gP-C74" secondAttribute="trailing" constant="20" id="I7w-Uh-5Ax"/>
+                            <constraint firstItem="UGD-gP-C74" firstAttribute="top" secondItem="RHW-mk-MOT" secondAttribute="top" constant="8" id="Jb6-xu-4A4"/>
+                            <constraint firstItem="vMv-P7-2Qc" firstAttribute="top" secondItem="RHW-mk-MOT" secondAttribute="top" constant="14" id="T8Y-rt-CIS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RHW-mk-MOT"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUH-jf-Kgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="138"/>
+            <point key="canvasLocation" x="2544.9275362318845" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

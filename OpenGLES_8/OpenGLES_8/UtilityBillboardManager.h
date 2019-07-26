@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UtilityBillboardManager : NSObject
 
 @property(nonatomic, strong, readonly) NSArray *sortedBillboards;
-@property(nonatomic, assign, readonly) BOOL shouldRenderSpherical;
+@property(nonatomic, assign) BOOL shouldRenderSpherical;
 
 - (void)updateWithEyePosition:(GLKVector3)eyePosition
                 lookDirection:(GLKVector3)lookDirection;

@@ -36,6 +36,7 @@
 		25494F5922E5588F0028D866 /* UtilityBillboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 25494F5822E5588F0028D866 /* UtilityBillboard.m */; };
 		25494F5C22E558BC0028D866 /* UtilityBillboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25494F5B22E558BC0028D866 /* UtilityBillboardManager.m */; };
 		25494F5F22E558E20028D866 /* UtilityBillboardManager+viewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25494F5E22E558E20028D866 /* UtilityBillboardManager+viewAdditions.m */; };
+		2551697B22EA964B00294CCB /* park.modelplist in Resources */ = {isa = PBXBuildFile; fileRef = 2551697A22EA964B00294CCB /* park.modelplist */; };
 		25B0B2F422E04C44002D1A84 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0B2F322E04C44002D1A84 /* ViewController3.m */; };
 		25B0B2F722E04FC4002D1A84 /* AGLKPointParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0B2F622E04FC4002D1A84 /* AGLKPointParticleEffect.m */; };
 		25B0B2F922E06786002D1A84 /* AGLKPointParticleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 25B0B2F822E06786002D1A84 /* AGLKPointParticleShader.fsh */; };
@@ -128,6 +129,7 @@
 		25494F5B22E558BC0028D866 /* UtilityBillboardManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityBillboardManager.m; sourceTree = "<group>"; };
 		25494F5D22E558E20028D866 /* UtilityBillboardManager+viewAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilityBillboardManager+viewAdditions.h"; sourceTree = "<group>"; };
 		25494F5E22E558E20028D866 /* UtilityBillboardManager+viewAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UtilityBillboardManager+viewAdditions.m"; sourceTree = "<group>"; };
+		2551697A22EA964B00294CCB /* park.modelplist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = park.modelplist; sourceTree = "<group>"; };
 		25B0B2F222E04C44002D1A84 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		25B0B2F322E04C44002D1A84 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		25B0B2F522E04FC4002D1A84 /* AGLKPointParticleEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKPointParticleEffect.h; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				25B0B2FC22E06AC8002D1A84 /* ball.png */,
 				25B0B2FD22E06AC8002D1A84 /* burst.png */,
 				25B0B2FE22E06AC8002D1A84 /* smoke.png */,
+				2551697A22EA964B00294CCB /* park.modelplist */,
 			);
 			path = OpenGLES_8;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				25CBAC4E22DEC98B00811CA7 /* boat.modelplist in Resources */,
 				2520970F22DDC05F006525E1 /* Assets.xcassets in Resources */,
 				25CBAC5622DEF62E00811CA7 /* AGLKSkyboxShader.fsh in Resources */,
+				2551697B22EA964B00294CCB /* park.modelplist in Resources */,
 				25B0B2FB22E06793002D1A84 /* AGLKPointParticleShader.vsh in Resources */,
 				25CBAC5822DEF6B500811CA7 /* AGLKSkyboxShader.vsh in Resources */,
 				25B0B30022E06AC8002D1A84 /* burst.png in Resources */,

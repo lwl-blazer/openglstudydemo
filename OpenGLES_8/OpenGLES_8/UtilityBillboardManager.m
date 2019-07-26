@@ -14,7 +14,6 @@
 @property(nonatomic, strong, readwrite) NSMutableArray *mutableSortedBillboards;
 
 @property(nonatomic, strong, readwrite) NSArray *sortedBillboards;
-@property(nonatomic, assign, readwrite) BOOL shouldRenderSpherical;
 
 @end
 
